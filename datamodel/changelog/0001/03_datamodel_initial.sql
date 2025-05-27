@@ -1,6 +1,8 @@
 -- Datamodel initialization script for the TEKSI cemetery database
 
 BEGIN;
+
+-- Table for storing deceased information
 CREATE TABLE IF NOT EXISTS tce_od.deceased
 (
    id uuid DEFAULT public.uuid_generate_v1() NOT NULL PRIMARY KEY,
@@ -29,4 +31,36 @@ CREATE TABLE IF NOT EXISTS tce_od.deceased
    the_geom geometry(Point,2056)
 )
 
+-- Table for storing funeral units information
+CREATE TABLE IF NOT EXISTS tce_od.unit
+(
+   id uuid DEFAULT public.uuid_generate_v1() NOT NULL PRIMARY KEY,
+   identifier character varying(10),
+   start_date date,
+   end_date date,
+   fk_company integer,
+   fk_sector integer,
+   fk_cemetery integer,
+   fk_unit_size integer,
+   fk_unit_kind integer,
+   fk_contract_kind integer,
+   remark text,
+   disused boolean,
+   disused_date date,
+   fk_control integer,
+   the_geom geometry(Polygon,2056)
+)
+
+CREATE TABLE IF NOT EXISTS tce_od.sector
+(
+    id uuid DEFAULT public.uuid_generate_v1() NOT NULL PRIMARY KEY,
+    ident_short character varying(10),
+    identifier character varying(100),
+    remark text,
+    the_geom geometry(Polygon,2056)
+)
+
 COMMIT;
+
+
+
