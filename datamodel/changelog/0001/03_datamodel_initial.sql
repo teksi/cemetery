@@ -2,7 +2,6 @@
 
 BEGIN;
 
--- Table for storing deceased information
 CREATE TABLE IF NOT EXISTS tce_od.deceased
 (
    id uuid DEFAULT public.uuid_generate_v1() NOT NULL PRIMARY KEY,
@@ -20,7 +19,7 @@ CREATE TABLE IF NOT EXISTS tce_od.deceased
    flag_ashes boolean,
    incineration_date date,
    incineration_place character varying(50),
-   fk_urn_type integer,
+   fk_urn_kind integer,
    exumation_date date,
    exumation_place character varying(50),
    remark text,
@@ -31,7 +30,6 @@ CREATE TABLE IF NOT EXISTS tce_od.deceased
    the_geom geometry(Point,2056)
 )
 
--- Table for storing funeral units information
 CREATE TABLE IF NOT EXISTS tce_od.unit
 (
    id uuid DEFAULT public.uuid_generate_v1() NOT NULL PRIMARY KEY,
@@ -53,12 +51,102 @@ CREATE TABLE IF NOT EXISTS tce_od.unit
 
 CREATE TABLE IF NOT EXISTS tce_od.sector
 (
-    id uuid DEFAULT public.uuid_generate_v1() NOT NULL PRIMARY KEY,
-    ident_short character varying(10),
-    identifier character varying(100),
-    remark text,
-    the_geom geometry(Polygon,2056)
+   id uuid DEFAULT public.uuid_generate_v1() NOT NULL PRIMARY KEY,
+   ident_short character varying(10),
+   identifier character varying(100),
+   remark text,
+   the_geom geometry(Polygon,2056)
 )
+
+CREATE TABLE IF NOT EXISTS tce_od.furniture
+(
+   id uuid DEFAULT public.uuid_generate_v1() NOT NULL PRIMARY KEY,
+   fk_furniture_kind integer,
+   remark text,
+   the_geom geometry(Point,2056)
+)
+
+CREATE TABLE IF NOT EXISTS tce_od.vegetation
+(
+   id uuid DEFAULT public.uuid_generate_v1() NOT NULL PRIMARY KEY,
+   fk_vegetation_kind integer,
+   remark text,
+   the_geom geometry(Polygon,2056)
+)
+
+CREATE TABLE IF NOT EXISTS tce_od.organisation
+(
+   id uuid DEFAULT public.uuid_generate_v1() NOT NULL PRIMARY KEY,
+   identifier integer,
+   remark text
+)
+
+
+CREATE TABLE tce_vl.urn_kind (
+    id integer NOT NULL,
+    active boolean DEFAULT true,
+    value_en text,
+    value_fr text,
+    value_de text,
+    description_en text,
+    description_fr text,
+    description_de text
+);
+
+CREATE TABLE tce_vl.unit_kind (
+    id integer NOT NULL,
+    active boolean DEFAULT true,
+    value_en text,
+    value_fr text,
+    value_de text,
+    description_en text,
+    description_fr text,
+    description_de text
+);
+
+CREATE TABLE tce_vl.unit_size (
+    id integer NOT NULL,
+    active boolean DEFAULT true,
+    value_en text,
+    value_fr text,
+    value_de text,
+    description_en text,
+    description_fr text,
+    description_de text
+);
+
+CREATE TABLE tce_vl.control_kind (
+    id integer NOT NULL,
+    active boolean DEFAULT true,
+    value_en text,
+    value_fr text,
+    value_de text,
+    description_en text,
+    description_fr text,
+    description_de text
+);
+
+CREATE TABLE tce_vl.furniture_kind (
+    id integer NOT NULL,
+    active boolean DEFAULT true,
+    value_en text,
+    value_fr text,
+    value_de text,
+    description_en text,
+    description_fr text,
+    description_de text
+);
+
+CREATE TABLE tce_vl.vegetation_kind (
+    id integer NOT NULL,
+    active boolean DEFAULT true,
+    value_en text,
+    value_fr text,
+    value_de text,
+    description_en text,
+    description_fr text,
+    description_de text
+);
 
 COMMIT;
 
