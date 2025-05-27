@@ -1,0 +1,4 @@
+
+CREATE SCHEMA tce_sys;
+CREATE SCHEMA tce_vl;
+CREATE SCHEMA tce_od;
