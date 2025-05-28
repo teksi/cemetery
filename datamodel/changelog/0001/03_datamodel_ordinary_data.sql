@@ -82,6 +82,3 @@ CREATE TABLE IF NOT EXISTS tce_od.organisation
 );
 
 COMMIT;
-
-
-

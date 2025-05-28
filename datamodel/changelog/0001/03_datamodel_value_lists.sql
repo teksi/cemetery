@@ -133,6 +133,3 @@ INSERT INTO tce_vl.vegetation_kind (id, value_en, value_fr, value_de, value_it) 
 INSERT INTO tce_vl.vegetation_kind (id, value_en, value_fr, value_de, value_it) VALUES (5003,'hedge','haie','Hecke','siepe');
 
 COMMIT;
-
-
-
