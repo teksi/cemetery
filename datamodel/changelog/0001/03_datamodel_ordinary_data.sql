@@ -28,7 +28,7 @@ CREATE TABLE IF NOT EXISTS tce_od.deceased
    orientation double precision,
    fk_unit integer,
    the_geom geometry(Point,2056)
-)
+);
 
 CREATE TABLE IF NOT EXISTS tce_od.unit
 (
@@ -47,7 +47,7 @@ CREATE TABLE IF NOT EXISTS tce_od.unit
    disused_date date,
    fk_control integer,
    the_geom geometry(Polygon,2056)
-)
+);
 
 CREATE TABLE IF NOT EXISTS tce_od.sector
 (
@@ -56,7 +56,7 @@ CREATE TABLE IF NOT EXISTS tce_od.sector
    identifier character varying(100),
    remark text,
    the_geom geometry(Polygon,2056)
-)
+);
 
 CREATE TABLE IF NOT EXISTS tce_od.furniture
 (
@@ -64,7 +64,7 @@ CREATE TABLE IF NOT EXISTS tce_od.furniture
    fk_furniture_kind integer,
    remark text,
    the_geom geometry(Point,2056)
-)
+);
 
 CREATE TABLE IF NOT EXISTS tce_od.vegetation
 (
@@ -72,80 +72,13 @@ CREATE TABLE IF NOT EXISTS tce_od.vegetation
    fk_vegetation_kind integer,
    remark text,
    the_geom geometry(Polygon,2056)
-)
+);
 
 CREATE TABLE IF NOT EXISTS tce_od.organisation
 (
    id uuid DEFAULT public.uuid_generate_v1() NOT NULL PRIMARY KEY,
    identifier integer,
    remark text
-)
-
-
-CREATE TABLE tce_vl.urn_kind (
-    id integer NOT NULL,
-    active boolean DEFAULT true,
-    value_en text,
-    value_fr text,
-    value_de text,
-    description_en text,
-    description_fr text,
-    description_de text
-);
-
-CREATE TABLE tce_vl.unit_kind (
-    id integer NOT NULL,
-    active boolean DEFAULT true,
-    value_en text,
-    value_fr text,
-    value_de text,
-    description_en text,
-    description_fr text,
-    description_de text
-);
-
-CREATE TABLE tce_vl.unit_size (
-    id integer NOT NULL,
-    active boolean DEFAULT true,
-    value_en text,
-    value_fr text,
-    value_de text,
-    description_en text,
-    description_fr text,
-    description_de text
-);
-
-CREATE TABLE tce_vl.control_kind (
-    id integer NOT NULL,
-    active boolean DEFAULT true,
-    value_en text,
-    value_fr text,
-    value_de text,
-    description_en text,
-    description_fr text,
-    description_de text
-);
-
-CREATE TABLE tce_vl.furniture_kind (
-    id integer NOT NULL,
-    active boolean DEFAULT true,
-    value_en text,
-    value_fr text,
-    value_de text,
-    description_en text,
-    description_fr text,
-    description_de text
-);
-
-CREATE TABLE tce_vl.vegetation_kind (
-    id integer NOT NULL,
-    active boolean DEFAULT true,
-    value_en text,
-    value_fr text,
-    value_de text,
-    description_en text,
-    description_fr text,
-    description_de text
 );
 
 COMMIT;
