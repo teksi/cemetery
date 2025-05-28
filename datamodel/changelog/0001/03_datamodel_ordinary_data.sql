@@ -26,7 +26,7 @@ CREATE TABLE IF NOT EXISTS tce_od.deceased
    child boolean,
    quality double precision,
    orientation double precision,
-   fk_unit integer,
+   fk_unit uuid,
    the_geom geometry(Point,2056)
 );
 

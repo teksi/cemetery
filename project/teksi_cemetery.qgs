@@ -1,4 +1,4 @@
-<qgis projectname="" saveDateTime="2025-05-28T14:02:29" saveUser="pulpoar" saveUserFull="Poncet-Montanges, Arnaud" version="3.40.5-Bratislava">
+<qgis projectname="" saveDateTime="2025-05-28T15:53:37" saveUser="pulpoar" saveUserFull="Poncet-Montanges, Arnaud" version="3.40.5-Bratislava">
   <homePath path=""></homePath>
   <title></title>
   <transaction mode="Disabled"></transaction>
@@ -140,11 +140,11 @@
   </layer-tree-group>
   <snapping-settings enabled="0" intersection-snapping="0" maxScale="0" minScale="0" mode="2" scaleDependencyMode="0" self-snapping="0" tolerance="12" type="1" unit="1">
     <individual-layer-settings>
-      <layer-setting enabled="0" id="sector_20f5d6bf_e4be_4f25_8548_46e7a86487cf" maxScale="0" minScale="0" tolerance="12" type="1" units="1"></layer-setting>
       <layer-setting enabled="0" id="vegetation_13fe5960_8b66_412b_ac4c_359c3f9833c1" maxScale="0" minScale="0" tolerance="12" type="1" units="1"></layer-setting>
       <layer-setting enabled="0" id="unit_b78284e3_6787_4220_bb9a_ea2a1e3b6ff7" maxScale="0" minScale="0" tolerance="12" type="1" units="1"></layer-setting>
       <layer-setting enabled="0" id="furniture_baf9ed0a_bb5b_44a6_9460_3ee6a1c535ce" maxScale="0" minScale="0" tolerance="12" type="1" units="1"></layer-setting>
       <layer-setting enabled="0" id="deceased_1daa27a1_ddc9_4055_ab6d_a8eb9fbfa0cb" maxScale="0" minScale="0" tolerance="12" type="1" units="1"></layer-setting>
+      <layer-setting enabled="0" id="sector_20f5d6bf_e4be_4f25_8548_46e7a86487cf" maxScale="0" minScale="0" tolerance="12" type="1" units="1"></layer-setting>
     </individual-layer-settings>
   </snapping-settings>
   <relations></relations>
@@ -152,10 +152,10 @@
   <mapcanvas annotationsVisible="1" name="theMapCanvas">
     <units>meters</units>
     <extent>
-      <xmin>2539708.38992689084261656</xmin>
-      <ymin>1151208.62982466770336032</ymin>
-      <xmax>2539775.39509513508528471</xmax>
-      <ymax>1151252.19606396509334445</ymax>
+      <xmin>2539720.44382709264755249</xmin>
+      <ymin>1151211.25585292559117079</ymin>
+      <xmax>2539787.44899533689022064</xmax>
+      <ymax>1151254.82209222298115492</ymax>
     </extent>
     <rotation>0</rotation>
     <destinationsrs>
@@ -1084,7 +1084,19 @@ def my_form_open(dialog, layer, feature):
       <previewExpression>"value_en"</previewExpression>
       <mapTip enabled="1"></mapTip>
     </maplayer>
-    <maplayer autoRefreshMode="Disabled" autoRefreshTime="0" geometry="Point" hasScaleBasedVisibilityFlag="0" labelsEnabled="0" legendPlaceholderImage="" maxScale="0" minScale="100000000" readOnly="0" refreshOnNotifyEnabled="0" refreshOnNotifyMessage="" simplifyAlgorithm="0" simplifyDrawingHints="1" simplifyDrawingTol="1" simplifyLocal="1" simplifyMaxScale="1" styleCategories="AllStyleCategories" symbologyReferenceScale="-1" type="vector" wkbType="Point">
+    <maplayer autoRefreshMode="Disabled" autoRefreshTime="0" geometry="Point" hasScaleBasedVisibilityFlag="0" labelsEnabled="0" legendPlaceholderImage="" maxScale="0" minScale="100000000" readOnly="0" refreshOnNotifyEnabled="0" refreshOnNotifyMessage="" simplifyAlgorithm="0" simplifyDrawingHints="0" simplifyDrawingTol="1" simplifyLocal="1" simplifyMaxScale="1" styleCategories="AllStyleCategories" symbologyReferenceScale="-1" type="vector" wkbType="Point">
+      <extent>
+        <xmin>2539740.88084438955411315</xmin>
+        <ymin>1151219.04783841269090772</ymin>
+        <xmax>2539740.88084438955411315</xmax>
+        <ymax>1151219.04783841269090772</ymax>
+      </extent>
+      <wgs84extent>
+        <xmin>6.65351253363064821</xmin>
+        <ymin>46.50955646032846147</ymin>
+        <xmax>6.65351253363064821</xmax>
+        <ymax>46.50955646032846147</ymax>
+      </wgs84extent>
       <id>deceased_1daa27a1_ddc9_4055_ab6d_a8eb9fbfa0cb</id>
       <datasource>service='pg_tce_dev' key='id' srid=2056 type=Point checkPrimaryKeyUnicity='0' table="tce_od"."deceased" (the_geom)</datasource>
       <keywordList>
@@ -1111,6 +1123,15 @@ def my_form_open(dialog, layer, feature):
         <type>dataset</type>
         <title></title>
         <abstract></abstract>
+        <contact>
+          <name></name>
+          <organization></organization>
+          <position></position>
+          <voice></voice>
+          <fax></fax>
+          <email></email>
+          <role></role>
+        </contact>
         <links></links>
         <dates></dates>
         <fees></fees>
@@ -1128,7 +1149,15 @@ def my_form_open(dialog, layer, feature):
             <geographicflag>false</geographicflag>
           </spatialrefsys>
         </crs>
-        <extent></extent>
+        <extent>
+          <spatial crs="EPSG:2056" dimensions="2" maxx="-179769313486231570814527423731704356798070567525844996598917476803157260780028538760589558632766878171540458953514382464234321326889464182768467546703537516986049910576551282076245490090389328944075868508455133942304583236903222948165808559332123348274797826204144723168738177180919299881250404026184124858368" maxy="-179769313486231570814527423731704356798070567525844996598917476803157260780028538760589558632766878171540458953514382464234321326889464182768467546703537516986049910576551282076245490090389328944075868508455133942304583236903222948165808559332123348274797826204144723168738177180919299881250404026184124858368" maxz="0" minx="179769313486231570814527423731704356798070567525844996598917476803157260780028538760589558632766878171540458953514382464234321326889464182768467546703537516986049910576551282076245490090389328944075868508455133942304583236903222948165808559332123348274797826204144723168738177180919299881250404026184124858368" miny="179769313486231570814527423731704356798070567525844996598917476803157260780028538760589558632766878171540458953514382464234321326889464182768467546703537516986049910576551282076245490090389328944075868508455133942304583236903222948165808559332123348274797826204144723168738177180919299881250404026184124858368" minz="0"></spatial>
+          <temporal>
+            <period>
+              <start></start>
+              <end></end>
+            </period>
+          </temporal>
+        </extent>
       </resourceMetadata>
       <provider encoding="">postgres</provider>
       <vectorjoins></vectorjoins>
@@ -1146,7 +1175,7 @@ def my_form_open(dialog, layer, feature):
         <Searchable>1</Searchable>
         <Private>0</Private>
       </flags>
-      <temporal accumulate="0" durationField="" durationUnit="min" enabled="0" endExpression="" endField="" fixedDuration="0" limitMode="0" mode="0" startExpression="" startField="">
+      <temporal accumulate="0" durationField="fk_urn_kind" durationUnit="min" enabled="0" endExpression="" endField="" fixedDuration="0" limitMode="0" mode="0" startExpression="" startField="birth_date">
         <fixedRange>
           <start></start>
           <end></end>
@@ -1338,180 +1367,251 @@ def my_form_open(dialog, layer, feature):
       </renderer-v2>
       <selection mode="Default">
         <selectionColor invalid="1"></selectionColor>
+        <selectionSymbol>
+          <symbol alpha="1" clip_to_extent="1" force_rhr="0" frame_rate="10" is_animated="0" name="" type="marker">
+            <data_defined_properties>
+              <Option type="Map">
+                <Option name="name" type="QString" value=""></Option>
+                <Option name="properties"></Option>
+                <Option name="type" type="QString" value="collection"></Option>
+              </Option>
+            </data_defined_properties>
+            <layer class="SimpleMarker" enabled="1" id="{f4e5351b-d61b-4c63-8d63-b173fed63410}" locked="0" pass="0">
+              <Option type="Map">
+                <Option name="angle" type="QString" value="0"></Option>
+                <Option name="cap_style" type="QString" value="square"></Option>
+                <Option name="color" type="QString" value="255,0,0,255,rgb:1,0,0,1"></Option>
+                <Option name="horizontal_anchor_point" type="QString" value="1"></Option>
+                <Option name="joinstyle" type="QString" value="bevel"></Option>
+                <Option name="name" type="QString" value="circle"></Option>
+                <Option name="offset" type="QString" value="0,0"></Option>
+                <Option name="offset_map_unit_scale" type="QString" value="3x:0,0,0,0,0,0"></Option>
+                <Option name="offset_unit" type="QString" value="MM"></Option>
+                <Option name="outline_color" type="QString" value="35,35,35,255,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,1"></Option>
+                <Option name="outline_style" type="QString" value="solid"></Option>
+                <Option name="outline_width" type="QString" value="0"></Option>
+                <Option name="outline_width_map_unit_scale" type="QString" value="3x:0,0,0,0,0,0"></Option>
+                <Option name="outline_width_unit" type="QString" value="MM"></Option>
+                <Option name="scale_method" type="QString" value="diameter"></Option>
+                <Option name="size" type="QString" value="2"></Option>
+                <Option name="size_map_unit_scale" type="QString" value="3x:0,0,0,0,0,0"></Option>
+                <Option name="size_unit" type="QString" value="MM"></Option>
+                <Option name="vertical_anchor_point" type="QString" value="1"></Option>
+              </Option>
+              <data_defined_properties>
+                <Option type="Map">
+                  <Option name="name" type="QString" value=""></Option>
+                  <Option name="properties"></Option>
+                  <Option name="type" type="QString" value="collection"></Option>
+                </Option>
+              </data_defined_properties>
+            </layer>
+          </symbol>
+        </selectionSymbol>
       </selection>
       <customproperties>
-        <Option></Option>
+        <Option type="Map">
+          <Option name="QFieldSync/action" type="QString" value="offline"></Option>
+          <Option name="QFieldSync/attachment_naming" type="QString" value="{}"></Option>
+          <Option name="QFieldSync/cloud_action" type="QString" value="offline"></Option>
+          <Option name="QFieldSync/geometry_locked_expression" type="QString" value=""></Option>
+          <Option name="QFieldSync/photo_naming" type="QString" value="{}"></Option>
+          <Option name="QFieldSync/relationship_maximum_visible" type="QString" value="{}"></Option>
+          <Option name="QFieldSync/tracking_distance_requirement_minimum_meters" type="int" value="30"></Option>
+          <Option name="QFieldSync/tracking_erroneous_distance_safeguard_maximum_meters" type="int" value="1"></Option>
+          <Option name="QFieldSync/tracking_measurement_type" type="int" value="0"></Option>
+          <Option name="QFieldSync/tracking_time_requirement_interval_seconds" type="int" value="30"></Option>
+          <Option name="QFieldSync/value_map_button_interface_threshold" type="int" value="0"></Option>
+          <Option name="embeddedWidgets/count" type="int" value="0"></Option>
+          <Option name="variableNames"></Option>
+          <Option name="variableValues"></Option>
+        </Option>
       </customproperties>
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
       <layerOpacity>1</layerOpacity>
       <geometryOptions geometryPrecision="0" removeDuplicateNodes="0">
-        <activeChecks type="StringList">
-          <Option type="QString" value=""></Option>
-        </activeChecks>
+        <activeChecks></activeChecks>
         <checkConfiguration></checkConfiguration>
       </geometryOptions>
       <legend showLabelLegend="0" type="default-vector"></legend>
       <referencedLayers></referencedLayers>
       <fieldConfiguration>
         <field configurationFlags="NoFlag" name="id">
-          <editWidget type="">
+          <editWidget type="TextEdit">
             <config>
               <Option></Option>
             </config>
           </editWidget>
         </field>
         <field configurationFlags="NoFlag" name="last_name">
-          <editWidget type="">
+          <editWidget type="TextEdit">
             <config>
               <Option></Option>
             </config>
           </editWidget>
         </field>
         <field configurationFlags="NoFlag" name="first_name">
-          <editWidget type="">
+          <editWidget type="TextEdit">
             <config>
               <Option></Option>
             </config>
           </editWidget>
         </field>
         <field configurationFlags="NoFlag" name="address">
-          <editWidget type="">
+          <editWidget type="TextEdit">
             <config>
               <Option></Option>
             </config>
           </editWidget>
         </field>
         <field configurationFlags="NoFlag" name="city">
-          <editWidget type="">
+          <editWidget type="TextEdit">
             <config>
               <Option></Option>
             </config>
           </editWidget>
         </field>
         <field configurationFlags="NoFlag" name="postal_code">
-          <editWidget type="">
+          <editWidget type="TextEdit">
             <config>
               <Option></Option>
             </config>
           </editWidget>
         </field>
         <field configurationFlags="NoFlag" name="birth_date">
-          <editWidget type="">
+          <editWidget type="DateTime">
             <config>
               <Option></Option>
             </config>
           </editWidget>
         </field>
         <field configurationFlags="NoFlag" name="death_date">
-          <editWidget type="">
+          <editWidget type="DateTime">
             <config>
               <Option></Option>
             </config>
           </editWidget>
         </field>
         <field configurationFlags="NoFlag" name="death_place">
-          <editWidget type="">
+          <editWidget type="TextEdit">
             <config>
               <Option></Option>
             </config>
           </editWidget>
         </field>
         <field configurationFlags="NoFlag" name="burial_date">
-          <editWidget type="">
+          <editWidget type="DateTime">
             <config>
               <Option></Option>
             </config>
           </editWidget>
         </field>
         <field configurationFlags="NoFlag" name="burial_place">
-          <editWidget type="">
+          <editWidget type="TextEdit">
             <config>
               <Option></Option>
             </config>
           </editWidget>
         </field>
         <field configurationFlags="NoFlag" name="flag_main">
-          <editWidget type="">
+          <editWidget type="CheckBox">
             <config>
               <Option></Option>
             </config>
           </editWidget>
         </field>
         <field configurationFlags="NoFlag" name="flag_ashes">
-          <editWidget type="">
+          <editWidget type="CheckBox">
             <config>
               <Option></Option>
             </config>
           </editWidget>
         </field>
         <field configurationFlags="NoFlag" name="incineration_date">
-          <editWidget type="">
+          <editWidget type="DateTime">
             <config>
               <Option></Option>
             </config>
           </editWidget>
         </field>
         <field configurationFlags="NoFlag" name="incineration_place">
-          <editWidget type="">
+          <editWidget type="TextEdit">
             <config>
               <Option></Option>
             </config>
           </editWidget>
         </field>
         <field configurationFlags="NoFlag" name="fk_urn_kind">
-          <editWidget type="">
+          <editWidget type="Range">
             <config>
               <Option></Option>
             </config>
           </editWidget>
         </field>
         <field configurationFlags="NoFlag" name="exumation_date">
-          <editWidget type="">
+          <editWidget type="DateTime">
             <config>
               <Option></Option>
             </config>
           </editWidget>
         </field>
         <field configurationFlags="NoFlag" name="exumation_place">
-          <editWidget type="">
+          <editWidget type="TextEdit">
             <config>
               <Option></Option>
             </config>
           </editWidget>
         </field>
         <field configurationFlags="NoFlag" name="remark">
-          <editWidget type="">
+          <editWidget type="TextEdit">
             <config>
               <Option></Option>
             </config>
           </editWidget>
         </field>
         <field configurationFlags="NoFlag" name="child">
-          <editWidget type="">
+          <editWidget type="CheckBox">
             <config>
               <Option></Option>
             </config>
           </editWidget>
         </field>
         <field configurationFlags="NoFlag" name="quality">
-          <editWidget type="">
+          <editWidget type="TextEdit">
             <config>
               <Option></Option>
             </config>
           </editWidget>
         </field>
         <field configurationFlags="NoFlag" name="orientation">
-          <editWidget type="">
+          <editWidget type="TextEdit">
             <config>
               <Option></Option>
             </config>
           </editWidget>
         </field>
         <field configurationFlags="NoFlag" name="fk_unit">
-          <editWidget type="">
+          <editWidget type="ValueRelation">
             <config>
-              <Option></Option>
+              <Option type="Map">
+                <Option name="AllowMulti" type="bool" value="false"></Option>
+                <Option name="AllowNull" type="bool" value="true"></Option>
+                <Option name="CompleterMatchFlags" type="int" value="2"></Option>
+                <Option name="Description" type="QString" value=""></Option>
+                <Option name="DisplayGroupName" type="bool" value="false"></Option>
+                <Option name="FilterExpression" type="QString" value=""></Option>
+                <Option name="Group" type="QString" value=""></Option>
+                <Option name="Key" type="QString" value="id"></Option>
+                <Option name="Layer" type="QString" value="unit_b78284e3_6787_4220_bb9a_ea2a1e3b6ff7"></Option>
+                <Option name="LayerName" type="QString" value="unit"></Option>
+                <Option name="LayerProviderName" type="QString" value="postgres"></Option>
+                <Option name="LayerSource" type="QString" value="service='pg_tce_dev' key='id' srid=2056 type=Polygon checkPrimaryKeyUnicity='0' table=&quot;tce_od&quot;.&quot;unit&quot; (the_geom)"></Option>
+                <Option name="NofColumns" type="int" value="1"></Option>
+                <Option name="OrderByValue" type="bool" value="false"></Option>
+                <Option name="UseCompleter" type="bool" value="false"></Option>
+                <Option name="Value" type="QString" value="identifier"></Option>
+              </Option>
             </config>
           </editWidget>
         </field>
@@ -1564,7 +1664,7 @@ def my_form_open(dialog, layer, feature):
         <policy field="child" policy="Duplicate"></policy>
         <policy field="quality" policy="Duplicate"></policy>
         <policy field="orientation" policy="Duplicate"></policy>
-        <policy field="fk_unit" policy="Duplicate"></policy>
+        <policy field="fk_unit" policy="DefaultValue"></policy>
       </splitPolicies>
       <duplicatePolicies>
         <policy field="id" policy="Duplicate"></policy>
@@ -1671,7 +1771,32 @@ def my_form_open(dialog, layer, feature):
         <defaultAction key="Canvas" value="{00000000-0000-0000-0000-000000000000}"></defaultAction>
       </attributeactions>
       <attributetableconfig actionWidgetStyle="dropDown" sortExpression="" sortOrder="0">
-        <columns></columns>
+        <columns>
+          <column hidden="0" name="id" type="field" width="-1"></column>
+          <column hidden="0" name="last_name" type="field" width="-1"></column>
+          <column hidden="0" name="first_name" type="field" width="-1"></column>
+          <column hidden="0" name="address" type="field" width="-1"></column>
+          <column hidden="0" name="city" type="field" width="-1"></column>
+          <column hidden="0" name="postal_code" type="field" width="-1"></column>
+          <column hidden="0" name="birth_date" type="field" width="-1"></column>
+          <column hidden="0" name="death_date" type="field" width="-1"></column>
+          <column hidden="0" name="death_place" type="field" width="-1"></column>
+          <column hidden="0" name="burial_date" type="field" width="-1"></column>
+          <column hidden="0" name="burial_place" type="field" width="-1"></column>
+          <column hidden="0" name="flag_main" type="field" width="-1"></column>
+          <column hidden="0" name="flag_ashes" type="field" width="-1"></column>
+          <column hidden="0" name="incineration_date" type="field" width="-1"></column>
+          <column hidden="0" name="incineration_place" type="field" width="-1"></column>
+          <column hidden="0" name="fk_urn_kind" type="field" width="-1"></column>
+          <column hidden="0" name="exumation_date" type="field" width="-1"></column>
+          <column hidden="0" name="exumation_place" type="field" width="-1"></column>
+          <column hidden="0" name="remark" type="field" width="-1"></column>
+          <column hidden="0" name="child" type="field" width="-1"></column>
+          <column hidden="0" name="quality" type="field" width="-1"></column>
+          <column hidden="0" name="orientation" type="field" width="-1"></column>
+          <column hidden="0" name="fk_unit" type="field" width="-1"></column>
+          <column hidden="1" type="actions" width="-1"></column>
+        </columns>
       </attributetableconfig>
       <conditionalstyles>
         <rowstyles></rowstyles>
@@ -1682,15 +1807,103 @@ def my_form_open(dialog, layer, feature):
       <editforminit></editforminit>
       <editforminitcodesource>0</editforminitcodesource>
       <editforminitfilepath></editforminitfilepath>
-      <editforminitcode></editforminitcode>
+      <editforminitcode># -*- coding: utf-8 -*-
+"""
+Les formulaires QGIS peuvent avoir une fonction Python qui est appelée lorsque le formulaire est
+ouvert.
+
+Utilisez cette fonction pour ajouter une logique supplémentaire à vos formulaires.
+
+Entrez le nom de la fonction dans le champ 
+"Fonction d'initialisation Python".
+Voici un exemple:
+"""
+from qgis.PyQt.QtWidgets import QWidget
+
+def my_form_open(dialog, layer, feature):
+    geom = feature.geometry()
+    control = dialog.findChild(QWidget, "MyLineEdit")
+</editforminitcode>
       <featformsuppress>0</featformsuppress>
       <editorlayout>generatedlayout</editorlayout>
-      <editable></editable>
-      <labelOnTop></labelOnTop>
-      <reuseLastValue></reuseLastValue>
+      <editable>
+        <field editable="1" name="address"></field>
+        <field editable="1" name="birth_date"></field>
+        <field editable="1" name="burial_date"></field>
+        <field editable="1" name="burial_place"></field>
+        <field editable="1" name="child"></field>
+        <field editable="1" name="city"></field>
+        <field editable="1" name="death_date"></field>
+        <field editable="1" name="death_place"></field>
+        <field editable="1" name="exumation_date"></field>
+        <field editable="1" name="exumation_place"></field>
+        <field editable="1" name="first_name"></field>
+        <field editable="1" name="fk_unit"></field>
+        <field editable="1" name="fk_urn_kind"></field>
+        <field editable="1" name="flag_ashes"></field>
+        <field editable="1" name="flag_main"></field>
+        <field editable="1" name="id"></field>
+        <field editable="1" name="incineration_date"></field>
+        <field editable="1" name="incineration_place"></field>
+        <field editable="1" name="last_name"></field>
+        <field editable="1" name="orientation"></field>
+        <field editable="1" name="postal_code"></field>
+        <field editable="1" name="quality"></field>
+        <field editable="1" name="remark"></field>
+      </editable>
+      <labelOnTop>
+        <field labelOnTop="0" name="address"></field>
+        <field labelOnTop="0" name="birth_date"></field>
+        <field labelOnTop="0" name="burial_date"></field>
+        <field labelOnTop="0" name="burial_place"></field>
+        <field labelOnTop="0" name="child"></field>
+        <field labelOnTop="0" name="city"></field>
+        <field labelOnTop="0" name="death_date"></field>
+        <field labelOnTop="0" name="death_place"></field>
+        <field labelOnTop="0" name="exumation_date"></field>
+        <field labelOnTop="0" name="exumation_place"></field>
+        <field labelOnTop="0" name="first_name"></field>
+        <field labelOnTop="0" name="fk_unit"></field>
+        <field labelOnTop="0" name="fk_urn_kind"></field>
+        <field labelOnTop="0" name="flag_ashes"></field>
+        <field labelOnTop="0" name="flag_main"></field>
+        <field labelOnTop="0" name="id"></field>
+        <field labelOnTop="0" name="incineration_date"></field>
+        <field labelOnTop="0" name="incineration_place"></field>
+        <field labelOnTop="0" name="last_name"></field>
+        <field labelOnTop="0" name="orientation"></field>
+        <field labelOnTop="0" name="postal_code"></field>
+        <field labelOnTop="0" name="quality"></field>
+        <field labelOnTop="0" name="remark"></field>
+      </labelOnTop>
+      <reuseLastValue>
+        <field name="address" reuseLastValue="0"></field>
+        <field name="birth_date" reuseLastValue="0"></field>
+        <field name="burial_date" reuseLastValue="0"></field>
+        <field name="burial_place" reuseLastValue="0"></field>
+        <field name="child" reuseLastValue="0"></field>
+        <field name="city" reuseLastValue="0"></field>
+        <field name="death_date" reuseLastValue="0"></field>
+        <field name="death_place" reuseLastValue="0"></field>
+        <field name="exumation_date" reuseLastValue="0"></field>
+        <field name="exumation_place" reuseLastValue="0"></field>
+        <field name="first_name" reuseLastValue="0"></field>
+        <field name="fk_unit" reuseLastValue="0"></field>
+        <field name="fk_urn_kind" reuseLastValue="0"></field>
+        <field name="flag_ashes" reuseLastValue="0"></field>
+        <field name="flag_main" reuseLastValue="0"></field>
+        <field name="id" reuseLastValue="0"></field>
+        <field name="incineration_date" reuseLastValue="0"></field>
+        <field name="incineration_place" reuseLastValue="0"></field>
+        <field name="last_name" reuseLastValue="0"></field>
+        <field name="orientation" reuseLastValue="0"></field>
+        <field name="postal_code" reuseLastValue="0"></field>
+        <field name="quality" reuseLastValue="0"></field>
+        <field name="remark" reuseLastValue="0"></field>
+      </reuseLastValue>
       <dataDefinedFieldProperties></dataDefinedFieldProperties>
       <widgets></widgets>
-      <previewExpression></previewExpression>
+      <previewExpression>"last_name"</previewExpression>
       <mapTip enabled="1"></mapTip>
     </maplayer>
     <maplayer autoRefreshMode="Disabled" autoRefreshTime="0" geometry="Point" hasScaleBasedVisibilityFlag="0" labelsEnabled="0" legendPlaceholderImage="" maxScale="0" minScale="100000000" readOnly="0" refreshOnNotifyEnabled="0" refreshOnNotifyMessage="" simplifyAlgorithm="0" simplifyDrawingHints="0" simplifyDrawingTol="1" simplifyLocal="1" simplifyMaxScale="1" styleCategories="AllStyleCategories" symbologyReferenceScale="-1" type="vector" wkbType="Point">
@@ -2011,7 +2224,7 @@ def my_form_open(dialog, layer, feature):
           <Option name="QFieldSync/action" type="QString" value="offline"></Option>
           <Option name="QFieldSync/attachment_naming" type="QString" value="{}"></Option>
           <Option name="QFieldSync/cloud_action" type="QString" value="offline"></Option>
-          <Option name="QFieldSync/geometry_locked_expression" type="QString" value=""></Option>
+          <Option name="QFieldSync/geometry_locked_expression" type="invalid"></Option>
           <Option name="QFieldSync/photo_naming" type="QString" value="{}"></Option>
           <Option name="QFieldSync/relationship_maximum_visible" type="QString" value="{}"></Option>
           <Option name="QFieldSync/tracking_distance_requirement_minimum_meters" type="int" value="30"></Option>
@@ -2020,8 +2233,8 @@ def my_form_open(dialog, layer, feature):
           <Option name="QFieldSync/tracking_time_requirement_interval_seconds" type="int" value="30"></Option>
           <Option name="QFieldSync/value_map_button_interface_threshold" type="int" value="0"></Option>
           <Option name="embeddedWidgets/count" type="int" value="0"></Option>
-          <Option name="variableNames"></Option>
-          <Option name="variableValues"></Option>
+          <Option name="variableNames" type="invalid"></Option>
+          <Option name="variableValues" type="invalid"></Option>
         </Option>
       </customproperties>
       <blendMode>0</blendMode>
@@ -2050,8 +2263,8 @@ def my_form_open(dialog, layer, feature):
                 <Option name="CompleterMatchFlags" type="int" value="2"></Option>
                 <Option name="Description" type="QString" value="&quot;description_en&quot;"></Option>
                 <Option name="DisplayGroupName" type="bool" value="false"></Option>
-                <Option name="FilterExpression" type="QString" value=""></Option>
-                <Option name="Group" type="QString" value=""></Option>
+                <Option name="FilterExpression" type="invalid"></Option>
+                <Option name="Group" type="invalid"></Option>
                 <Option name="Key" type="QString" value="id"></Option>
                 <Option name="Layer" type="QString" value="furniture_kind_88857af9_a3b8_4e2b_9422_f5acdee2b74d"></Option>
                 <Option name="LayerName" type="QString" value="furniture_kind"></Option>
@@ -3257,16 +3470,16 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer autoRefreshMode="Disabled" autoRefreshTime="0" geometry="Polygon" hasScaleBasedVisibilityFlag="0" labelsEnabled="0" legendPlaceholderImage="" maxScale="0" minScale="100000000" readOnly="0" refreshOnNotifyEnabled="0" refreshOnNotifyMessage="" simplifyAlgorithm="0" simplifyDrawingHints="1" simplifyDrawingTol="1" simplifyLocal="1" simplifyMaxScale="1" styleCategories="AllStyleCategories" symbologyReferenceScale="-1" type="vector" wkbType="Polygon">
       <extent>
-        <xmin>2539738.29455245658755302</xmin>
-        <ymin>1151215.06884386180900037</ymin>
-        <xmax>2539760.99565886240452528</xmax>
-        <ymax>1151245.00651050545275211</ymax>
+        <xmin>2539739.58935508131980896</xmin>
+        <ymin>1151215.73301585740409791</ymin>
+        <xmax>2539743.07637621089816093</xmax>
+        <ymax>1151220.4254270070232451</ymax>
       </extent>
       <wgs84extent>
-        <xmin>6.65347544750376407</xmin>
-        <ymin>46.50952043540969072</ymin>
-        <xmax>6.65377511548968847</xmax>
-        <ymax>46.50979177635752393</ymax>
+        <xmin>6.65349552773827657</xmin>
+        <ymin>46.50952652651843522</ymin>
+        <xmax>6.653541570715924</xmax>
+        <ymax>46.50956904995646823</ymax>
       </wgs84extent>
       <id>unit_b78284e3_6787_4220_bb9a_ea2a1e3b6ff7</id>
       <datasource>service='pg_tce_dev' key='id' srid=2056 type=Polygon checkPrimaryKeyUnicity='0' table="tce_od"."unit" (the_geom)</datasource>
@@ -3569,7 +3782,7 @@ def my_form_open(dialog, layer, feature):
           <Option name="QFieldSync/action" type="QString" value="offline"></Option>
           <Option name="QFieldSync/attachment_naming" type="QString" value="{}"></Option>
           <Option name="QFieldSync/cloud_action" type="QString" value="offline"></Option>
-          <Option name="QFieldSync/geometry_locked_expression" type="QString" value=""></Option>
+          <Option name="QFieldSync/geometry_locked_expression" type="invalid"></Option>
           <Option name="QFieldSync/photo_naming" type="QString" value="{}"></Option>
           <Option name="QFieldSync/relationship_maximum_visible" type="QString" value="{}"></Option>
           <Option name="QFieldSync/tracking_distance_requirement_minimum_meters" type="int" value="30"></Option>
@@ -3578,8 +3791,8 @@ def my_form_open(dialog, layer, feature):
           <Option name="QFieldSync/tracking_time_requirement_interval_seconds" type="int" value="30"></Option>
           <Option name="QFieldSync/value_map_button_interface_threshold" type="int" value="0"></Option>
           <Option name="embeddedWidgets/count" type="int" value="0"></Option>
-          <Option name="variableNames"></Option>
-          <Option name="variableValues"></Option>
+          <Option name="variableNames" type="invalid"></Option>
+          <Option name="variableValues" type="invalid"></Option>
         </Option>
       </customproperties>
       <blendMode>0</blendMode>
@@ -3591,7 +3804,7 @@ def my_form_open(dialog, layer, feature):
           <Option name="QgsGeometryGapCheck" type="Map">
             <Option name="allowedGapsBuffer" type="double" value="0"></Option>
             <Option name="allowedGapsEnabled" type="bool" value="false"></Option>
-            <Option name="allowedGapsLayer" type="QString" value=""></Option>
+            <Option name="allowedGapsLayer" type="invalid"></Option>
           </Option>
         </checkConfiguration>
       </geometryOptions>
@@ -6139,7 +6352,7 @@ def my_form_open(dialog, layer, feature):
           <Option name="QFieldSync/action" type="QString" value="offline"></Option>
           <Option name="QFieldSync/attachment_naming" type="QString" value="{}"></Option>
           <Option name="QFieldSync/cloud_action" type="QString" value="offline"></Option>
-          <Option name="QFieldSync/geometry_locked_expression" type="QString" value=""></Option>
+          <Option name="QFieldSync/geometry_locked_expression" type="invalid"></Option>
           <Option name="QFieldSync/photo_naming" type="QString" value="{}"></Option>
           <Option name="QFieldSync/relationship_maximum_visible" type="QString" value="{}"></Option>
           <Option name="QFieldSync/tracking_distance_requirement_minimum_meters" type="int" value="30"></Option>
@@ -6148,8 +6361,8 @@ def my_form_open(dialog, layer, feature):
           <Option name="QFieldSync/tracking_time_requirement_interval_seconds" type="int" value="30"></Option>
           <Option name="QFieldSync/value_map_button_interface_threshold" type="int" value="0"></Option>
           <Option name="embeddedWidgets/count" type="int" value="0"></Option>
-          <Option name="variableNames"></Option>
-          <Option name="variableValues"></Option>
+          <Option name="variableNames" type="invalid"></Option>
+          <Option name="variableValues" type="invalid"></Option>
         </Option>
       </customproperties>
       <blendMode>0</blendMode>
@@ -6161,7 +6374,7 @@ def my_form_open(dialog, layer, feature):
           <Option name="QgsGeometryGapCheck" type="Map">
             <Option name="allowedGapsBuffer" type="double" value="0"></Option>
             <Option name="allowedGapsEnabled" type="bool" value="false"></Option>
-            <Option name="allowedGapsLayer" type="QString" value=""></Option>
+            <Option name="allowedGapsLayer" type="invalid"></Option>
           </Option>
         </checkConfiguration>
       </geometryOptions>
@@ -6184,8 +6397,8 @@ def my_form_open(dialog, layer, feature):
                 <Option name="CompleterMatchFlags" type="int" value="2"></Option>
                 <Option name="Description" type="QString" value="&quot;description_en&quot;"></Option>
                 <Option name="DisplayGroupName" type="bool" value="false"></Option>
-                <Option name="FilterExpression" type="QString" value=""></Option>
-                <Option name="Group" type="QString" value=""></Option>
+                <Option name="FilterExpression" type="invalid"></Option>
+                <Option name="Group" type="invalid"></Option>
                 <Option name="Key" type="QString" value="id"></Option>
                 <Option name="Layer" type="QString" value="vegetation_kind_d89fa1cb_18bf_478c_a315_a061460305a9"></Option>
                 <Option name="LayerName" type="QString" value="vegetation_kind"></Option>
@@ -6832,7 +7045,7 @@ def my_form_open(dialog, layer, feature):
   <Sensors></Sensors>
   <ProjectViewSettings UseProjectScales="0" rotation="0">
     <Scales></Scales>
-    <DefaultViewExtent xmax="2539777.94658750668168068" xmin="2539705.83843451924622059" ymax="1151252.19606396509334445" ymin="1151208.62982466770336032">
+    <DefaultViewExtent xmax="2539792.26059399591758847" xmin="2539715.63222843362018466" ymax="1151254.82209222298115492" ymin="1151211.25585292559117079">
       <spatialrefsys nativeFormat="Wkt">
         <wkt>PROJCRS["CH1903+ / LV95",BASEGEOGCRS["CH1903+",DATUM["CH1903+",ELLIPSOID["Bessel 1841",6377397.155,299.1528128,LENGTHUNIT["metre",1]]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4150]],CONVERSION["Swiss Oblique Mercator 1995",METHOD["Hotine Oblique Mercator (variant B)",ID["EPSG",9815]],PARAMETER["Latitude of projection centre",46.9524055555556,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8811]],PARAMETER["Longitude of projection centre",7.43958333333333,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8812]],PARAMETER["Azimuth at projection centre",90,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8813]],PARAMETER["Angle from Rectified to Skew Grid",90,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8814]],PARAMETER["Scale factor at projection centre",1,SCALEUNIT["unity",1],ID["EPSG",8815]],PARAMETER["Easting at projection centre",2600000,LENGTHUNIT["metre",1],ID["EPSG",8816]],PARAMETER["Northing at projection centre",1200000,LENGTHUNIT["metre",1],ID["EPSG",8817]]],CS[Cartesian,2],AXIS["(E)",east,ORDER[1],LENGTHUNIT["metre",1]],AXIS["(N)",north,ORDER[2],LENGTHUNIT["metre",1]],USAGE[SCOPE["Cadastre, engineering survey, topographic mapping (large and medium scale)."],AREA["Liechtenstein; Switzerland."],BBOX[45.82,5.96,47.81,10.49]],ID["EPSG",2056]]</wkt>
         <proj4>+proj=somerc +lat_0=46.9524055555556 +lon_0=7.43958333333333 +k_0=1 +x_0=2600000 +y_0=1200000 +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +units=m +no_defs</proj4>
@@ -6897,7 +7110,7 @@ def my_form_open(dialog, layer, feature):
       </spatialrefsys>
     </CoordinateCustomCrs>
   </ProjectDisplaySettings>
-  <ProjectGpsSettings autoAddTrackVertices="0" autoCommitFeatures="0" destinationFollowsActiveLayer="1" destinationLayer="unit_b78284e3_6787_4220_bb9a_ea2a1e3b6ff7" destinationLayerName="unit" destinationLayerProvider="postgres" destinationLayerSource="service='pg_tce_dev' key='id' srid=2056 type=Polygon checkPrimaryKeyUnicity='0' table=&quot;tce_od&quot;.&quot;unit&quot; (the_geom)">
+  <ProjectGpsSettings autoAddTrackVertices="0" autoCommitFeatures="0" destinationFollowsActiveLayer="1" destinationLayer="deceased_1daa27a1_ddc9_4055_ab6d_a8eb9fbfa0cb" destinationLayerName="deceased" destinationLayerProvider="postgres" destinationLayerSource="service='pg_tce_dev' key='id' srid=2056 type=Point checkPrimaryKeyUnicity='0' table=&quot;tce_od&quot;.&quot;deceased&quot; (the_geom)">
     <timeStampFields></timeStampFields>
   </ProjectGpsSettings>
 </qgis>
