@@ -68,6 +68,6 @@ migration_hooks:
   post:
     - file: app/create_app.py
 
-demo_data:
-  - name: Aletsch
-    file: demo_data/demo_data_aletsch.sql
+# demo_data:
+#  - name: Aletsch
+#    file: demo_data/demo_data_aletsch.sql
