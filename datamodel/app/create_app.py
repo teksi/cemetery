@@ -19,7 +19,7 @@ from yaml import safe_load
 class Hook(HookBase):
     def run_hook(
         self,
-        # connection: psycopg.Connection,
+        connection: psycopg.Connection,
         # SRID: int = 2056,
     ):
         """
