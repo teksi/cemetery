@@ -6,8 +6,8 @@ declare -a KEYWORDS=()
 declare -a HINTS=()
 declare -a EXCLUDES=()
 
-KEYWORDS[0]="tce"
-HINTS[0]="No mention of tce"
+KEYWORDS[0]="tww"
+HINTS[0]="No mention of tww"
 
 KEYWORDS[1]="wastewater"
 HINTS[1]="No mention of wastewater"
