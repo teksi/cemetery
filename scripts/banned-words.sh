@@ -9,6 +9,9 @@ declare -a EXCLUDES=()
 KEYWORDS[0]="tww"
 HINTS[0]="No mention of tww"
 
+KEYWORDS[1]="wastewater"
+HINTS[1]="No mention of wastewater"
+
 RES=0
 DIR=$(git rev-parse --show-toplevel)
 
