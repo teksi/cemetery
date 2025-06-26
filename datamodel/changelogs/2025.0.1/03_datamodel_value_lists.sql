@@ -1,7 +1,5 @@
 -- Datamodel initialization script for the TEKSI cemetery database
 
-BEGIN;
-
 --------------------- VALUE LIST BASE--------------------------------
 /* CREATE */
 CREATE TABLE tce_vl.value_list_base ( id integer not null, CONSTRAINT "value_list_base_pk" PRIMARY KEY (id));
@@ -131,5 +129,3 @@ INSERT INTO tce_vl.vegetation_kind (id, value_en, value_fr, value_de, value_it) 
 INSERT INTO tce_vl.vegetation_kind (id, value_en, value_fr, value_de, value_it) VALUES (5001,'bush','buisson','Busch','cespuglio');
 INSERT INTO tce_vl.vegetation_kind (id, value_en, value_fr, value_de, value_it) VALUES (5002,'glower bed','massif floral','Blumenbeet','aiuola fiorita');
 INSERT INTO tce_vl.vegetation_kind (id, value_en, value_fr, value_de, value_it) VALUES (5003,'hedge','haie','Hecke','siepe');
-
-COMMIT;

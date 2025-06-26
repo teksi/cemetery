@@ -1,7 +1,5 @@
 -- Datamodel initialization script for the TEKSI cemetery database
 
-BEGIN;
-
 CREATE TABLE IF NOT EXISTS tce_od.deceased
 (
    id uuid DEFAULT public.uuid_generate_v1() NOT NULL PRIMARY KEY,
@@ -80,5 +78,3 @@ CREATE TABLE IF NOT EXISTS tce_od.organisation
    identifier integer,
    remark text
 );
-
-COMMIT;
