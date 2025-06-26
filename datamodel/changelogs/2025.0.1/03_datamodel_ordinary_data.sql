@@ -25,7 +25,7 @@ CREATE TABLE IF NOT EXISTS tce_od.deceased
    quality double precision,
    orientation double precision,
    fk_unit uuid,
-   the_geom geometry(Point,2056)
+   the_geom geometry(Point,{SRID})
 );
 
 CREATE TABLE IF NOT EXISTS tce_od.unit
@@ -44,7 +44,7 @@ CREATE TABLE IF NOT EXISTS tce_od.unit
    disused boolean,
    disused_date date,
    fk_control integer,
-   the_geom geometry(Polygon,2056)
+   the_geom geometry(Polygon,{SRID})
 );
 
 CREATE TABLE IF NOT EXISTS tce_od.sector
@@ -53,7 +53,7 @@ CREATE TABLE IF NOT EXISTS tce_od.sector
    ident_short character varying(10),
    identifier character varying(100),
    remark text,
-   the_geom geometry(Polygon,2056)
+   the_geom geometry(Polygon,{SRID})
 );
 
 CREATE TABLE IF NOT EXISTS tce_od.furniture
@@ -61,7 +61,7 @@ CREATE TABLE IF NOT EXISTS tce_od.furniture
    id uuid DEFAULT public.uuid_generate_v1() NOT NULL PRIMARY KEY,
    fk_furniture_kind integer,
    remark text,
-   the_geom geometry(Point,2056)
+   the_geom geometry(Point,{SRID})
 );
 
 CREATE TABLE IF NOT EXISTS tce_od.vegetation
@@ -69,7 +69,7 @@ CREATE TABLE IF NOT EXISTS tce_od.vegetation
    id uuid DEFAULT public.uuid_generate_v1() NOT NULL PRIMARY KEY,
    fk_vegetation_kind integer,
    remark text,
-   the_geom geometry(Polygon,2056)
+   the_geom geometry(Polygon,{SRID})
 );
 
 CREATE TABLE IF NOT EXISTS tce_od.organisation
