@@ -37,12 +37,12 @@ done
 shift "$(($OPTIND -1))"
 
 if [[ $BUILD -eq 1 ]]; then
-  docker build --build-arg RUN_TEST=True -f datamodel/.docker/Dockerfile --tag teksi/wastewater .
+  docker build --build-arg RUN_TEST=True -f datamodel/.docker/Dockerfile --tag teksi/cemetery .
 fi
 
-docker rm -f teksi-wastewater
-docker run -d -p ${TCE_PG_PORT}:5432 -v $(pwd):/src  --name teksi-wastewater teksi/wastewater -c log_statement=all
-docker exec teksi-wastewater run-pum.sh wait
+docker rm -f teksi-cemetery
+docker run -d -p ${TCE_PG_PORT}:5432 -v $(pwd):/src  --name teksi-cemetery teksi/cemetery -c log_statement=all
+docker exec teksi-cemetery run-pum.sh wait
 if [[ $DEMO_DATA -eq 1 ]]; then
-  docker exec teksi-wastewater run-pum.sh build -d
+  docker exec teksi-cemetery run-pum.sh build -d
 fi

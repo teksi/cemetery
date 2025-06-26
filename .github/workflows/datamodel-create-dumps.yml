@@ -41,8 +41,8 @@ jobs:
             echo "Waiting for PostgreSQL to be ready..."
             sleep 2
           done
-          docker compose exec db createdb -U postgres tww
-          docker compose exec db pum -vvv -s pg_tww -d datamodel install -p SRID 2056 --roles --grant
+          docker compose exec db createdb -U postgres tce
+          docker compose exec db pum -vvv -s pg_tce -d datamodel install -p SRID 2056 --roles --grant
 
       - name: Create dumps
         run: docker compose exec db /src/datamodel/scripts/create-dumps.py
