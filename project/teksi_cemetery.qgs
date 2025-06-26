@@ -42,17 +42,17 @@
         <customproperties>
           <Option></Option>
         </customproperties>
-        <layer-tree-layer checked="Qt::Checked" expanded="1" id="deceased_1daa27a1_ddc9_4055_ab6d_a8eb9fbfa0cb" legend_exp="" legend_split_behavior="0" name="deceased" patch_size="-1,-1" providerKey="postgres" source="service='pg_tce_dev' key='id' srid=2056 type=Point checkPrimaryKeyUnicity='0' table=&quot;tce_od&quot;.&quot;deceased&quot; (the_geom)">
+        <layer-tree-layer checked="Qt::Checked" expanded="1" id="deceased_1daa27a1_ddc9_4055_ab6d_a8eb9fbfa0cb" legend_exp="" legend_split_behavior="0" name="deceased" patch_size="-1,-1" providerKey="postgres" source="service='pg_tce' key='id' srid=2056 type=Point checkPrimaryKeyUnicity='0' table=&quot;tce_od&quot;.&quot;deceased&quot; (the_geom)">
           <customproperties>
             <Option></Option>
           </customproperties>
         </layer-tree-layer>
-        <layer-tree-layer checked="Qt::Checked" expanded="1" id="unit_b78284e3_6787_4220_bb9a_ea2a1e3b6ff7" legend_exp="" legend_split_behavior="0" name="unit" patch_size="-1,-1" providerKey="postgres" source="service='pg_tce_dev' key='id' srid=2056 type=Polygon checkPrimaryKeyUnicity='0' table=&quot;tce_od&quot;.&quot;unit&quot; (the_geom)">
+        <layer-tree-layer checked="Qt::Checked" expanded="1" id="unit_b78284e3_6787_4220_bb9a_ea2a1e3b6ff7" legend_exp="" legend_split_behavior="0" name="unit" patch_size="-1,-1" providerKey="postgres" source="service='pg_tce' key='id' srid=2056 type=Polygon checkPrimaryKeyUnicity='0' table=&quot;tce_od&quot;.&quot;unit&quot; (the_geom)">
           <customproperties>
             <Option></Option>
           </customproperties>
         </layer-tree-layer>
-        <layer-tree-layer checked="Qt::Checked" expanded="1" id="sector_20f5d6bf_e4be_4f25_8548_46e7a86487cf" legend_exp="" legend_split_behavior="0" name="sector" patch_size="-1,-1" providerKey="postgres" source="service='pg_tce_dev' key='id' srid=2056 type=Polygon checkPrimaryKeyUnicity='0' table=&quot;tce_od&quot;.&quot;sector&quot; (the_geom)">
+        <layer-tree-layer checked="Qt::Checked" expanded="1" id="sector_20f5d6bf_e4be_4f25_8548_46e7a86487cf" legend_exp="" legend_split_behavior="0" name="sector" patch_size="-1,-1" providerKey="postgres" source="service='pg_tce' key='id' srid=2056 type=Polygon checkPrimaryKeyUnicity='0' table=&quot;tce_od&quot;.&quot;sector&quot; (the_geom)">
           <customproperties>
             <Option></Option>
           </customproperties>
@@ -62,19 +62,19 @@
         <customproperties>
           <Option></Option>
         </customproperties>
-        <layer-tree-layer checked="Qt::Checked" expanded="1" id="furniture_baf9ed0a_bb5b_44a6_9460_3ee6a1c535ce" legend_exp="" legend_split_behavior="0" name="furniture" patch_size="-1,-1" providerKey="postgres" source="service='pg_tce_dev' key='id' srid=2056 type=Point checkPrimaryKeyUnicity='0' table=&quot;tce_od&quot;.&quot;furniture&quot; (the_geom)">
+        <layer-tree-layer checked="Qt::Checked" expanded="1" id="furniture_baf9ed0a_bb5b_44a6_9460_3ee6a1c535ce" legend_exp="" legend_split_behavior="0" name="furniture" patch_size="-1,-1" providerKey="postgres" source="service='pg_tce' key='id' srid=2056 type=Point checkPrimaryKeyUnicity='0' table=&quot;tce_od&quot;.&quot;furniture&quot; (the_geom)">
           <customproperties>
             <Option></Option>
           </customproperties>
         </layer-tree-layer>
-        <layer-tree-layer checked="Qt::Checked" expanded="1" id="vegetation_13fe5960_8b66_412b_ac4c_359c3f9833c1" legend_exp="" legend_split_behavior="0" name="vegetation" patch_size="-1,-1" providerKey="postgres" source="service='pg_tce_dev' key='id' srid=2056 type=Polygon checkPrimaryKeyUnicity='0' table=&quot;tce_od&quot;.&quot;vegetation&quot; (the_geom)">
+        <layer-tree-layer checked="Qt::Checked" expanded="1" id="vegetation_13fe5960_8b66_412b_ac4c_359c3f9833c1" legend_exp="" legend_split_behavior="0" name="vegetation" patch_size="-1,-1" providerKey="postgres" source="service='pg_tce' key='id' srid=2056 type=Polygon checkPrimaryKeyUnicity='0' table=&quot;tce_od&quot;.&quot;vegetation&quot; (the_geom)">
           <customproperties>
             <Option></Option>
           </customproperties>
         </layer-tree-layer>
       </layer-tree-group>
     </layer-tree-group>
-    <layer-tree-layer checked="Qt::Checked" expanded="1" id="organisation_50967dc7_386b_4301_902c_39f81101d002" legend_exp="" legend_split_behavior="0" name="organisation" patch_size="-1,-1" providerKey="postgres" source="service='pg_tce_dev' key='id' checkPrimaryKeyUnicity='0' table=&quot;tce_od&quot;.&quot;organisation&quot;">
+    <layer-tree-layer checked="Qt::Checked" expanded="1" id="organisation_50967dc7_386b_4301_902c_39f81101d002" legend_exp="" legend_split_behavior="0" name="organisation" patch_size="-1,-1" providerKey="postgres" source="service='pg_tce' key='id' checkPrimaryKeyUnicity='0' table=&quot;tce_od&quot;.&quot;organisation&quot;">
       <customproperties>
         <Option></Option>
       </customproperties>
@@ -83,37 +83,37 @@
       <customproperties>
         <Option></Option>
       </customproperties>
-      <layer-tree-layer checked="Qt::Checked" expanded="1" id="control_kind_fe9d6d8d_4fad_4a31_bd98_03456b9975e2" legend_exp="" legend_split_behavior="0" name="control_kind" patch_size="-1,-1" providerKey="postgres" source="service='pg_tce_dev' key='id' checkPrimaryKeyUnicity='0' table=&quot;tce_vl&quot;.&quot;control_kind&quot;">
+      <layer-tree-layer checked="Qt::Checked" expanded="1" id="control_kind_fe9d6d8d_4fad_4a31_bd98_03456b9975e2" legend_exp="" legend_split_behavior="0" name="control_kind" patch_size="-1,-1" providerKey="postgres" source="service='pg_tce' key='id' checkPrimaryKeyUnicity='0' table=&quot;tce_vl&quot;.&quot;control_kind&quot;">
         <customproperties>
           <Option></Option>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer checked="Qt::Checked" expanded="1" id="furniture_kind_88857af9_a3b8_4e2b_9422_f5acdee2b74d" legend_exp="" legend_split_behavior="0" name="furniture_kind" patch_size="-1,-1" providerKey="postgres" source="service='pg_tce_dev' key='id' checkPrimaryKeyUnicity='0' table=&quot;tce_vl&quot;.&quot;furniture_kind&quot;">
+      <layer-tree-layer checked="Qt::Checked" expanded="1" id="furniture_kind_88857af9_a3b8_4e2b_9422_f5acdee2b74d" legend_exp="" legend_split_behavior="0" name="furniture_kind" patch_size="-1,-1" providerKey="postgres" source="service='pg_tce' key='id' checkPrimaryKeyUnicity='0' table=&quot;tce_vl&quot;.&quot;furniture_kind&quot;">
         <customproperties>
           <Option></Option>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer checked="Qt::Checked" expanded="1" id="unit_kind_2050087d_b6ae_4a38_ab27_c64e820e362b" legend_exp="" legend_split_behavior="0" name="unit_kind" patch_size="-1,-1" providerKey="postgres" source="service='pg_tce_dev' key='id' checkPrimaryKeyUnicity='0' table=&quot;tce_vl&quot;.&quot;unit_kind&quot;">
+      <layer-tree-layer checked="Qt::Checked" expanded="1" id="unit_kind_2050087d_b6ae_4a38_ab27_c64e820e362b" legend_exp="" legend_split_behavior="0" name="unit_kind" patch_size="-1,-1" providerKey="postgres" source="service='pg_tce' key='id' checkPrimaryKeyUnicity='0' table=&quot;tce_vl&quot;.&quot;unit_kind&quot;">
         <customproperties>
           <Option></Option>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer checked="Qt::Checked" expanded="1" id="unit_size_6440dfb5_fb99_40e8_bdc3_4981b457f634" legend_exp="" legend_split_behavior="0" name="unit_size" patch_size="-1,-1" providerKey="postgres" source="service='pg_tce_dev' key='id' checkPrimaryKeyUnicity='0' table=&quot;tce_vl&quot;.&quot;unit_size&quot;">
+      <layer-tree-layer checked="Qt::Checked" expanded="1" id="unit_size_6440dfb5_fb99_40e8_bdc3_4981b457f634" legend_exp="" legend_split_behavior="0" name="unit_size" patch_size="-1,-1" providerKey="postgres" source="service='pg_tce' key='id' checkPrimaryKeyUnicity='0' table=&quot;tce_vl&quot;.&quot;unit_size&quot;">
         <customproperties>
           <Option></Option>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer checked="Qt::Checked" expanded="1" id="urn_material_0cf52bba_c178_426a_9c56_8b0046cdd741" legend_exp="" legend_split_behavior="0" name="urn_material" patch_size="-1,-1" providerKey="postgres" source="service='pg_tce_dev' key='id' checkPrimaryKeyUnicity='0' table=&quot;tce_vl&quot;.&quot;urn_material&quot;">
+      <layer-tree-layer checked="Qt::Checked" expanded="1" id="urn_material_0cf52bba_c178_426a_9c56_8b0046cdd741" legend_exp="" legend_split_behavior="0" name="urn_material" patch_size="-1,-1" providerKey="postgres" source="service='pg_tce' key='id' checkPrimaryKeyUnicity='0' table=&quot;tce_vl&quot;.&quot;urn_material&quot;">
         <customproperties>
           <Option></Option>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer checked="Qt::Checked" expanded="1" id="urn_shape_9ddbbc88_42e8_444e_b3dd_d732c33e5679" legend_exp="" legend_split_behavior="0" name="urn_shape" patch_size="-1,-1" providerKey="postgres" source="service='pg_tce_dev' key='id' checkPrimaryKeyUnicity='0' table=&quot;tce_vl&quot;.&quot;urn_shape&quot;">
+      <layer-tree-layer checked="Qt::Checked" expanded="1" id="urn_shape_9ddbbc88_42e8_444e_b3dd_d732c33e5679" legend_exp="" legend_split_behavior="0" name="urn_shape" patch_size="-1,-1" providerKey="postgres" source="service='pg_tce' key='id' checkPrimaryKeyUnicity='0' table=&quot;tce_vl&quot;.&quot;urn_shape&quot;">
         <customproperties>
           <Option></Option>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer checked="Qt::Checked" expanded="1" id="vegetation_kind_d89fa1cb_18bf_478c_a315_a061460305a9" legend_exp="" legend_split_behavior="0" name="vegetation_kind" patch_size="-1,-1" providerKey="postgres" source="service='pg_tce_dev' key='id' checkPrimaryKeyUnicity='0' table=&quot;tce_vl&quot;.&quot;vegetation_kind&quot;">
+      <layer-tree-layer checked="Qt::Checked" expanded="1" id="vegetation_kind_d89fa1cb_18bf_478c_a315_a061460305a9" legend_exp="" legend_split_behavior="0" name="vegetation_kind" patch_size="-1,-1" providerKey="postgres" source="service='pg_tce' key='id' checkPrimaryKeyUnicity='0' table=&quot;tce_vl&quot;.&quot;vegetation_kind&quot;">
         <customproperties>
           <Option></Option>
         </customproperties>
@@ -525,7 +525,7 @@
     </maplayer>
     <maplayer autoRefreshMode="Disabled" autoRefreshTime="0" geometry="No geometry" hasScaleBasedVisibilityFlag="0" legendPlaceholderImage="" maxScale="0" minScale="1e+08" readOnly="0" refreshOnNotifyEnabled="0" refreshOnNotifyMessage="" styleCategories="AllStyleCategories" type="vector" wkbType="NoGeometry">
       <id>control_kind_fe9d6d8d_4fad_4a31_bd98_03456b9975e2</id>
-      <datasource>service='pg_tce_dev' key='id' checkPrimaryKeyUnicity='0' table="tce_vl"."control_kind"</datasource>
+      <datasource>service='pg_tce' key='id' checkPrimaryKeyUnicity='0' table="tce_vl"."control_kind"</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -1098,7 +1098,7 @@ def my_form_open(dialog, layer, feature):
         <ymax>46.50955646032846147</ymax>
       </wgs84extent>
       <id>deceased_1daa27a1_ddc9_4055_ab6d_a8eb9fbfa0cb</id>
-      <datasource>service='pg_tce_dev' key='id' srid=2056 type=Point checkPrimaryKeyUnicity='0' table="tce_od"."deceased" (the_geom)</datasource>
+      <datasource>service='pg_tce' key='id' srid=2056 type=Point checkPrimaryKeyUnicity='0' table="tce_od"."deceased" (the_geom)</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -1606,7 +1606,7 @@ def my_form_open(dialog, layer, feature):
                 <Option name="Layer" type="QString" value="unit_b78284e3_6787_4220_bb9a_ea2a1e3b6ff7"></Option>
                 <Option name="LayerName" type="QString" value="unit"></Option>
                 <Option name="LayerProviderName" type="QString" value="postgres"></Option>
-                <Option name="LayerSource" type="QString" value="service='pg_tce_dev' key='id' srid=2056 type=Polygon checkPrimaryKeyUnicity='0' table=&quot;tce_od&quot;.&quot;unit&quot; (the_geom)"></Option>
+                <Option name="LayerSource" type="QString" value="service='pg_tce' key='id' srid=2056 type=Polygon checkPrimaryKeyUnicity='0' table=&quot;tce_od&quot;.&quot;unit&quot; (the_geom)"></Option>
                 <Option name="NofColumns" type="int" value="1"></Option>
                 <Option name="OrderByValue" type="bool" value="false"></Option>
                 <Option name="UseCompleter" type="bool" value="false"></Option>
@@ -1908,7 +1908,7 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer autoRefreshMode="Disabled" autoRefreshTime="0" geometry="Point" hasScaleBasedVisibilityFlag="0" labelsEnabled="0" legendPlaceholderImage="" maxScale="0" minScale="100000000" readOnly="0" refreshOnNotifyEnabled="0" refreshOnNotifyMessage="" simplifyAlgorithm="0" simplifyDrawingHints="0" simplifyDrawingTol="1" simplifyLocal="1" simplifyMaxScale="1" styleCategories="AllStyleCategories" symbologyReferenceScale="-1" type="vector" wkbType="Point">
       <id>furniture_baf9ed0a_bb5b_44a6_9460_3ee6a1c535ce</id>
-      <datasource>service='pg_tce_dev' key='id' srid=2056 type=Point checkPrimaryKeyUnicity='0' table="tce_od"."furniture" (the_geom)</datasource>
+      <datasource>service='pg_tce' key='id' srid=2056 type=Point checkPrimaryKeyUnicity='0' table="tce_od"."furniture" (the_geom)</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -2269,7 +2269,7 @@ def my_form_open(dialog, layer, feature):
                 <Option name="Layer" type="QString" value="furniture_kind_88857af9_a3b8_4e2b_9422_f5acdee2b74d"></Option>
                 <Option name="LayerName" type="QString" value="furniture_kind"></Option>
                 <Option name="LayerProviderName" type="QString" value="postgres"></Option>
-                <Option name="LayerSource" type="QString" value="service='pg_tce_dev' key='id' checkPrimaryKeyUnicity='0' table=&quot;tce_vl&quot;.&quot;furniture_kind&quot;"></Option>
+                <Option name="LayerSource" type="QString" value="service='pg_tce' key='id' checkPrimaryKeyUnicity='0' table=&quot;tce_vl&quot;.&quot;furniture_kind&quot;"></Option>
                 <Option name="NofColumns" type="int" value="1"></Option>
                 <Option name="OrderByValue" type="bool" value="false"></Option>
                 <Option name="UseCompleter" type="bool" value="false"></Option>
@@ -2378,7 +2378,7 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer autoRefreshMode="Disabled" autoRefreshTime="0" geometry="No geometry" hasScaleBasedVisibilityFlag="0" legendPlaceholderImage="" maxScale="0" minScale="1e+08" readOnly="0" refreshOnNotifyEnabled="0" refreshOnNotifyMessage="" styleCategories="AllStyleCategories" type="vector" wkbType="NoGeometry">
       <id>furniture_kind_88857af9_a3b8_4e2b_9422_f5acdee2b74d</id>
-      <datasource>service='pg_tce_dev' key='id' checkPrimaryKeyUnicity='0' table="tce_vl"."furniture_kind"</datasource>
+      <datasource>service='pg_tce' key='id' checkPrimaryKeyUnicity='0' table="tce_vl"."furniture_kind"</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -2825,7 +2825,7 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer autoRefreshMode="Disabled" autoRefreshTime="0" geometry="No geometry" hasScaleBasedVisibilityFlag="0" legendPlaceholderImage="" maxScale="0" minScale="1e+08" readOnly="0" refreshOnNotifyEnabled="0" refreshOnNotifyMessage="" styleCategories="AllStyleCategories" type="vector" wkbType="NoGeometry">
       <id>organisation_50967dc7_386b_4301_902c_39f81101d002</id>
-      <datasource>service='pg_tce_dev' key='id' checkPrimaryKeyUnicity='0' table="tce_od"."organisation"</datasource>
+      <datasource>service='pg_tce' key='id' checkPrimaryKeyUnicity='0' table="tce_od"."organisation"</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -3116,7 +3116,7 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer autoRefreshMode="Disabled" autoRefreshTime="0" geometry="Polygon" hasScaleBasedVisibilityFlag="0" labelsEnabled="0" legendPlaceholderImage="" maxScale="0" minScale="100000000" readOnly="0" refreshOnNotifyEnabled="0" refreshOnNotifyMessage="" simplifyAlgorithm="0" simplifyDrawingHints="1" simplifyDrawingTol="1" simplifyLocal="1" simplifyMaxScale="1" styleCategories="AllStyleCategories" symbologyReferenceScale="-1" type="vector" wkbType="Polygon">
       <id>sector_20f5d6bf_e4be_4f25_8548_46e7a86487cf</id>
-      <datasource>service='pg_tce_dev' key='id' srid=2056 type=Polygon checkPrimaryKeyUnicity='0' table="tce_od"."sector" (the_geom)</datasource>
+      <datasource>service='pg_tce' key='id' srid=2056 type=Polygon checkPrimaryKeyUnicity='0' table="tce_od"."sector" (the_geom)</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -3482,7 +3482,7 @@ def my_form_open(dialog, layer, feature):
         <ymax>46.50956904995646823</ymax>
       </wgs84extent>
       <id>unit_b78284e3_6787_4220_bb9a_ea2a1e3b6ff7</id>
-      <datasource>service='pg_tce_dev' key='id' srid=2056 type=Polygon checkPrimaryKeyUnicity='0' table="tce_od"."unit" (the_geom)</datasource>
+      <datasource>service='pg_tce' key='id' srid=2056 type=Polygon checkPrimaryKeyUnicity='0' table="tce_od"."unit" (the_geom)</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -3871,7 +3871,7 @@ def my_form_open(dialog, layer, feature):
                 <Option name="Layer" type="QString" value="organisation_50967dc7_386b_4301_902c_39f81101d002"></Option>
                 <Option name="LayerName" type="QString" value="organisation"></Option>
                 <Option name="LayerProviderName" type="QString" value="postgres"></Option>
-                <Option name="LayerSource" type="QString" value="service='pg_tce_dev' key='id' checkPrimaryKeyUnicity='0' table=&quot;tce_od&quot;.&quot;organisation&quot;"></Option>
+                <Option name="LayerSource" type="QString" value="service='pg_tce' key='id' checkPrimaryKeyUnicity='0' table=&quot;tce_od&quot;.&quot;organisation&quot;"></Option>
                 <Option name="NofColumns" type="int" value="1"></Option>
                 <Option name="OrderByValue" type="bool" value="false"></Option>
                 <Option name="UseCompleter" type="bool" value="false"></Option>
@@ -3895,7 +3895,7 @@ def my_form_open(dialog, layer, feature):
                 <Option name="Layer" type="QString" value="sector_20f5d6bf_e4be_4f25_8548_46e7a86487cf"></Option>
                 <Option name="LayerName" type="QString" value="sector"></Option>
                 <Option name="LayerProviderName" type="QString" value="postgres"></Option>
-                <Option name="LayerSource" type="QString" value="service='pg_tce_dev' key='id' srid=2056 type=Polygon checkPrimaryKeyUnicity='0' table=&quot;tce_od&quot;.&quot;sector&quot; (the_geom)"></Option>
+                <Option name="LayerSource" type="QString" value="service='pg_tce' key='id' srid=2056 type=Polygon checkPrimaryKeyUnicity='0' table=&quot;tce_od&quot;.&quot;sector&quot; (the_geom)"></Option>
                 <Option name="NofColumns" type="int" value="1"></Option>
                 <Option name="OrderByValue" type="bool" value="false"></Option>
                 <Option name="UseCompleter" type="bool" value="false"></Option>
@@ -3933,7 +3933,7 @@ def my_form_open(dialog, layer, feature):
                 <Option name="Layer" type="QString" value="unit_size_6440dfb5_fb99_40e8_bdc3_4981b457f634"></Option>
                 <Option name="LayerName" type="QString" value="unit_size"></Option>
                 <Option name="LayerProviderName" type="QString" value="postgres"></Option>
-                <Option name="LayerSource" type="QString" value="service='pg_tce_dev' key='id' checkPrimaryKeyUnicity='0' table=&quot;tce_vl&quot;.&quot;unit_size&quot;"></Option>
+                <Option name="LayerSource" type="QString" value="service='pg_tce' key='id' checkPrimaryKeyUnicity='0' table=&quot;tce_vl&quot;.&quot;unit_size&quot;"></Option>
                 <Option name="NofColumns" type="int" value="1"></Option>
                 <Option name="OrderByValue" type="bool" value="false"></Option>
                 <Option name="UseCompleter" type="bool" value="false"></Option>
@@ -3957,7 +3957,7 @@ def my_form_open(dialog, layer, feature):
                 <Option name="Layer" type="QString" value="unit_kind_2050087d_b6ae_4a38_ab27_c64e820e362b"></Option>
                 <Option name="LayerName" type="QString" value="unit_kind"></Option>
                 <Option name="LayerProviderName" type="QString" value="postgres"></Option>
-                <Option name="LayerSource" type="QString" value="service='pg_tce_dev' key='id' checkPrimaryKeyUnicity='0' table=&quot;tce_vl&quot;.&quot;unit_kind&quot;"></Option>
+                <Option name="LayerSource" type="QString" value="service='pg_tce' key='id' checkPrimaryKeyUnicity='0' table=&quot;tce_vl&quot;.&quot;unit_kind&quot;"></Option>
                 <Option name="NofColumns" type="int" value="1"></Option>
                 <Option name="OrderByValue" type="bool" value="false"></Option>
                 <Option name="UseCompleter" type="bool" value="false"></Option>
@@ -4031,7 +4031,7 @@ def my_form_open(dialog, layer, feature):
                 <Option name="Layer" type="QString" value="control_kind_fe9d6d8d_4fad_4a31_bd98_03456b9975e2"></Option>
                 <Option name="LayerName" type="QString" value="control_kind"></Option>
                 <Option name="LayerProviderName" type="QString" value="postgres"></Option>
-                <Option name="LayerSource" type="QString" value="service='pg_tce_dev' key='id' checkPrimaryKeyUnicity='0' table=&quot;tce_vl&quot;.&quot;control_kind&quot;"></Option>
+                <Option name="LayerSource" type="QString" value="service='pg_tce' key='id' checkPrimaryKeyUnicity='0' table=&quot;tce_vl&quot;.&quot;control_kind&quot;"></Option>
                 <Option name="NofColumns" type="int" value="1"></Option>
                 <Option name="OrderByValue" type="bool" value="false"></Option>
                 <Option name="UseCompleter" type="bool" value="false"></Option>
@@ -4243,7 +4243,7 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer autoRefreshMode="Disabled" autoRefreshTime="0" geometry="No geometry" hasScaleBasedVisibilityFlag="0" legendPlaceholderImage="" maxScale="0" minScale="1e+08" readOnly="0" refreshOnNotifyEnabled="0" refreshOnNotifyMessage="" styleCategories="AllStyleCategories" type="vector" wkbType="NoGeometry">
       <id>unit_kind_2050087d_b6ae_4a38_ab27_c64e820e362b</id>
-      <datasource>service='pg_tce_dev' key='id' checkPrimaryKeyUnicity='0' table="tce_vl"."unit_kind"</datasource>
+      <datasource>service='pg_tce' key='id' checkPrimaryKeyUnicity='0' table="tce_vl"."unit_kind"</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -4690,7 +4690,7 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer autoRefreshMode="Disabled" autoRefreshTime="0" geometry="No geometry" hasScaleBasedVisibilityFlag="0" legendPlaceholderImage="" maxScale="0" minScale="1e+08" readOnly="0" refreshOnNotifyEnabled="0" refreshOnNotifyMessage="" styleCategories="AllStyleCategories" type="vector" wkbType="NoGeometry">
       <id>unit_size_6440dfb5_fb99_40e8_bdc3_4981b457f634</id>
-      <datasource>service='pg_tce_dev' key='id' checkPrimaryKeyUnicity='0' table="tce_vl"."unit_size"</datasource>
+      <datasource>service='pg_tce' key='id' checkPrimaryKeyUnicity='0' table="tce_vl"."unit_size"</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -5137,7 +5137,7 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer autoRefreshMode="Disabled" autoRefreshTime="0" geometry="No geometry" hasScaleBasedVisibilityFlag="0" legendPlaceholderImage="" maxScale="0" minScale="1e+08" readOnly="0" refreshOnNotifyEnabled="0" refreshOnNotifyMessage="" styleCategories="AllStyleCategories" type="vector" wkbType="NoGeometry">
       <id>urn_material_0cf52bba_c178_426a_9c56_8b0046cdd741</id>
-      <datasource>service='pg_tce_dev' key='id' checkPrimaryKeyUnicity='0' table="tce_vl"."urn_material"</datasource>
+      <datasource>service='pg_tce' key='id' checkPrimaryKeyUnicity='0' table="tce_vl"."urn_material"</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -5605,7 +5605,7 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer autoRefreshMode="Disabled" autoRefreshTime="0" geometry="No geometry" hasScaleBasedVisibilityFlag="0" legendPlaceholderImage="" maxScale="0" minScale="1e+08" readOnly="0" refreshOnNotifyEnabled="0" refreshOnNotifyMessage="" styleCategories="AllStyleCategories" type="vector" wkbType="NoGeometry">
       <id>urn_shape_9ddbbc88_42e8_444e_b3dd_d732c33e5679</id>
-      <datasource>service='pg_tce_dev' key='id' checkPrimaryKeyUnicity='0' table="tce_vl"."urn_shape"</datasource>
+      <datasource>service='pg_tce' key='id' checkPrimaryKeyUnicity='0' table="tce_vl"."urn_shape"</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -6052,7 +6052,7 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer autoRefreshMode="Disabled" autoRefreshTime="0" geometry="Polygon" hasScaleBasedVisibilityFlag="0" labelsEnabled="0" legendPlaceholderImage="" maxScale="0" minScale="100000000" readOnly="0" refreshOnNotifyEnabled="0" refreshOnNotifyMessage="" simplifyAlgorithm="0" simplifyDrawingHints="1" simplifyDrawingTol="1" simplifyLocal="1" simplifyMaxScale="1" styleCategories="AllStyleCategories" symbologyReferenceScale="-1" type="vector" wkbType="Polygon">
       <id>vegetation_13fe5960_8b66_412b_ac4c_359c3f9833c1</id>
-      <datasource>service='pg_tce_dev' key='id' srid=2056 type=Polygon checkPrimaryKeyUnicity='0' table="tce_od"."vegetation" (the_geom)</datasource>
+      <datasource>service='pg_tce' key='id' srid=2056 type=Polygon checkPrimaryKeyUnicity='0' table="tce_od"."vegetation" (the_geom)</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -6403,7 +6403,7 @@ def my_form_open(dialog, layer, feature):
                 <Option name="Layer" type="QString" value="vegetation_kind_d89fa1cb_18bf_478c_a315_a061460305a9"></Option>
                 <Option name="LayerName" type="QString" value="vegetation_kind"></Option>
                 <Option name="LayerProviderName" type="QString" value="postgres"></Option>
-                <Option name="LayerSource" type="QString" value="service='pg_tce_dev' key='id' checkPrimaryKeyUnicity='0' table=&quot;tce_vl&quot;.&quot;vegetation_kind&quot;"></Option>
+                <Option name="LayerSource" type="QString" value="service='pg_tce' key='id' checkPrimaryKeyUnicity='0' table=&quot;tce_vl&quot;.&quot;vegetation_kind&quot;"></Option>
                 <Option name="NofColumns" type="int" value="1"></Option>
                 <Option name="OrderByValue" type="bool" value="false"></Option>
                 <Option name="UseCompleter" type="bool" value="false"></Option>
@@ -6512,7 +6512,7 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer autoRefreshMode="Disabled" autoRefreshTime="0" geometry="No geometry" hasScaleBasedVisibilityFlag="0" legendPlaceholderImage="" maxScale="0" minScale="1e+08" readOnly="0" refreshOnNotifyEnabled="0" refreshOnNotifyMessage="" styleCategories="AllStyleCategories" type="vector" wkbType="NoGeometry">
       <id>vegetation_kind_d89fa1cb_18bf_478c_a315_a061460305a9</id>
-      <datasource>service='pg_tce_dev' key='id' checkPrimaryKeyUnicity='0' table="tce_vl"."vegetation_kind"</datasource>
+      <datasource>service='pg_tce' key='id' checkPrimaryKeyUnicity='0' table="tce_vl"."vegetation_kind"</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -7110,7 +7110,7 @@ def my_form_open(dialog, layer, feature):
       </spatialrefsys>
     </CoordinateCustomCrs>
   </ProjectDisplaySettings>
-  <ProjectGpsSettings autoAddTrackVertices="0" autoCommitFeatures="0" destinationFollowsActiveLayer="1" destinationLayer="deceased_1daa27a1_ddc9_4055_ab6d_a8eb9fbfa0cb" destinationLayerName="deceased" destinationLayerProvider="postgres" destinationLayerSource="service='pg_tce_dev' key='id' srid=2056 type=Point checkPrimaryKeyUnicity='0' table=&quot;tce_od&quot;.&quot;deceased&quot; (the_geom)">
+  <ProjectGpsSettings autoAddTrackVertices="0" autoCommitFeatures="0" destinationFollowsActiveLayer="1" destinationLayer="deceased_1daa27a1_ddc9_4055_ab6d_a8eb9fbfa0cb" destinationLayerName="deceased" destinationLayerProvider="postgres" destinationLayerSource="service='pg_tce' key='id' srid=2056 type=Point checkPrimaryKeyUnicity='0' table=&quot;tce_od&quot;.&quot;deceased&quot; (the_geom)">
     <timeStampFields></timeStampFields>
   </ProjectGpsSettings>
 </qgis>
