@@ -13,38 +13,31 @@ from pum import HookBase
 # from view.vw_tce_infiltration_installation import vw_tce_infiltration_installation
 # from view.vw_tce_measurement_series import vw_tce_measurement_series
 # from view.vw_tce_reach import vw_tce_reach
-# from view.vw_tce_wastewater_structure import vw_tce_wastewater_structure
-# from view.vw_wastewater_structure import vw_wastewater_structure
 from yaml import safe_load
 
 
 class Hook(HookBase):
     def run_hook(
         self,
-        connection: psycopg.Connection,
-        SRID: int = 2056,
+        # connection: psycopg.Connection,
+        # SRID: int = 2056,
     ):
         """
         Creates the schema tce_app for TEKSI Wastewater & GEP
         :param SRID: the EPSG code for geometry columns
-        :param tce_reach_extra: YAML file path of the definition of additional columns for vw_tce_reach view
-        :param tce_wastewater_structure_extra: YAML file path of the definition of additional columns for vw_tce_wastewater_structure_extra view
-        :param tce_ii_extra: YAML file path of the definition of additional columns for vw_tce_infiltration_installation_extra view
-        :param wastewater_structure_extra: YAML file path of the definition of additional columns for vw_wastewater_structure_extra view
-        :param tce_channel_extra: YAML file path of the definition of additional columns for vw_tce_channel_extra view
         """
         cwd = Path(__file__).parent.resolve()
 
-        variables = {
-            "SRID": psycopg.sql.SQL(f"{SRID}")
-        }  # when dropping psycopg2 support, we can use the SRID var directly
+        # variables = {
+        #    "SRID": psycopg.sql.SQL(f"{SRID}")
+        #}  # when dropping psycopg2 support, we can use the SRID var directly
 
         self.execute("CREATE SCHEMA tce_app;")
         self.execute(cwd / "functions/geometry_functions.sql")
 
         # self.execute(cwd / "view/vw_dictionary_value_list.sql")
 
-        defaults = {"view_schema": "tce_app"}
+        # defaults = {"view_schema": "tce_app"}
 
         # SingleInheritances = {
         #     # structure parts
