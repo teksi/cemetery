@@ -7,18 +7,18 @@ on:
 jobs:
   datamodel-create-dumps:
     name: Call Datamodel Create Dumps Workflow
-    uses: .github/workflows/datamodel-create-dumps.yml
+    uses: teksi/cemetery/.github/workflows/datamodel-create-dumps.yml@main
     with:
       release_tag: ${{ github.event.release.tag_name }}
 
   # plugin-package:
   #   name: Call Plugin Package Workflow
-  #   uses: teksi/cemetery/.github/workflows/plugin-package.yml
+  #   uses: teksi/cemetery/.github/workflows/plugin-package.yml@main
   #   with:
   #     release_tag: ${{ github.event.release.tag_name }}
 
   project-translations:
     name: Call Project Translations Workflow
-    uses: .github/workflows/project-translation.yml
+    uses: teksi/cemetery/.github/workflows/project-translation.yml@main
     with:
       release_tag: ${{ github.event.release.tag_name }}
