@@ -4,8 +4,8 @@ from argparse import ArgumentParser, BooleanOptionalAction
 from pathlib import Path
 
 import psycopg
-from pirogue import MultipleInheritance, SimpleJoins, SingleInheritance
 from pum import HookBase
+
 # from triggers.set_defaults_and_triggers import set_defaults_and_triggers
 # from view.vw_tce_additional_ws import vw_tce_additional_ws
 # from view.vw_tce_channel import vw_tce_channel
@@ -13,7 +13,6 @@ from pum import HookBase
 # from view.vw_tce_infiltration_installation import vw_tce_infiltration_installation
 # from view.vw_tce_measurement_series import vw_tce_measurement_series
 # from view.vw_tce_reach import vw_tce_reach
-from yaml import safe_load
 
 
 class Hook(HookBase):
@@ -30,7 +29,7 @@ class Hook(HookBase):
 
         # variables = {
         #    "SRID": psycopg.sql.SQL(f"{SRID}")
-        #}  # when dropping psycopg2 support, we can use the SRID var directly
+        # }  # when dropping psycopg2 support, we can use the SRID var directly
 
         self.execute("CREATE SCHEMA tce_app;")
         self.execute(cwd / "functions/geometry_functions.sql")
@@ -76,4 +75,4 @@ if __name__ == "__main__":
         hook.run_hook(
             connection=connection,
             SRID=args.srid,
-         )
+        )
