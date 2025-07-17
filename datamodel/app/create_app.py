@@ -23,7 +23,8 @@ class Hook(HookBase):
     def run_hook(
         self,
         connection: psycopg.Connection,
-        # SRID: int = 2056,
+        SRID: int = 2056,
+        lang_code: str = "en",
     ):
         """
         Creates the schema tce_app for TEKSI Wastewater & GEP
@@ -32,9 +33,28 @@ class Hook(HookBase):
         self.cwd = Path(__file__).parent.resolve()
         self.connection = connection
 
-        # variables = {
-        #    "SRID": psycopg.sql.SQL(f"{SRID}")
-        # }  # when dropping psycopg2 support, we can use the SRID var directly
+        self.variables_sql = {
+            "SRID": {
+                "value": f"{SRID}",
+                "type": "number",
+            },
+            "value_lang": {
+                "value": f"value_{lang_code}",
+                "type": "identifier",
+            },
+            "abbr_lang": {
+                "value": f"abbr_{lang_code}",
+                "type": "identifier",
+            },
+            "description_lang": {
+                "value": f"description_{lang_code}",
+                "type": "identifier",
+            },
+            "display_lang": {
+                "value": f"display_{lang_code}",
+                "type": "identifier",
+            },
+        }
 
         self.execute("CREATE SCHEMA tce_app;")
         self.run_sql_files_in_folder(self.cwd / "sql_functions")
@@ -53,7 +73,7 @@ class Hook(HookBase):
         # self.execute(cwd / "audit/audit.sql")
 
         # Roles
-        self.execute(cwd / "tce_app_roles.sql")
+        self.run_sql_files_in_folder(self.cwd / "roles")
 
     def run_sql_file(self, file_path: str, variables: dict = None):
         with open(file_path) as f:
@@ -83,6 +103,30 @@ class Hook(HookBase):
             if filename.lower().endswith(".sql"):
                 logger.info(f"Running {filename}")
                 self.run_sql_file(os.path.join(directory, filename), sql_vars)
+
+    def parse_variables(self, variables: dict) -> dict:
+        """Parse variables based on their defined types in the YAML."""
+        formatted_vars = {}
+
+        for key, meta in variables.items():
+            if isinstance(meta, dict) and "value" in meta and "type" in meta:
+                value, var_type = meta["value"], meta["type"].lower()
+
+                if var_type == "number":  # Directly insert SQL without escaping
+                    if not re.match(r"^[\d.]*$", value):  # avoid injection
+                        raise ValueError(f"Number '{value}' contains invalid characters.")
+                    formatted_vars[key] = psycopg.sql.SQL(value)
+                elif var_type == "identifier":  # Table/Column names
+                    if not re.match(r"^[a-zA-Z_][a-zA-Z0-9_]*$", value):  # avoid injection
+                        raise ValueError(f"Identifier '{value}' contains invalid characters.")
+                    formatted_vars[key] = psycopg.sql.Identifier(value)
+                elif var_type == "literal":  # String/Number literals
+                    formatted_vars[key] = psycopg.sql.Literal(value)
+                else:
+                    raise ValueError(f"Unknown type '{var_type}' for variable '{key}'")
+            else:
+                raise ValueError(f"Unknown type '{var_type}' for variable '{key}'.")
+        return formatted_vars
 
 
 if __name__ == "__main__":
