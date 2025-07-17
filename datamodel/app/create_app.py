@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-
+import logging
 from argparse import ArgumentParser, BooleanOptionalAction
 from pathlib import Path
 
@@ -14,6 +14,7 @@ from pum import HookBase
 # from view.vw_tce_measurement_series import vw_tce_measurement_series
 # from view.vw_tce_reach import vw_tce_reach
 
+logger = logging.getLogger(__name__)
 
 class Hook(HookBase):
     def run_hook(
@@ -25,16 +26,15 @@ class Hook(HookBase):
         Creates the schema tce_app for TEKSI Wastewater & GEP
         :param SRID: the EPSG code for geometry columns
         """
-        cwd = Path(__file__).parent.resolve()
+        self.cwd = Path(__file__).parent.resolve()
+        self.connection = connection
 
         # variables = {
         #    "SRID": psycopg.sql.SQL(f"{SRID}")
         # }  # when dropping psycopg2 support, we can use the SRID var directly
 
         self.execute("CREATE SCHEMA tce_app;")
-        self.execute(cwd / "functions/geometry_functions.sql")
-
-        # self.execute(cwd / "view/vw_dictionary_value_list.sql")
+        self.run_sql_files_in_folder(self.cwd / "sql_functions")
 
         # defaults = {"view_schema": "tce_app"}
 
@@ -52,6 +52,35 @@ class Hook(HookBase):
         # Roles
         self.execute(cwd / "tce_app_roles.sql")
 
+
+    def run_sql_file(self, file_path: str, variables: dict = None):
+        with open(file_path) as f:
+            sql = f.read()
+        self.run_sql(sql, variables)
+
+    def run_sql(self, sql: str, variables: dict = None):
+        if variables is None:
+            variables = {}
+        if (
+            re.search(r"\{[A-Za-z-_]+\}", sql) and variables
+        ):  # avoid formatting if no variables are present
+            try:
+                sql = psycopg.sql.SQL(sql).format(**variables).as_string(self.connection)
+
+            except IndexError:
+                logger.critical(sql)
+                raise
+        self.execute(sql)
+
+    def run_sql_files_in_folder(self, directory: str):
+        files = os.listdir(directory)
+        files.sort()
+        sql_vars = self.parse_variables(self.variables_sql)
+        for file in files:
+            filename = os.fsdecode(file)
+            if filename.lower().endswith(".sql"):
+                logger.info(f"Running {filename}")
+                self.run_sql_file(os.path.join(directory, filename), sql_vars)
 
 if __name__ == "__main__":
     parser = ArgumentParser()
