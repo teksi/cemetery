@@ -58,6 +58,10 @@ parameters:
     type: text
     description: YAML file with extra information for the vw_tce_channel_extra view.
 
+  - name: lang_code
+    type: text
+    description: language code for the creation of custom views
+
 dependencies:
   - name: pirogue
     minimum_version: 3.0.0
