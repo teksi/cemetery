@@ -16,6 +16,7 @@ from pum import HookBase
 
 logger = logging.getLogger(__name__)
 
+
 class Hook(HookBase):
     def run_hook(
         self,
@@ -52,7 +53,6 @@ class Hook(HookBase):
         # Roles
         self.execute(cwd / "tce_app_roles.sql")
 
-
     def run_sql_file(self, file_path: str, variables: dict = None):
         with open(file_path) as f:
             sql = f.read()
@@ -81,6 +81,7 @@ class Hook(HookBase):
             if filename.lower().endswith(".sql"):
                 logger.info(f"Running {filename}")
                 self.run_sql_file(os.path.join(directory, filename), sql_vars)
+
 
 if __name__ == "__main__":
     parser = ArgumentParser()
