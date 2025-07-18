@@ -1,8 +1,0 @@
-[main]
-host = https://www.transifex.com
-
-[o:teksi:p:tce-qgis-project:r:tce-qgis-project]
-file_filter = teksi_cemetery_<lang>.ts
-source_file = teksi_cemetery.ts
-source_lang = en
-type = QT

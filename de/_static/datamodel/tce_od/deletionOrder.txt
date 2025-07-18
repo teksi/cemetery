@@ -1,0 +1,6 @@
+vegetation
+unit
+sector
+organisation
+furniture
+deceased

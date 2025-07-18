@@ -1,0 +1,8 @@
+vegetation_kind
+value_list_base
+urn_shape
+urn_material
+unit_size
+unit_kind
+furniture_kind
+control_kind
