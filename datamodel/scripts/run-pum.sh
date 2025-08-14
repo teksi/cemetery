@@ -35,4 +35,3 @@ pum -v -s pg_tce -d datamodel install -p SRID 2056 # --roles --grant # --demo-da
 
 # Database roles
 psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -f ${DIR}/12_1_roles.sql
-
