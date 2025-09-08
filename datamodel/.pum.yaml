@@ -38,26 +38,6 @@ parameters:
     default: 2056
     description: Coordinate Reference System (CRS) to use for the data. This is used for the geometry column in the database. Default is 2056 (CH1903+ / LV95).
 
-  - name: tce_reach_extra
-    type: text
-    description: YAML file with extra information for the tce_reach view.
-
-  - name: tce_cemetery_structure_extra
-    type: text
-    description: YAML file with extra information for the tce_cemetery_structure view.
-
-  - name: tce_ii_extra
-    type: text
-    description: YAML file with extra information for the vw_tce_infiltration_installation_extra view.
-
-  - name: cemetery_structure_extra
-    type: text
-    description: YAML file with extra information for the cemetery_structure view.
-
-  - name: tce_channel_extra
-    type: text
-    description: YAML file with extra information for the vw_tce_channel_extra view.
-
   - name: lang_code
     type: text
     description: language code for the creation of custom views
