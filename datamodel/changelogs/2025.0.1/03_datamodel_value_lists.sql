@@ -128,5 +128,6 @@ COMMENT ON TABLE tce_vl.vegetation_kind IS 'Vegetation kind';
 INSERT INTO tce_vl.vegetation_kind (id, value_en, value_fr, value_de, value_it) VALUES (101, 'unknown', 'inconnu', 'unbekannt', 'sconosciuto');
 
 INSERT INTO tce_vl.vegetation_kind (id, value_en, value_fr, value_de, value_it) VALUES (5001,'bush','buisson','Busch','cespuglio');
-INSERT INTO tce_vl.vegetation_kind (id, value_en, value_fr, value_de, value_it) VALUES (5002,'glower bed','massif floral','Blumenbeet','aiuola fiorita');
+INSERT INTO tce_vl.vegetation_kind (id, value_en, value_fr, value_de, value_it) VALUES (5002,'flower bed','massif floral','Blumenbeet','aiuola fiorita');
 INSERT INTO tce_vl.vegetation_kind (id, value_en, value_fr, value_de, value_it) VALUES (5003,'hedge','haie','Hecke','siepe');
+INSERT INTO tce_vl.vegetation_kind (id, value_en, value_fr, value_de, value_it) VALUES (5004,'meadow','prairie','Wiese','prato');
