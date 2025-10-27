@@ -77,6 +77,7 @@ INSERT INTO tce_vl.unit_kind (id, value_en, value_fr, value_de, value_it) VALUES
 INSERT INTO tce_vl.unit_kind (id, value_en, value_fr, value_de, value_it) VALUES (2008,'memorial garden','jardin du souvenir','Garten der Erinnerung','giardino della memoria');
 INSERT INTO tce_vl.unit_kind (id, value_en, value_fr, value_de, value_it) VALUES (2009,'concession columbarium','concession columbarium','Koncession Kolumbarium','concessione colombario');
 INSERT INTO tce_vl.unit_kind (id, value_en, value_fr, value_de, value_it) VALUES (2010,'monument only','monument uniquement','nur Monument','solo monumento');
+INSERT INTO tce_vl.unit_kind (id, value_en, value_fr, value_de, value_it) VALUES (2011,'Family grave','tombe familiale','Familiengrab','tomba di famiglia');
 
 --------------------- UNIT SIZE --------------------------------
 /* CREATE */
