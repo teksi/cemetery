@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<database name="tce" schema="tce_od" type="PostgreSQL - 16.10">
+<database name="tce" schema="tce_od" type="PostgreSQL - 16.11">
    <tables>
       <table name="deceased" remarks="" schema="tce_od" type="TABLE">
          <column autoUpdated="false" defaultValue="uuid_generate_v1()" digits="0" id="0" name="id" nullable="false" remarks="" size="2147483647" type="uuid" typeCode="1111"/>
