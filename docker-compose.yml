@@ -6,13 +6,20 @@ services:
       dockerfile: datamodel/.docker/Dockerfile
       args:
         POSTGIS_IMAGE: ${POSTGIS_IMAGE:-postgis/postgis:16-3.5-alpine}
+        DB_NAME: ${DB_NAME:-tce}
+        PG_SERVICE: ${PG_SERVICE:-pg_tce}
     image: teksi/tce:${DOCKER_TAG:-unstable}
-    working_dir: /src
+    working_dir: /usr/src
+    environment:
+      - EXTENSION_CI
+      - EXTENSION_AGXX
+      - EXTENSION_ZIP
+      - LANG_CODE
     volumes:
-      - .:/src
+      - .:/usr/src
     ports:
       # making the postgres database accessible for debugging
-      - ${tce_PG_PORT:-5432}:${tce_PG_PORT:-5432}
+      - ${PG_CONTAINER_PORT:-5432}:${PG_CONTAINER_PORT:-5432}
 
   qgis:
     build:
@@ -23,7 +30,7 @@ services:
     tty: true
     volumes:
       - .:/usr/src
-    links:
+    depends_on:
       - db
     profiles:
       - qgis
@@ -35,7 +42,6 @@ services:
       - ./datamodel/schemaspy.properties:/schemaspy.properties
     depends_on:
       - db
-    network_mode: "service:db"
     command: [
       "-configFile",
       "/schemaspy.properties"
