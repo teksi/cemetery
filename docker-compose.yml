@@ -11,9 +11,6 @@ services:
     image: teksi/tce:${DOCKER_TAG:-unstable}
     working_dir: /usr/src
     environment:
-      - EXTENSION_CI
-      - EXTENSION_AGXX
-      - EXTENSION_ZIP
       - LANG_CODE
     volumes:
       - .:/usr/src
