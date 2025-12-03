@@ -3,23 +3,26 @@
 CREATE TABLE IF NOT EXISTS tce_od.deceased
 (
    id uuid DEFAULT public.uuid_generate_v1() NOT NULL PRIMARY KEY,
-   last_name character varying(50),
-   first_name character varying(50),
-   address character varying(50),
-   city character varying(50),
+   ahv_number character varying(16),
+   fk_civility integer,
+   first_name text,
+   second_first_name text,
+   last_name text,
+   address character text,
+   city text,
    postal_code character varying(10),
    birth_date date,
    death_date date,
-   death_place character varying(50),
+   death_place text,
    burial_date date,
-   burial_place character varying(50),
+   burial_place text,
    flag_main boolean,
    flag_ashes boolean,
    incineration_date date,
-   incineration_place character varying(50),
+   incineration_place text,
    fk_urn_kind integer,
    exumation_date date,
-   exumation_place character varying(50),
+   exumation_place text,
    remark text,
    child boolean,
    quality double precision,
@@ -32,6 +35,7 @@ CREATE TABLE IF NOT EXISTS tce_od.unit
 (
    id uuid DEFAULT public.uuid_generate_v1() NOT NULL PRIMARY KEY,
    identifier character varying(10),
+   excavation_date date,
    begin_date date,
    end_date date,
    fk_company uuid,
@@ -53,6 +57,9 @@ CREATE TABLE IF NOT EXISTS tce_od.contract
    fk_kind integer,
    begin_date date,
    end_date date,
+   approval_date date,
+   valid boolean,
+   invoiced boolean,
    fk_contract_person uuid,
    remark text
 );
@@ -89,14 +96,15 @@ CREATE TABLE IF NOT EXISTS tce_od.organisation
    remark text
 );
 
-CREATE TABLE IF NOT EXISTS tce_od.contact_person
+CREATE TABLE IF NOT EXISTS tce_od.person
 (
    id uuid DEFAULT public.uuid_generate_v1() NOT NULL PRIMARY KEY,
-   person_kind integer,
-   last_name character varying(50),
-   first_name character varying(50),
-   address character varying(50),
-   city character varying(50),
+   kind integer,
+   fk_civility integer,
+   first_name text,
+   last_name text,
+   address text,
+   city text,
    postal_code character varying(10),
    phone character varying(20),
    email character varying(255),

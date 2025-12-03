@@ -153,5 +153,19 @@ COMMENT ON TABLE tce_vl.person_kind IS 'Person kind';
 
 /* VALUES */
 INSERT INTO tce_vl.person_kind (id, value_en, value_fr, value_de, value_it) VALUES (101, 'unknown', 'inconnu', 'unbekannt', 'sconosciuto');
+
 INSERT INTO tce_vl.person_kind (id, value_en, value_fr, value_de, value_it) VALUES (6001,'individual','individu','Einzelperson','individuo');
 INSERT INTO tce_vl.person_kind (id, value_en, value_fr, value_de, value_it) VALUES (6002,'company','entreprise','Firma','azienda');
+
+--------------------- CIVILITY --------------------------------
+
+/* CREATE */
+CREATE TABLE tce_vl.civility () INHERITS ( tce_vl.value_list_base);
+ALTER TABLE tce_vl.civility ADD CONSTRAINT vl_civility_pk PRIMARY KEY (id);
+COMMENT ON TABLE tce_vl.civility IS 'Civility';
+
+/* VALUES */
+INSERT INTO tce_vl.civility (id, value_en, value_fr, value_de, value_it) VALUES (101, 'unknown', 'inconnu', 'unbekannt', 'sconosciuto');
+
+INSERT INTO tce_vl.civility (id, value_en, value_fr, value_de, value_it) VALUES (6101,'M.','M.','Herr','Signore');
+INSERT INTO tce_vl.civility (id, value_en, value_fr, value_de, value_it) VALUES (6102,'Mme','Mme','Frau','Signora');
