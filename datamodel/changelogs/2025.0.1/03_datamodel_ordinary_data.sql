@@ -25,7 +25,7 @@ CREATE TABLE IF NOT EXISTS tce_od.deceased
    quality double precision,
    orientation double precision,
    fk_unit uuid,
-   fk_unit_contact_person uuid,
+   fk_contact_person uuid,
    the_geom geometry(Point,{SRID})
 );
 
