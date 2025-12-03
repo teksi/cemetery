@@ -113,7 +113,9 @@ ALTER TABLE tce_vl.contract_kind ADD CONSTRAINT vl_contract_kind_pk PRIMARY KEY 
 COMMENT ON TABLE tce_vl.contract_kind IS 'Contract kind';
 
 /* VALUES */
-
+INSERT INTO tce_vl.contract_kind (id, value_en, value_fr, value_de, value_it) VALUES (101, 'unknown', 'inconnu', 'unbekannt', 'sconosciuto');
+INSERT INTO tce_vl.contract_kind (id, value_en, value_fr, value_de, value_it) VALUES (3001,'concession','concession','Konzessionsvertrag','concessione');
+INSERT INTO tce_vl.contract_kind (id, value_en, value_fr, value_de, value_it) VALUES (3002,'maintenance','entretien','Wartungsvertrag','manutenzione');
 
 --------------------- FURNITURE KIND --------------------------------
 /* CREATE */
