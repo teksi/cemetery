@@ -20,7 +20,7 @@ WITH (
 COMMENT ON COLUMN tce_od.file.object IS 'UUID (uuid) des Datensatzes zu dem die Datei gehört / Identification de l''ensemble de données auquel le fichier appartient (UUID)';
 ALTER TABLE tce_od.file ADD COLUMN filepath text;
 --  ALTER TABLE tce_od.file ADD CONSTRAINT fi_path_relative_length_max_200 CHECK(char_length(path_relative)<=200);
-COMMENT ON COLUMN tce_od.file.path_relative IS 'yyy_Zusätzlicher Relativer Pfad, wo die Datei auf dem Datenträger zu finden ist. Z.B. DVD_01. / Zusätzlicher Relativer Pfad, wo die Datei auf dem Datenträger zu finden ist. Z.B. DVD_01. / Accès relatif supplémentaire à l’emplacement du fichier sur le support de données. P. ex. DVD_01';
+COMMENT ON COLUMN tce_od.file.filepath IS 'yyy_Zusätzlicher Relativer Pfad, wo die Datei auf dem Datenträger zu finden ist. Z.B. DVD_01. / Zusätzlicher Relativer Pfad, wo die Datei auf dem Datenträger zu finden ist. Z.B. DVD_01. / Accès relatif supplémentaire à l’emplacement du fichier sur le support de données. P. ex. DVD_01';
  ALTER TABLE tce_od.file ADD COLUMN remark text;
 --  ALTER TABLE tce_od.file ADD CONSTRAINT fi_remark_length_max_80 CHECK(char_length(remark)<=80);
 -- COMMENT ON COLUMN tce_od.file.remark IS 'General remarks / Allgemeine Bemerkungen / Remarques générales';
