@@ -25,7 +25,6 @@ CREATE TABLE IF NOT EXISTS tce_od.deceased
    quality double precision,
    orientation double precision,
    fk_unit uuid,
-   fk_contact_person uuid,
    the_geom geometry(Point,{SRID})
 );
 
@@ -40,12 +39,22 @@ CREATE TABLE IF NOT EXISTS tce_od.unit
    fk_cemetery integer,
    fk_unit_size integer,
    fk_unit_kind integer,
-   fk_contract_kind integer,
+   fk_contact_person uuid,
    remark text,
    disused boolean,
    disused_date date,
    fk_control integer,
    the_geom geometry(Polygon,{SRID})
+);
+
+CREATE TABLE IF NOT EXISTS tce_od.contract
+(
+   id uuid DEFAULT public.uuid_generate_v1() NOT NULL PRIMARY KEY,
+   fk_kind integer,
+   begin_date date,
+   end_date date,
+   fk_contract_person uuid,
+   remark text
 );
 
 CREATE TABLE IF NOT EXISTS tce_od.sector
@@ -83,11 +92,13 @@ CREATE TABLE IF NOT EXISTS tce_od.organisation
 CREATE TABLE IF NOT EXISTS tce_od.contact_person
 (
    id uuid DEFAULT public.uuid_generate_v1() NOT NULL PRIMARY KEY,
+   person_kind integer,
    last_name character varying(50),
    first_name character varying(50),
    address character varying(50),
    city character varying(50),
    postal_code character varying(10),
    phone character varying(20),
-   email character varying(255)
+   email character varying(255),
+   remark text
 );
