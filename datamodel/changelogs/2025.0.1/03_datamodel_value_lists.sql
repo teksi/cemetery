@@ -19,7 +19,6 @@ ALTER TABLE tce_vl.value_list_base ADD COLUMN description_en text ;
 ALTER TABLE tce_vl.value_list_base ADD COLUMN description_fr text ;
 ALTER TABLE tce_vl.value_list_base ADD COLUMN description_de text ;
 ALTER TABLE tce_vl.value_list_base ADD COLUMN description_it text ;
-ALTER TABLE tce_vl.value_list_base ADD COLUMN sia405code text;
 
 
 --------------------- URN MATERIAL --------------------------------
