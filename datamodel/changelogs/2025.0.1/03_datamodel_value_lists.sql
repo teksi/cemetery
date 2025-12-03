@@ -19,7 +19,6 @@ ALTER TABLE tce_vl.value_list_base ADD COLUMN description_en text ;
 ALTER TABLE tce_vl.value_list_base ADD COLUMN description_fr text ;
 ALTER TABLE tce_vl.value_list_base ADD COLUMN description_de text ;
 ALTER TABLE tce_vl.value_list_base ADD COLUMN description_it text ;
-ALTER TABLE tce_vl.value_list_base ADD COLUMN sia405code text;
 
 
 --------------------- URN MATERIAL --------------------------------
@@ -105,6 +104,18 @@ INSERT INTO tce_vl.control_kind (id, value_en, value_fr, value_de, value_it) VAL
 INSERT INTO tce_vl.control_kind (id, value_en, value_fr, value_de, value_it) VALUES (2201,'controled','contrôlé','kontrolliert','controllato');
 INSERT INTO tce_vl.control_kind (id, value_en, value_fr, value_de, value_it) VALUES (2202,'not controled','non contrôlé','nicht kontrolliert','non controllato');
 
+--------------------- CONTRACT KIND --------------------------------
+
+/* CREATE */
+CREATE TABLE tce_vl.contract_kind () INHERITS ( tce_vl.value_list_base);
+ALTER TABLE tce_vl.contract_kind ADD CONSTRAINT vl_contract_kind_pk PRIMARY KEY (id);
+COMMENT ON TABLE tce_vl.contract_kind IS 'Contract kind';
+
+/* VALUES */
+INSERT INTO tce_vl.contract_kind (id, value_en, value_fr, value_de, value_it) VALUES (101, 'unknown', 'inconnu', 'unbekannt', 'sconosciuto');
+INSERT INTO tce_vl.contract_kind (id, value_en, value_fr, value_de, value_it) VALUES (3001,'concession','concession','Konzessionsvertrag','concessione');
+INSERT INTO tce_vl.contract_kind (id, value_en, value_fr, value_de, value_it) VALUES (3002,'maintenance','entretien','Wartungsvertrag','manutenzione');
+
 --------------------- FURNITURE KIND --------------------------------
 /* CREATE */
 CREATE TABLE tce_vl.furniture_kind () INHERITS ( tce_vl.value_list_base);
@@ -131,3 +142,29 @@ INSERT INTO tce_vl.vegetation_kind (id, value_en, value_fr, value_de, value_it) 
 INSERT INTO tce_vl.vegetation_kind (id, value_en, value_fr, value_de, value_it) VALUES (5002,'flower bed','massif floral','Blumenbeet','aiuola fiorita');
 INSERT INTO tce_vl.vegetation_kind (id, value_en, value_fr, value_de, value_it) VALUES (5003,'hedge','haie','Hecke','siepe');
 INSERT INTO tce_vl.vegetation_kind (id, value_en, value_fr, value_de, value_it) VALUES (5004,'meadow','prairie','Wiese','prato');
+
+--------------------- PERSON KIND --------------------------------
+
+/* CREATE */
+CREATE TABLE tce_vl.person_kind () INHERITS ( tce_vl.value_list_base);
+ALTER TABLE tce_vl.person_kind ADD CONSTRAINT vl_person_kind_pk PRIMARY KEY (id);
+COMMENT ON TABLE tce_vl.person_kind IS 'Person kind';
+
+/* VALUES */
+INSERT INTO tce_vl.person_kind (id, value_en, value_fr, value_de, value_it) VALUES (101, 'unknown', 'inconnu', 'unbekannt', 'sconosciuto');
+
+INSERT INTO tce_vl.person_kind (id, value_en, value_fr, value_de, value_it) VALUES (6001,'individual','individu','Einzelperson','individuo');
+INSERT INTO tce_vl.person_kind (id, value_en, value_fr, value_de, value_it) VALUES (6002,'company','entreprise','Firma','azienda');
+
+--------------------- CIVILITY --------------------------------
+
+/* CREATE */
+CREATE TABLE tce_vl.civility () INHERITS ( tce_vl.value_list_base);
+ALTER TABLE tce_vl.civility ADD CONSTRAINT vl_civility_pk PRIMARY KEY (id);
+COMMENT ON TABLE tce_vl.civility IS 'Civility';
+
+/* VALUES */
+INSERT INTO tce_vl.civility (id, value_en, value_fr, value_de, value_it) VALUES (101, 'unknown', 'inconnu', 'unbekannt', 'sconosciuto');
+
+INSERT INTO tce_vl.civility (id, value_en, value_fr, value_de, value_it) VALUES (6101,'M.','M.','Herr','Signore');
+INSERT INTO tce_vl.civility (id, value_en, value_fr, value_de, value_it) VALUES (6102,'Mme','Mme','Frau','Signora');
