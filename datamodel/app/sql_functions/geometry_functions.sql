@@ -32,7 +32,7 @@ BEFORE INSERT OR UPDATE ON tce_od.deceased
 FOR EACH ROW
 EXECUTE FUNCTION tce_app.ft_update_fk_unit();
 
-COMMENT ON TRIGGER trg_update_fk_unit IS 'Trigger to update fk_unit in tce_od.deceased based on its location';
+COMMENT ON TRIGGER trg_update_fk_unit ON tce_od.deceased IS 'Trigger to update fk_unit in tce_od.deceased based on its location';
 
 
 
@@ -68,4 +68,4 @@ BEFORE INSERT OR UPDATE ON tce_od.unit
 FOR EACH ROW
 EXECUTE FUNCTION tce_app.ft_update_fk_sector();
 
-COMMENT ON TRIGGER trg_update_fk_sector IS 'Trigger to update fk_sector in tce_od.unit based on its location';
+COMMENT ON TRIGGER trg_update_fk_sector ON tce_od.unit IS 'Trigger to update fk_sector in tce_od.unit based on its location';
