@@ -1,5 +1,8 @@
+civility
+contract_kind
 control_kind
 furniture_kind
+person_kind
 unit_kind
 unit_size
 urn_material

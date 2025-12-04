@@ -4,5 +4,8 @@ urn_shape
 urn_material
 unit_size
 unit_kind
+person_kind
 furniture_kind
 control_kind
+contract_kind
+civility

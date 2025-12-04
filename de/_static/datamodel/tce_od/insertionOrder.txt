@@ -1,7 +1,9 @@
+contract
 deceased
 file
 furniture
 organisation
+person
 sector
 unit
 vegetation
