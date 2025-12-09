@@ -26,8 +26,6 @@ ALTER TABLE tce_vl.value_list_base ADD COLUMN description_it text ;
 CREATE TABLE tce_vl.urn_material () INHERITS ( tce_vl.value_list_base);
 ALTER TABLE tce_vl.urn_material ADD CONSTRAINT vl_urn_material_pk PRIMARY KEY (id);
 COMMENT ON TABLE tce_vl.urn_material IS 'Urn material';
-ALTER TABLE tce_od.unit ADD CONSTRAINT fkey_vl_unit FOREIGN KEY (connection_type)
- REFERENCES tww_vl.channel_connection_type (code) MATCH SIMPLE
 
 /* VALUES */
 INSERT INTO tce_vl.urn_material (id, value_en, value_fr, value_de, value_it) VALUES (101, 'unknown', 'inconnu', 'unbekannt', 'sconosciuto');
