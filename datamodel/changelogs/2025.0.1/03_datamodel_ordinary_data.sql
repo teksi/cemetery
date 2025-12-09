@@ -54,6 +54,8 @@ ALTER TABLE tce_od.unit ADD COLUMN fk_sector uuid;
 ALTER TABLE tce_od.unit ADD COLUMN fk_cemetery integer;
 ALTER TABLE tce_od.unit ADD COLUMN fk_unit_size integer;
 ALTER TABLE tce_od.unit ADD COLUMN fk_unit_kind integer;
+ALTER TABLE tce_od.unit ADD COLUMN fk_urn_material integer;
+ALTER TABLE tce_od.unit ADD COLUMN fk_urn_shape integer;
 ALTER TABLE tce_od.unit ADD COLUMN fk_contact_person uuid;
 ALTER TABLE tce_od.unit ADD COLUMN remark text;
 ALTER TABLE tce_od.unit ADD COLUMN disused boolean;
