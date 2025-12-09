@@ -103,7 +103,7 @@ CREATE TABLE IF NOT EXISTS tce_od.furniture
 );
 COMMENT ON TABLE tce_od.furniture IS 'Dataset of cemetery furniture / Datensatz der Friedhofsmöbel / Ensemble de données du mobilier de cimetière';
 
-ALTER TABLE tce_od.furniture ADD COLUMN fk_furniture_kind integer;
+ALTER TABLE tce_od.furniture ADD COLUMN fk_kind integer;
 ALTER TABLE tce_od.furniture ADD COLUMN remark text;
 ALTER TABLE tce_od.furniture ADD COLUMN the_geom geometry(Point,{SRID});
 
