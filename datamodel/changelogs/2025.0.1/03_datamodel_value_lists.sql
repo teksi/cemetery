@@ -197,7 +197,7 @@ INSERT INTO tce_vl.contact_kind (id, value_en, value_fr, value_de, value_it) VAL
 INSERT INTO tce_vl.contact_kind (id, value_en, value_fr, value_de, value_it) VALUES (6002,'company','entreprise','Firma','azienda');
 
 /* FOREIGN KEYS */
-ALTER TABLE tce_od.person ADD CONSTRAINT fkey_vl_contact_kind FOREIGN KEY (kind)
+ALTER TABLE tce_od.contact ADD CONSTRAINT fkey_vl_contact_kind FOREIGN KEY (fk_kind)
   REFERENCES tce_vl.contact_kind (id) MATCH SIMPLE;
 
 

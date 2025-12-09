@@ -138,8 +138,8 @@ CREATE TABLE IF NOT EXISTS tce_od.contact
 );
 COMMENT ON TABLE tce_od.contact IS 'Dataset of contacts / Datensatz der Kontakte / Ensemble de données des contacts';
 
-ALTER TABLE tce_od.contact ADD COLUMN kind integer;
-COMMENT ON COLUMN tce_od.contact.kind IS 'Type of contact person / Art der Kontaktperson / Type de personne de contact';
+ALTER TABLE tce_od.contact ADD COLUMN fk_kind integer;
+COMMENT ON COLUMN tce_od.contact.fk_kind IS 'Type of contact person / Art der Kontaktperson / Type de personne de contact';
 ALTER TABLE tce_od.contact ADD COLUMN fk_organisation uuid;
 
 ALTER TABLE tce_od.contact ADD COLUMN fk_civility integer;
