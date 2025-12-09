@@ -51,7 +51,7 @@ ALTER TABLE tce_od.unit ADD COLUMN begin_date date;
 ALTER TABLE tce_od.unit ADD COLUMN end_date date;
 ALTER TABLE tce_od.unit ADD COLUMN fk_company uuid;
 ALTER TABLE tce_od.unit ADD COLUMN fk_sector uuid;
-ALTER TABLE tce_od.unit ADD COLUMN fk_cemetery integer;
+ALTER TABLE tce_od.unit ADD COLUMN fk_cemetery uuid;
 ALTER TABLE tce_od.unit ADD COLUMN fk_size integer;
 ALTER TABLE tce_od.unit ADD COLUMN fk_kind integer;
 ALTER TABLE tce_od.unit ADD COLUMN fk_urn_material integer;
