@@ -52,8 +52,8 @@ ALTER TABLE tce_od.unit ADD COLUMN end_date date;
 ALTER TABLE tce_od.unit ADD COLUMN fk_company uuid;
 ALTER TABLE tce_od.unit ADD COLUMN fk_sector uuid;
 ALTER TABLE tce_od.unit ADD COLUMN fk_cemetery integer;
-ALTER TABLE tce_od.unit ADD COLUMN fk_unit_size integer;
-ALTER TABLE tce_od.unit ADD COLUMN fk_unit_kind integer;
+ALTER TABLE tce_od.unit ADD COLUMN fk_size integer;
+ALTER TABLE tce_od.unit ADD COLUMN fk_kind integer;
 ALTER TABLE tce_od.unit ADD COLUMN fk_urn_material integer;
 ALTER TABLE tce_od.unit ADD COLUMN fk_urn_shape integer;
 ALTER TABLE tce_od.unit ADD COLUMN fk_contact_person uuid;
@@ -115,7 +115,7 @@ CREATE TABLE IF NOT EXISTS tce_od.vegetation
 );
 COMMENT ON TABLE tce_od.vegetation IS 'Dataset of cemetery vegetation / Datensatz der Friedhofsbepflanzungen / Ensemble de données de la végétation du cimetière';
 
-ALTER TABLE tce_od.vegetation ADD COLUMN fk_vegetation_kind integer;
+ALTER TABLE tce_od.vegetation ADD COLUMN fk_kind integer;
 ALTER TABLE tce_od.vegetation ADD COLUMN remark text;
 ALTER TABLE tce_od.vegetation ADD COLUMN the_geom geometry(Polygon,{SRID});
 

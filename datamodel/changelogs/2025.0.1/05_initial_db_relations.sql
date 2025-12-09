@@ -1,8 +1,7 @@
 -- INITIAL DB RELATIONS FOR 2025.0.1
 
---ALTER TABLE tww_od.structure_part ADD CONSTRAINT rel_structure_part_wastewater_structure FOREIGN KEY (fk_wastewater_structure) REFERENCES tww_od.wastewater_structure(obj_id) ON UPDATE CASCADE ON DELETE cascade DEFERRABLE INITIALLY DEFERRED;
+------ DECEASED - RELATIONS -------
 
-------- DECEASED - RELATIONS -------
 ALTER TABLE tce_od.deceased
   ADD CONSTRAINT rel_deceased_unit FOREIGN KEY (fk_unit)
   REFERENCES tce_od.unit (id) MATCH SIMPLE

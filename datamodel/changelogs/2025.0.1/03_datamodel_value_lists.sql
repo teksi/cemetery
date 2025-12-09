@@ -89,7 +89,7 @@ INSERT INTO tce_vl.unit_kind (id, value_en, value_fr, value_de, value_it) VALUES
 INSERT INTO tce_vl.unit_kind (id, value_en, value_fr, value_de, value_it) VALUES (2011,'Family grave','tombe familiale','Familiengrab','tomba di famiglia');
 
 /* FOREIGN KEYS */
-ALTER TABLE tce_od.unit ADD CONSTRAINT fkey_vl_unit_kind FOREIGN KEY (fk_unit_kind)
+ALTER TABLE tce_od.unit ADD CONSTRAINT fkey_vl_unit_kind FOREIGN KEY (fk_kind)
   REFERENCES tce_vl.unit_kind (id) MATCH SIMPLE;
 
 
@@ -108,7 +108,7 @@ INSERT INTO tce_vl.unit_size (id, value_en, value_fr, value_de, value_it) VALUES
 INSERT INTO tce_vl.unit_size (id, value_en, value_fr, value_de, value_it) VALUES (2104,'quadruple','quadruple','vierfach','quattro posti');
 
 /* FOREIGN KEYS */
-ALTER TABLE tce_od.unit ADD CONSTRAINT fkey_vl_unit_size FOREIGN KEY (fk_unit_size)
+ALTER TABLE tce_od.unit ADD CONSTRAINT fkey_vl_unit_size FOREIGN KEY (fk_size)
   REFERENCES tce_vl.unit_size (id) MATCH SIMPLE;
 
 
