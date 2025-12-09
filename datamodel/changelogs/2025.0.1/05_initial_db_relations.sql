@@ -8,7 +8,7 @@ ALTER TABLE tce_od.deceased
   ON UPDATE RESTRICT ON DELETE RESTRICT
   DEFERRABLE INITIALLY DEFERRED;
 
-COMMENT ON CONSTRAINT rel_deceased_unit ON TABLE tce_od.deceased IS 'Foreign key constraint linking deceased.fk_unit to unit.id, ensuring referential integrity between deceased records and their associated burial units.';
+COMMENT ON CONSTRAINT rel_deceased_unit ON tce_od.deceased IS 'Foreign key constraint linking deceased.fk_unit to unit.id, ensuring referential integrity between deceased records and their associated burial units.';
 
  /*
 
@@ -49,7 +49,7 @@ ALTER TABLE tce_od.unit
   ON UPDATE RESTRICT ON DELETE RESTRICT
   DEFERRABLE INITIALLY DEFERRED;
 
-COMMENT ON CONSTRAINT rel_unit_contact_person ON TABLE tce_od.unit IS 'Foreign key constraint linking unit.fk_contact_person to contact.id, ensuring referential integrity between burial units and their associated contact persons.';
+COMMENT ON CONSTRAINT rel_unit_contact_person ON tce_od.unit IS 'Foreign key constraint linking unit.fk_contact_person to contact.id, ensuring referential integrity between burial units and their associated contact persons.';
 
 ALTER TABLE tce_od.unit
   ADD CONSTRAINT rel_unit_company FOREIGN KEY (fk_company)
@@ -57,7 +57,7 @@ ALTER TABLE tce_od.unit
   ON UPDATE RESTRICT ON DELETE RESTRICT
   DEFERRABLE INITIALLY DEFERRED;
 
-COMMENT ON CONSTRAINT rel_unit_company ON TABLE tce_od.unit IS 'Foreign key constraint linking unit.fk_company to organisation.id, ensuring referential integrity between burial units and their associated companies.';
+COMMENT ON CONSTRAINT rel_unit_company ON tce_od.unit IS 'Foreign key constraint linking unit.fk_company to organisation.id, ensuring referential integrity between burial units and their associated companies.';
 
 ALTER TABLE tce_od.unit
   ADD CONSTRAINT rel_unit_sector FOREIGN KEY (fk_sector)
@@ -65,7 +65,7 @@ ALTER TABLE tce_od.unit
   ON UPDATE RESTRICT ON DELETE RESTRICT
   DEFERRABLE INITIALLY DEFERRED;
 
-COMMENT ON CONSTRAINT rel_unit_sector ON TABLE tce_od.unit IS 'Foreign key constraint linking unit.fk_sector to sector.id, ensuring referential integrity between burial units and their associated cemetery sectors.';
+COMMENT ON CONSTRAINT rel_unit_sector ON tce_od.unit IS 'Foreign key constraint linking unit.fk_sector to sector.id, ensuring referential integrity between burial units and their associated cemetery sectors.';
 
 ALTER TABLE tce_od.unit
   ADD CONSTRAINT rel_unit_cemetery FOREIGN KEY (fk_cemetery)
@@ -73,7 +73,7 @@ ALTER TABLE tce_od.unit
   ON UPDATE RESTRICT ON DELETE RESTRICT
   DEFERRABLE INITIALLY DEFERRED;
 
-COMMENT ON CONSTRAINT rel_unit_cemetery ON TABLE tce_od.unit IS 'Foreign key constraint linking unit.fk_cemetery to cemetery.id, ensuring referential integrity between burial units and their associated cemeteries.';
+COMMENT ON CONSTRAINT rel_unit_cemetery ON tce_od.unit IS 'Foreign key constraint linking unit.fk_cemetery to cemetery.id, ensuring referential integrity between burial units and their associated cemeteries.';
 
 ------ CONTRACT - RELATIONS -------
 
@@ -83,7 +83,7 @@ ALTER TABLE tce_od.contract
    ON UPDATE RESTRICT ON DELETE RESTRICT
    DEFERRABLE INITIALLY DEFERRED;
 
-COMMENT ON CONSTRAINT rel_contract_unit ON TABLE tce_od.contract IS 'Foreign key constraint linking contract.fk_unit to unit.id, ensuring referential integrity between contracts and their associated burial units.';
+COMMENT ON CONSTRAINT rel_contract_unit ON tce_od.contract IS 'Foreign key constraint linking contract.fk_unit to unit.id, ensuring referential integrity between contracts and their associated burial units.';
 
 ALTER TABLE tce_od.contract
   ADD CONSTRAINT rel_contract_contact FOREIGN KEY (fk_contract_person)
@@ -91,4 +91,4 @@ ALTER TABLE tce_od.contract
   ON UPDATE RESTRICT ON DELETE RESTRICT
   DEFERRABLE INITIALLY DEFERRED;
 
-COMMENT ON CONSTRAINT rel_contract_contact ON TABLE tce_od.contract IS 'Foreign key constraint linking contract.fk_contract_person to contact.id, ensuring referential integrity between contracts and their associated contact persons.';
+COMMENT ON CONSTRAINT rel_contract_contact ON tce_od.contract IS 'Foreign key constraint linking contract.fk_contract_person to contact.id, ensuring referential integrity between contracts and their associated contact persons.';
