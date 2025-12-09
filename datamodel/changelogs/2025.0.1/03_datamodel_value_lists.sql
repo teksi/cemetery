@@ -218,6 +218,6 @@ INSERT INTO tce_vl.civility (id, value_en, value_fr, value_de, value_it) VALUES 
 
 /* FOREIGN KEYS */
 ALTER TABLE tce_od.deceased ADD CONSTRAINT fkey_vl_deceased_civility FOREIGN KEY (fk_civility)
-  REFERENCES tce_vl.civility (id) MATCH SIMPLE; 
+  REFERENCES tce_vl.civility (id) MATCH SIMPLE;
 ALTER TABLE tce_od.contact ADD CONSTRAINT fkey_vl_contact_civility FOREIGN KEY (fk_civility)
     REFERENCES tce_vl.civility (id) MATCH SIMPLE;

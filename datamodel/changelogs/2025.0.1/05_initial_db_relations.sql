@@ -9,7 +9,7 @@ ALTER TABLE tce_od.deceased
   ON UPDATE RESTRICT ON DELETE RESTRICT
   DEFERRABLE INITIALLY DEFERRED;
 
-COMMENT ON CONSTRAINT rel_deceased_unit ON TABLE tce_od.deceased IS 'Foreign key constraint linking deceased.fk_unit to unit.id, ensuring referential integrity between deceased records and their associated burial units.'; 
+COMMENT ON CONSTRAINT rel_deceased_unit ON TABLE tce_od.deceased IS 'Foreign key constraint linking deceased.fk_unit to unit.id, ensuring referential integrity between deceased records and their associated burial units.';
 
  /*
 
@@ -93,5 +93,3 @@ ALTER TABLE tce_od.contract
   DEFERRABLE INITIALLY DEFERRED;
 
 COMMENT ON CONSTRAINT rel_contract_contact ON TABLE tce_od.contract IS 'Foreign key constraint linking contract.fk_contract_person to contact.id, ensuring referential integrity between contracts and their associated contact persons.';
-
-
