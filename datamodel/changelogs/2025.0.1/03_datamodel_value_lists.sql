@@ -26,6 +26,8 @@ ALTER TABLE tce_vl.value_list_base ADD COLUMN description_it text ;
 CREATE TABLE tce_vl.urn_material () INHERITS ( tce_vl.value_list_base);
 ALTER TABLE tce_vl.urn_material ADD CONSTRAINT vl_urn_material_pk PRIMARY KEY (id);
 COMMENT ON TABLE tce_vl.urn_material IS 'Urn material';
+ALTER TABLE tce_od.unit ADD CONSTRAINT fkey_vl_unit FOREIGN KEY (connection_type)
+ REFERENCES tww_vl.channel_connection_type (code) MATCH SIMPLE
 
 /* VALUES */
 INSERT INTO tce_vl.urn_material (id, value_en, value_fr, value_de, value_it) VALUES (101, 'unknown', 'inconnu', 'unbekannt', 'sconosciuto');
@@ -39,6 +41,11 @@ INSERT INTO tce_vl.urn_material (id, value_en, value_fr, value_de, value_it) VAL
 INSERT INTO tce_vl.urn_material (id, value_en, value_fr, value_de, value_it) VALUES (1007,'bronze','bronze','Bronze','bronzo');
 INSERT INTO tce_vl.urn_material (id, value_en, value_fr, value_de, value_it) VALUES (1008,'marble','marbre','Marmor','marmo');
 INSERT INTO tce_vl.urn_material (id, value_en, value_fr, value_de, value_it) VALUES (1009,'fabric','toile','Stoff','tessuto');
+
+/* FOREIGN KEYS */
+ALTER TABLE tce_od.unit ADD CONSTRAINT fkey_vl_urn_material FOREIGN KEY (fk_urn_material)
+  REFERENCES tce_vl.urn_material (id) MATCH SIMPLE;
+
 
 --------------------- URN SHAPE --------------------------------
 /* CREATE */
@@ -54,6 +61,11 @@ INSERT INTO tce_vl.urn_shape (id, value_en, value_fr, value_de, value_it) VALUES
 INSERT INTO tce_vl.urn_shape (id, value_en, value_fr, value_de, value_it) VALUES (1103,'round','ronde','rund','rotondo');
 INSERT INTO tce_vl.urn_shape (id, value_en, value_fr, value_de, value_it) VALUES (1104,'amphora','amphore','Amphore','anfora');
 INSERT INTO tce_vl.urn_shape (id, value_en, value_fr, value_de, value_it) VALUES (1105,'bag','sac','Sack','sacco');
+
+/* FOREIGN KEYS */
+ALTER TABLE tce_od.unit ADD CONSTRAINT fkey_vl_urn_shape FOREIGN KEY (fk_urn_shape)
+  REFERENCES tce_vl.urn_shape (id) MATCH SIMPLE;
+
 
 --------------------- UNIT KIND --------------------------------
 /* CREATE */
@@ -78,6 +90,11 @@ INSERT INTO tce_vl.unit_kind (id, value_en, value_fr, value_de, value_it) VALUES
 INSERT INTO tce_vl.unit_kind (id, value_en, value_fr, value_de, value_it) VALUES (2010,'monument only','monument uniquement','nur Monument','solo monumento');
 INSERT INTO tce_vl.unit_kind (id, value_en, value_fr, value_de, value_it) VALUES (2011,'Family grave','tombe familiale','Familiengrab','tomba di famiglia');
 
+/* FOREIGN KEYS */
+ALTER TABLE tce_od.unit ADD CONSTRAINT fkey_vl_unit_kind FOREIGN KEY (fk_unit_kind)
+  REFERENCES tce_vl.unit_kind (id) MATCH SIMPLE;
+
+
 --------------------- UNIT SIZE --------------------------------
 /* CREATE */
 CREATE TABLE tce_vl.unit_size () INHERITS ( tce_vl.value_list_base);
@@ -92,6 +109,11 @@ INSERT INTO tce_vl.unit_size (id, value_en, value_fr, value_de, value_it) VALUES
 INSERT INTO tce_vl.unit_size (id, value_en, value_fr, value_de, value_it) VALUES (2103,'triple','triple','dreifach','triplo');
 INSERT INTO tce_vl.unit_size (id, value_en, value_fr, value_de, value_it) VALUES (2104,'quadruple','quadruple','vierfach','quattro posti');
 
+/* FOREIGN KEYS */
+ALTER TABLE tce_od.unit ADD CONSTRAINT fkey_vl_unit_size FOREIGN KEY (fk_unit_size)
+  REFERENCES tce_vl.unit_size (id) MATCH SIMPLE;
+
+
 --------------------- UNIT CONTROL --------------------------------
 /* CREATE */
 CREATE TABLE tce_vl.control_kind () INHERITS ( tce_vl.value_list_base);
@@ -103,6 +125,11 @@ INSERT INTO tce_vl.control_kind (id, value_en, value_fr, value_de, value_it) VAL
 
 INSERT INTO tce_vl.control_kind (id, value_en, value_fr, value_de, value_it) VALUES (2201,'controled','contrôlé','kontrolliert','controllato');
 INSERT INTO tce_vl.control_kind (id, value_en, value_fr, value_de, value_it) VALUES (2202,'not controled','non contrôlé','nicht kontrolliert','non controllato');
+
+/* FOREIGN KEYS */
+ALTER TABLE tce_od.unit ADD CONSTRAINT fkey_vl_control_kind FOREIGN KEY (fk_control)
+  REFERENCES tce_vl.control_kind (id) MATCH SIMPLE;
+
 
 --------------------- CONTRACT KIND --------------------------------
 
@@ -116,6 +143,11 @@ INSERT INTO tce_vl.contract_kind (id, value_en, value_fr, value_de, value_it) VA
 INSERT INTO tce_vl.contract_kind (id, value_en, value_fr, value_de, value_it) VALUES (3001,'concession','concession','Konzessionsvertrag','concessione');
 INSERT INTO tce_vl.contract_kind (id, value_en, value_fr, value_de, value_it) VALUES (3002,'maintenance','entretien','Wartungsvertrag','manutenzione');
 
+/* FOREIGN KEYS */
+ALTER TABLE tce_od.contract ADD CONSTRAINT fkey_vl_contract_kind FOREIGN KEY (fk_kind)
+  REFERENCES tce_vl.contract_kind (id) MATCH SIMPLE;
+
+
 --------------------- FURNITURE KIND --------------------------------
 /* CREATE */
 CREATE TABLE tce_vl.furniture_kind () INHERITS ( tce_vl.value_list_base);
@@ -128,6 +160,11 @@ INSERT INTO tce_vl.furniture_kind (id, value_en, value_fr, value_de, value_it) V
 INSERT INTO tce_vl.furniture_kind (id, value_en, value_fr, value_de, value_it) VALUES (4001,'fountain','fontaine','Brunnen','fontana');
 INSERT INTO tce_vl.furniture_kind (id, value_en, value_fr, value_de, value_it) VALUES (4002,'bench','banc','Bank','panchina');
 INSERT INTO tce_vl.furniture_kind (id, value_en, value_fr, value_de, value_it) VALUES (4003,'garbage bin','poubelle','Abfalleimer','cestino');
+
+/* FOREIGN KEYS */
+ALTER TABLE tce_od.furniture ADD CONSTRAINT fkey_vl_furniture_kind FOREIGN KEY (fk_kind)
+  REFERENCES tce_vl.furniture_kind (id) MATCH SIMPLE;
+
 
 ---------------------- VEGETATION KIND --------------------------------
 /* CREATE */
@@ -143,18 +180,28 @@ INSERT INTO tce_vl.vegetation_kind (id, value_en, value_fr, value_de, value_it) 
 INSERT INTO tce_vl.vegetation_kind (id, value_en, value_fr, value_de, value_it) VALUES (5003,'hedge','haie','Hecke','siepe');
 INSERT INTO tce_vl.vegetation_kind (id, value_en, value_fr, value_de, value_it) VALUES (5004,'meadow','prairie','Wiese','prato');
 
---------------------- PERSON KIND --------------------------------
+/* FOREIGN KEYS */
+ALTER TABLE tce_od.vegetation ADD CONSTRAINT fkey_vl_vegetation_kind FOREIGN KEY (fk_kind)
+  REFERENCES tce_vl.vegetation_kind (id) MATCH SIMPLE;
+
+
+--------------------- CONTACT KIND --------------------------------
 
 /* CREATE */
-CREATE TABLE tce_vl.person_kind () INHERITS ( tce_vl.value_list_base);
-ALTER TABLE tce_vl.person_kind ADD CONSTRAINT vl_person_kind_pk PRIMARY KEY (id);
-COMMENT ON TABLE tce_vl.person_kind IS 'Person kind';
+CREATE TABLE tce_vl.contact_kind () INHERITS ( tce_vl.value_list_base);
+ALTER TABLE tce_vl.contact_kind ADD CONSTRAINT vl_contact_kind_pk PRIMARY KEY (id);
+COMMENT ON TABLE tce_vl.contact_kind IS 'Contact kind';
 
 /* VALUES */
-INSERT INTO tce_vl.person_kind (id, value_en, value_fr, value_de, value_it) VALUES (101, 'unknown', 'inconnu', 'unbekannt', 'sconosciuto');
+INSERT INTO tce_vl.contact_kind (id, value_en, value_fr, value_de, value_it) VALUES (101, 'unknown', 'inconnu', 'unbekannt', 'sconosciuto');
 
-INSERT INTO tce_vl.person_kind (id, value_en, value_fr, value_de, value_it) VALUES (6001,'individual','individu','Einzelperson','individuo');
-INSERT INTO tce_vl.person_kind (id, value_en, value_fr, value_de, value_it) VALUES (6002,'company','entreprise','Firma','azienda');
+INSERT INTO tce_vl.contact_kind (id, value_en, value_fr, value_de, value_it) VALUES (6001,'individual','individu','Einzelperson','individuo');
+INSERT INTO tce_vl.contact_kind (id, value_en, value_fr, value_de, value_it) VALUES (6002,'company','entreprise','Firma','azienda');
+
+/* FOREIGN KEYS */
+ALTER TABLE tce_od.person ADD CONSTRAINT fkey_vl_contact_kind FOREIGN KEY (kind)
+  REFERENCES tce_vl.contact_kind (id) MATCH SIMPLE;
+
 
 --------------------- CIVILITY --------------------------------
 
@@ -168,3 +215,9 @@ INSERT INTO tce_vl.civility (id, value_en, value_fr, value_de, value_it) VALUES 
 
 INSERT INTO tce_vl.civility (id, value_en, value_fr, value_de, value_it) VALUES (6101,'M.','M.','Herr','Signore');
 INSERT INTO tce_vl.civility (id, value_en, value_fr, value_de, value_it) VALUES (6102,'Mme','Mme','Frau','Signora');
+
+/* FOREIGN KEYS */
+ALTER TABLE tce_od.deceased ADD CONSTRAINT fkey_vl_deceased_civility FOREIGN KEY (fk_civility)
+  REFERENCES tce_vl.civility (id) MATCH SIMPLE; 
+ALTER TABLE tce_od.contact ADD CONSTRAINT fkey_vl_contact_civility FOREIGN KEY (fk_civility)
+    REFERENCES tce_vl.civility (id) MATCH SIMPLE;

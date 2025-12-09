@@ -2,10 +2,8 @@
 -------
 CREATE TABLE tce_od.file
 (
-   id uuid DEFAULT public.uuid_generate_v1() NOT NULL PRIMARY KEY
-)
-WITH (
-   OIDS = False
+   id uuid DEFAULT public.uuid_generate_v4() NOT NULL,
+   CONSTRAINT pkey_tce_od_file_id PRIMARY KEY (id)
 );
 -- COMMENT ON COLUMN tce_od.file.obj_id IS 'INTERLIS STANDARD OID (with Postfix/Präfix), see www.interlis.ch';
 -- ALTER TABLE tce_od.file ADD COLUMN classname  integer ;
