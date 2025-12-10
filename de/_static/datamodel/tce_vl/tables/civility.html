@@ -130,6 +130,16 @@
                                     <td>null</td>
                                     <td>
                                         <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="contact.fk_civility references civility.id via fkey_vl_contact_civility"><a href='../../tce_od/tables/contact.html'>contact</a><span class='relatedKey'>.fk_civility</span></td>
+                                                <td class="constraint detail">fkey_vl_contact_civility</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td title="deceased.fk_civility references civility.id via fkey_vl_deceased_civility"><a href='../../tce_od/tables/deceased.html'>deceased</a><span class='relatedKey'>.fk_civility</span></td>
+                                                <td class="constraint detail">fkey_vl_deceased_civility</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
                                         </table>
                                     </td>
                                     <td>

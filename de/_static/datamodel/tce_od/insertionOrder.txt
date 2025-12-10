@@ -1,9 +1,10 @@
-contract
-deceased
-file
-furniture
+cemetery
 organisation
-person
 sector
+contact
 unit
+furniture
 vegetation
+deceased
+contract
+file

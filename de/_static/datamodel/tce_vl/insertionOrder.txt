@@ -1,11 +1,11 @@
 civility
+contact_kind
 contract_kind
 control_kind
 furniture_kind
-person_kind
 unit_kind
 unit_size
 urn_material
 urn_shape
-value_list_base
 vegetation_kind
+value_list_base

@@ -2,7 +2,10 @@
 <database name="tce" schema="tce_vl" type="PostgreSQL - 16.11">
    <tables>
       <table name="civility" remarks="Civility" schema="tce_vl" type="TABLE">
-         <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="int4" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <child column="fk_civility" foreignKey="fkey_vl_contact_civility" implied="false" onDeleteCascade="false" schema="tce_od" table="contact"/>
+            <child column="fk_civility" foreignKey="fkey_vl_deceased_civility" implied="false" onDeleteCascade="false" schema="tce_od" table="deceased"/>
+         </column>
          <column autoUpdated="false" defaultValue="true" digits="0" id="1" name="active" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="short_en" nullable="true" remarks="" size="10" type="varchar" typeCode="12"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="short_fr" nullable="true" remarks="" size="10" type="varchar" typeCode="12"/>
@@ -21,8 +24,32 @@
             <column ascending="true" name="id"/>
          </index>
       </table>
+      <table name="contact_kind" remarks="Contact kind" schema="tce_vl" type="TABLE">
+         <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <child column="fk_kind" foreignKey="fkey_vl_contact_kind" implied="false" onDeleteCascade="false" schema="tce_od" table="contact"/>
+         </column>
+         <column autoUpdated="false" defaultValue="true" digits="0" id="1" name="active" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="short_en" nullable="true" remarks="" size="10" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="short_fr" nullable="true" remarks="" size="10" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="short_de" nullable="true" remarks="" size="10" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="short_it" nullable="true" remarks="" size="10" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="6" name="value_en" nullable="true" remarks="" size="50" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="7" name="value_fr" nullable="true" remarks="" size="50" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="8" name="value_de" nullable="true" remarks="" size="50" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="9" name="value_it" nullable="true" remarks="" size="50" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="10" name="description_en" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="11" name="description_fr" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="12" name="description_de" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="13" name="description_it" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="vl_contact_kind_pk" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
       <table name="contract_kind" remarks="Contract kind" schema="tce_vl" type="TABLE">
-         <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="int4" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <child column="fk_kind" foreignKey="fkey_vl_contract_kind" implied="false" onDeleteCascade="false" schema="tce_od" table="contract"/>
+         </column>
          <column autoUpdated="false" defaultValue="true" digits="0" id="1" name="active" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="short_en" nullable="true" remarks="" size="10" type="varchar" typeCode="12"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="short_fr" nullable="true" remarks="" size="10" type="varchar" typeCode="12"/>
@@ -42,7 +69,9 @@
          </index>
       </table>
       <table name="control_kind" remarks="Control kind" schema="tce_vl" type="TABLE">
-         <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="int4" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <child column="fk_control" foreignKey="fkey_vl_control_kind" implied="false" onDeleteCascade="false" schema="tce_od" table="unit"/>
+         </column>
          <column autoUpdated="false" defaultValue="true" digits="0" id="1" name="active" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="short_en" nullable="true" remarks="" size="10" type="varchar" typeCode="12"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="short_fr" nullable="true" remarks="" size="10" type="varchar" typeCode="12"/>
@@ -62,7 +91,9 @@
          </index>
       </table>
       <table name="furniture_kind" remarks="Furniture kind" schema="tce_vl" type="TABLE">
-         <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="int4" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <child column="fk_kind" foreignKey="fkey_vl_furniture_kind" implied="false" onDeleteCascade="false" schema="tce_od" table="furniture"/>
+         </column>
          <column autoUpdated="false" defaultValue="true" digits="0" id="1" name="active" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="short_en" nullable="true" remarks="" size="10" type="varchar" typeCode="12"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="short_fr" nullable="true" remarks="" size="10" type="varchar" typeCode="12"/>
@@ -81,28 +112,10 @@
             <column ascending="true" name="id"/>
          </index>
       </table>
-      <table name="person_kind" remarks="Person kind" schema="tce_vl" type="TABLE">
-         <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="int4" typeCode="4"/>
-         <column autoUpdated="false" defaultValue="true" digits="0" id="1" name="active" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="short_en" nullable="true" remarks="" size="10" type="varchar" typeCode="12"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="short_fr" nullable="true" remarks="" size="10" type="varchar" typeCode="12"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="short_de" nullable="true" remarks="" size="10" type="varchar" typeCode="12"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="short_it" nullable="true" remarks="" size="10" type="varchar" typeCode="12"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="6" name="value_en" nullable="true" remarks="" size="50" type="varchar" typeCode="12"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="7" name="value_fr" nullable="true" remarks="" size="50" type="varchar" typeCode="12"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="8" name="value_de" nullable="true" remarks="" size="50" type="varchar" typeCode="12"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="9" name="value_it" nullable="true" remarks="" size="50" type="varchar" typeCode="12"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="10" name="description_en" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="11" name="description_fr" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="12" name="description_de" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="13" name="description_it" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
-         <primaryKey column="id" sequenceNumberInPK="1"/>
-         <index name="vl_person_kind_pk" unique="true">
-            <column ascending="true" name="id"/>
-         </index>
-      </table>
       <table name="unit_kind" remarks="Unit kind" schema="tce_vl" type="TABLE">
-         <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="int4" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <child column="fk_kind" foreignKey="fkey_vl_unit_kind" implied="false" onDeleteCascade="false" schema="tce_od" table="unit"/>
+         </column>
          <column autoUpdated="false" defaultValue="true" digits="0" id="1" name="active" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="short_en" nullable="true" remarks="" size="10" type="varchar" typeCode="12"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="short_fr" nullable="true" remarks="" size="10" type="varchar" typeCode="12"/>
@@ -122,7 +135,9 @@
          </index>
       </table>
       <table name="unit_size" remarks="Unit size" schema="tce_vl" type="TABLE">
-         <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="int4" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <child column="fk_size" foreignKey="fkey_vl_unit_size" implied="false" onDeleteCascade="false" schema="tce_od" table="unit"/>
+         </column>
          <column autoUpdated="false" defaultValue="true" digits="0" id="1" name="active" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="short_en" nullable="true" remarks="" size="10" type="varchar" typeCode="12"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="short_fr" nullable="true" remarks="" size="10" type="varchar" typeCode="12"/>
@@ -142,7 +157,9 @@
          </index>
       </table>
       <table name="urn_material" remarks="Urn material" schema="tce_vl" type="TABLE">
-         <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="int4" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <child column="fk_urn_material" foreignKey="fkey_vl_urn_material" implied="false" onDeleteCascade="false" schema="tce_od" table="unit"/>
+         </column>
          <column autoUpdated="false" defaultValue="true" digits="0" id="1" name="active" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="short_en" nullable="true" remarks="" size="10" type="varchar" typeCode="12"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="short_fr" nullable="true" remarks="" size="10" type="varchar" typeCode="12"/>
@@ -162,7 +179,9 @@
          </index>
       </table>
       <table name="urn_shape" remarks="Urn shape" schema="tce_vl" type="TABLE">
-         <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="int4" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <child column="fk_urn_shape" foreignKey="fkey_vl_urn_shape" implied="false" onDeleteCascade="false" schema="tce_od" table="unit"/>
+         </column>
          <column autoUpdated="false" defaultValue="true" digits="0" id="1" name="active" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="short_en" nullable="true" remarks="" size="10" type="varchar" typeCode="12"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="short_fr" nullable="true" remarks="" size="10" type="varchar" typeCode="12"/>
@@ -202,7 +221,9 @@
          </index>
       </table>
       <table name="vegetation_kind" remarks="Vegetation kind" schema="tce_vl" type="TABLE">
-         <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="int4" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <child column="fk_kind" foreignKey="fkey_vl_vegetation_kind" implied="false" onDeleteCascade="false" schema="tce_od" table="vegetation"/>
+         </column>
          <column autoUpdated="false" defaultValue="true" digits="0" id="1" name="active" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="short_en" nullable="true" remarks="" size="10" type="varchar" typeCode="12"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="short_fr" nullable="true" remarks="" size="10" type="varchar" typeCode="12"/>

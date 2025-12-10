@@ -1,25 +1,74 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <database name="tce" schema="tce_od" type="PostgreSQL - 16.11">
    <tables>
-      <table name="contract" remarks="" schema="tce_od" type="TABLE">
-         <column autoUpdated="false" defaultValue="uuid_generate_v1()" digits="0" id="0" name="id" nullable="false" remarks="" size="2147483647" type="uuid" typeCode="1111"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="fk_kind" nullable="true" remarks="" size="10" type="int4" typeCode="4"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="begin_date" nullable="true" remarks="" size="13" type="date" typeCode="91"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="end_date" nullable="true" remarks="" size="13" type="date" typeCode="91"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="approval_date" nullable="true" remarks="" size="13" type="date" typeCode="91"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="valid" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="6" name="invoiced" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="7" name="fk_contract_person" nullable="true" remarks="" size="2147483647" type="uuid" typeCode="1111"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="8" name="remark" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+      <table name="cemetery" remarks="Dataset of cemeteries / Datensatz der Friedhöfe / Ensemble de données des cimetières" schema="tce_od" type="TABLE">
+         <column autoUpdated="false" defaultValue="uuid_generate_v4()" digits="0" id="0" name="id" nullable="false" remarks="" size="2147483647" type="uuid" typeCode="1111">
+            <child column="fk_cemetery" foreignKey="rel_unit_cemetery" implied="false" onDeleteCascade="false" schema="tce_od" table="unit"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="identifier" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="remark" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="the_geom" nullable="true" remarks="" size="2147483647" type="geometry" typeCode="1111"/>
          <primaryKey column="id" sequenceNumberInPK="1"/>
-         <index name="contract_pkey" unique="true">
+         <index name="pkey_tce_od_cemetery_id" unique="true">
             <column ascending="true" name="id"/>
          </index>
       </table>
-      <table name="deceased" remarks="" schema="tce_od" type="TABLE">
-         <column autoUpdated="false" defaultValue="uuid_generate_v1()" digits="0" id="0" name="id" nullable="false" remarks="" size="2147483647" type="uuid" typeCode="1111"/>
+      <table name="contact" remarks="Dataset of contacts / Datensatz der Kontakte / Ensemble de données des contacts" schema="tce_od" type="TABLE">
+         <column autoUpdated="false" defaultValue="uuid_generate_v4()" digits="0" id="0" name="id" nullable="false" remarks="" size="2147483647" type="uuid" typeCode="1111">
+            <child column="fk_contract_person" foreignKey="rel_contract_contact" implied="false" onDeleteCascade="false" schema="tce_od" table="contract"/>
+            <child column="fk_contact_person" foreignKey="rel_unit_contact_person" implied="false" onDeleteCascade="false" schema="tce_od" table="unit"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="fk_kind" nullable="true" remarks="Type of contact person / Art der Kontaktperson / Type de personne de contact" size="10" type="int4" typeCode="4">
+            <parent column="id" foreignKey="fkey_vl_contact_kind" implied="false" onDeleteCascade="false" schema="tce_vl" table="contact_kind"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="fk_organisation" nullable="true" remarks="" size="2147483647" type="uuid" typeCode="1111"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="fk_civility" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="id" foreignKey="fkey_vl_contact_civility" implied="false" onDeleteCascade="false" schema="tce_vl" table="civility"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="first_name" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="last_name" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="6" name="street_name" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="7" name="house_number" nullable="true" remarks="" size="10" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="8" name="address_supplement" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="9" name="city" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="10" name="postal_code" nullable="true" remarks="" size="10" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="11" name="phone" nullable="true" remarks="" size="20" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="12" name="email" nullable="true" remarks="" size="255" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="13" name="remark" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="pkey_tce_od_contact_id" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="contract" remarks="Dataset of contracts / Datensatz der Verträge / Ensemble de données des contrats" schema="tce_od" type="TABLE">
+         <column autoUpdated="false" defaultValue="uuid_generate_v4()" digits="0" id="0" name="id" nullable="false" remarks="" size="2147483647" type="uuid" typeCode="1111"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="fk_kind" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="id" foreignKey="fkey_vl_contract_kind" implied="false" onDeleteCascade="false" schema="tce_vl" table="contract_kind"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="identifier" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="begin_date" nullable="true" remarks="" size="13" type="date" typeCode="91"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="end_date" nullable="true" remarks="" size="13" type="date" typeCode="91"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="approval_date" nullable="true" remarks="" size="13" type="date" typeCode="91"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="6" name="valid" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="7" name="invoiced" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="8" name="fk_contract_person" nullable="true" remarks="" size="2147483647" type="uuid" typeCode="1111">
+            <parent column="id" foreignKey="rel_contract_contact" implied="false" onDeleteCascade="false" schema="tce_od" table="contact"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="9" name="fk_unit" nullable="true" remarks="" size="2147483647" type="uuid" typeCode="1111">
+            <parent column="id" foreignKey="rel_contract_unit" implied="false" onDeleteCascade="false" schema="tce_od" table="unit"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="10" name="remark" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="pkey_tce_od_contract_id" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="deceased" remarks="Dataset of deceased persons / Datensatz der Verstorbenen / Ensemble de données des personnes décédées" schema="tce_od" type="TABLE">
+         <column autoUpdated="false" defaultValue="uuid_generate_v4()" digits="0" id="0" name="id" nullable="false" remarks="" size="2147483647" type="uuid" typeCode="1111"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="ahv_number" nullable="true" remarks="" size="16" type="varchar" typeCode="12"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="fk_civility" nullable="true" remarks="" size="10" type="int4" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="fk_civility" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="id" foreignKey="fkey_vl_deceased_civility" implied="false" onDeleteCascade="false" schema="tce_vl" table="civility"/>
+         </column>
          <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="first_name" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="second_first_name" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="last_name" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
@@ -29,117 +78,133 @@
          <column autoUpdated="false" defaultValue="null" digits="0" id="9" name="city" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="10" name="postal_code" nullable="true" remarks="" size="10" type="varchar" typeCode="12"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="11" name="birth_date" nullable="true" remarks="" size="13" type="date" typeCode="91"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="12" name="death_date" nullable="true" remarks="" size="13" type="date" typeCode="91"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="13" name="death_place" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="14" name="burial_date" nullable="true" remarks="" size="13" type="date" typeCode="91"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="15" name="burial_place" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="16" name="flag_main" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="17" name="flag_ashes" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="18" name="incineration_date" nullable="true" remarks="" size="13" type="date" typeCode="91"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="19" name="incineration_place" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="20" name="fk_urn_kind" nullable="true" remarks="" size="10" type="int4" typeCode="4"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="21" name="exumation_date" nullable="true" remarks="" size="13" type="date" typeCode="91"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="22" name="exumation_place" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="23" name="remark" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="24" name="child" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
-         <column autoUpdated="false" defaultValue="null" digits="17" id="25" name="quality" nullable="true" remarks="" size="17" type="float8" typeCode="8"/>
-         <column autoUpdated="false" defaultValue="null" digits="17" id="26" name="orientation" nullable="true" remarks="" size="17" type="float8" typeCode="8"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="27" name="fk_unit" nullable="true" remarks="" size="2147483647" type="uuid" typeCode="1111"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="28" name="the_geom" nullable="true" remarks="" size="2147483647" type="geometry" typeCode="1111"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="12" name="birth_place" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="13" name="death_date" nullable="true" remarks="" size="13" type="date" typeCode="91"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="14" name="death_place" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="15" name="burial_date" nullable="true" remarks="" size="13" type="date" typeCode="91"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="16" name="burial_place" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="17" name="municipality_disposal_date" nullable="true" remarks="" size="13" type="date" typeCode="91"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="18" name="municipality_approval" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="19" name="incineration_date" nullable="true" remarks="" size="13" type="date" typeCode="91"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="20" name="incineration_place" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="21" name="fk_urn_kind" nullable="true" remarks="" size="10" type="int4" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="22" name="exumation_date" nullable="true" remarks="" size="13" type="date" typeCode="91"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="23" name="exumation_place" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="24" name="remark" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="25" name="child" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
+         <column autoUpdated="false" defaultValue="null" digits="17" id="26" name="quality" nullable="true" remarks="" size="17" type="float8" typeCode="8"/>
+         <column autoUpdated="false" defaultValue="null" digits="17" id="27" name="orientation" nullable="true" remarks="" size="17" type="float8" typeCode="8"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="28" name="fk_unit" nullable="true" remarks="" size="2147483647" type="uuid" typeCode="1111">
+            <parent column="id" foreignKey="rel_deceased_unit" implied="false" onDeleteCascade="false" schema="tce_od" table="unit"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="29" name="the_geom" nullable="true" remarks="" size="2147483647" type="geometry" typeCode="1111"/>
          <primaryKey column="id" sequenceNumberInPK="1"/>
-         <index name="deceased_pkey" unique="true">
+         <index name="pkey_tce_od_deceased_id" unique="true">
             <column ascending="true" name="id"/>
          </index>
       </table>
       <table name="file" remarks="" schema="tce_od" type="TABLE">
-         <column autoUpdated="false" defaultValue="uuid_generate_v1()" digits="0" id="0" name="id" nullable="false" remarks="" size="2147483647" type="uuid" typeCode="1111"/>
+         <column autoUpdated="false" defaultValue="uuid_generate_v4()" digits="0" id="0" name="id" nullable="false" remarks="" size="2147483647" type="uuid" typeCode="1111"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="identifier" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="object" nullable="true" remarks="UUID (uuid) des Datensatzes zu dem die Datei gehört / Identification de l'ensemble de données auquel le fichier appartient (UUID)" size="2147483647" type="text" typeCode="12"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="filepath" nullable="true" remarks="yyy_Zusätzlicher Relativer Pfad, wo die Datei auf dem Datenträger zu finden ist. Z.B. DVD_01. / Zusätzlicher Relativer Pfad, wo die Datei auf dem Datenträger zu finden ist. Z.B. DVD_01. / Accès relatif supplémentaire à l’emplacement du fichier sur le support de données. P. ex. DVD_01" size="2147483647" type="text" typeCode="12"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="remark" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
          <primaryKey column="id" sequenceNumberInPK="1"/>
-         <index name="file_pkey" unique="true">
+         <index name="pkey_tce_od_file_id" unique="true">
             <column ascending="true" name="id"/>
          </index>
       </table>
-      <table name="furniture" remarks="" schema="tce_od" type="TABLE">
-         <column autoUpdated="false" defaultValue="uuid_generate_v1()" digits="0" id="0" name="id" nullable="false" remarks="" size="2147483647" type="uuid" typeCode="1111"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="fk_furniture_kind" nullable="true" remarks="" size="10" type="int4" typeCode="4"/>
+      <table name="furniture" remarks="Dataset of cemetery furniture / Datensatz der Friedhofsmöbel / Ensemble de données du mobilier de cimetière" schema="tce_od" type="TABLE">
+         <column autoUpdated="false" defaultValue="uuid_generate_v4()" digits="0" id="0" name="id" nullable="false" remarks="" size="2147483647" type="uuid" typeCode="1111"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="fk_kind" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="id" foreignKey="fkey_vl_furniture_kind" implied="false" onDeleteCascade="false" schema="tce_vl" table="furniture_kind"/>
+         </column>
          <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="remark" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="the_geom" nullable="true" remarks="" size="2147483647" type="geometry" typeCode="1111"/>
          <primaryKey column="id" sequenceNumberInPK="1"/>
-         <index name="furniture_pkey" unique="true">
+         <index name="pkey_tce_od_furniture_id" unique="true">
             <column ascending="true" name="id"/>
          </index>
       </table>
-      <table name="organisation" remarks="" schema="tce_od" type="TABLE">
-         <column autoUpdated="false" defaultValue="uuid_generate_v1()" digits="0" id="0" name="id" nullable="false" remarks="" size="2147483647" type="uuid" typeCode="1111"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="identifier" nullable="true" remarks="" size="10" type="int4" typeCode="4"/>
+      <table name="organisation" remarks="Dataset of organisations / Datensatz der Organisationen / Ensemble de données des organisations" schema="tce_od" type="TABLE">
+         <column autoUpdated="false" defaultValue="uuid_generate_v4()" digits="0" id="0" name="id" nullable="false" remarks="" size="2147483647" type="uuid" typeCode="1111">
+            <child column="fk_company" foreignKey="rel_unit_company" implied="false" onDeleteCascade="false" schema="tce_od" table="unit"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="identifier" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="remark" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
          <primaryKey column="id" sequenceNumberInPK="1"/>
-         <index name="organisation_pkey" unique="true">
+         <index name="pkey_tce_od_organisation_id" unique="true">
             <column ascending="true" name="id"/>
          </index>
       </table>
-      <table name="person" remarks="" schema="tce_od" type="TABLE">
-         <column autoUpdated="false" defaultValue="uuid_generate_v1()" digits="0" id="0" name="id" nullable="false" remarks="" size="2147483647" type="uuid" typeCode="1111"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="kind" nullable="true" remarks="" size="10" type="int4" typeCode="4"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="fk_civility" nullable="true" remarks="" size="10" type="int4" typeCode="4"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="first_name" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="last_name" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="street_name" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="6" name="house_number" nullable="true" remarks="" size="10" type="varchar" typeCode="12"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="7" name="address_supplement" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="8" name="city" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="9" name="postal_code" nullable="true" remarks="" size="10" type="varchar" typeCode="12"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="10" name="phone" nullable="true" remarks="" size="20" type="varchar" typeCode="12"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="11" name="email" nullable="true" remarks="" size="255" type="varchar" typeCode="12"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="12" name="remark" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
-         <primaryKey column="id" sequenceNumberInPK="1"/>
-         <index name="person_pkey" unique="true">
-            <column ascending="true" name="id"/>
-         </index>
-      </table>
-      <table name="sector" remarks="" schema="tce_od" type="TABLE">
-         <column autoUpdated="false" defaultValue="uuid_generate_v1()" digits="0" id="0" name="id" nullable="false" remarks="" size="2147483647" type="uuid" typeCode="1111"/>
+      <table name="sector" remarks="Dataset of cemetery sectors / Datensatz der Friedhofssektoren / Ensemble de données des secteurs de cimetières" schema="tce_od" type="TABLE">
+         <column autoUpdated="false" defaultValue="uuid_generate_v4()" digits="0" id="0" name="id" nullable="false" remarks="" size="2147483647" type="uuid" typeCode="1111">
+            <child column="fk_sector" foreignKey="rel_unit_sector" implied="false" onDeleteCascade="false" schema="tce_od" table="unit"/>
+         </column>
          <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="ident_short" nullable="true" remarks="" size="10" type="varchar" typeCode="12"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="identifier" nullable="true" remarks="" size="100" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="identifier" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="remark" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="the_geom" nullable="true" remarks="" size="2147483647" type="geometry" typeCode="1111"/>
          <primaryKey column="id" sequenceNumberInPK="1"/>
-         <index name="sector_pkey" unique="true">
+         <index name="pkey_tce_od_sector_id" unique="true">
             <column ascending="true" name="id"/>
          </index>
       </table>
-      <table name="unit" remarks="" schema="tce_od" type="TABLE">
-         <column autoUpdated="false" defaultValue="uuid_generate_v1()" digits="0" id="0" name="id" nullable="false" remarks="" size="2147483647" type="uuid" typeCode="1111"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="identifier" nullable="true" remarks="" size="10" type="varchar" typeCode="12"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="excavation_date" nullable="true" remarks="" size="13" type="date" typeCode="91"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="begin_date" nullable="true" remarks="" size="13" type="date" typeCode="91"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="end_date" nullable="true" remarks="" size="13" type="date" typeCode="91"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="fk_company" nullable="true" remarks="" size="2147483647" type="uuid" typeCode="1111"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="6" name="fk_sector" nullable="true" remarks="" size="2147483647" type="uuid" typeCode="1111"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="7" name="fk_cemetery" nullable="true" remarks="" size="10" type="int4" typeCode="4"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="8" name="fk_unit_size" nullable="true" remarks="" size="10" type="int4" typeCode="4"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="9" name="fk_unit_kind" nullable="true" remarks="" size="10" type="int4" typeCode="4"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="10" name="fk_contact_person" nullable="true" remarks="" size="2147483647" type="uuid" typeCode="1111"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="11" name="remark" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="12" name="disused" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="13" name="disused_date" nullable="true" remarks="" size="13" type="date" typeCode="91"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="14" name="fk_control" nullable="true" remarks="" size="10" type="int4" typeCode="4"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="15" name="the_geom" nullable="true" remarks="" size="2147483647" type="geometry" typeCode="1111"/>
+      <table name="unit" remarks="Dataset of burial units / Datensatz der Grabstellen / Ensemble de données des emplacements de sépulture" schema="tce_od" type="TABLE">
+         <column autoUpdated="false" defaultValue="uuid_generate_v4()" digits="0" id="0" name="id" nullable="false" remarks="" size="2147483647" type="uuid" typeCode="1111">
+            <child column="fk_unit" foreignKey="rel_contract_unit" implied="false" onDeleteCascade="false" schema="tce_od" table="contract"/>
+            <child column="fk_unit" foreignKey="rel_deceased_unit" implied="false" onDeleteCascade="false" schema="tce_od" table="deceased"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="ident_short" nullable="true" remarks="" size="10" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="identifier" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="excavation_date" nullable="true" remarks="" size="13" type="date" typeCode="91"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="begin_date" nullable="true" remarks="" size="13" type="date" typeCode="91"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="end_date" nullable="true" remarks="" size="13" type="date" typeCode="91"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="6" name="fk_company" nullable="true" remarks="" size="2147483647" type="uuid" typeCode="1111">
+            <parent column="id" foreignKey="rel_unit_company" implied="false" onDeleteCascade="false" schema="tce_od" table="organisation"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="7" name="fk_sector" nullable="true" remarks="" size="2147483647" type="uuid" typeCode="1111">
+            <parent column="id" foreignKey="rel_unit_sector" implied="false" onDeleteCascade="false" schema="tce_od" table="sector"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="8" name="fk_cemetery" nullable="true" remarks="" size="2147483647" type="uuid" typeCode="1111">
+            <parent column="id" foreignKey="rel_unit_cemetery" implied="false" onDeleteCascade="false" schema="tce_od" table="cemetery"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="9" name="fk_size" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="id" foreignKey="fkey_vl_unit_size" implied="false" onDeleteCascade="false" schema="tce_vl" table="unit_size"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="10" name="fk_kind" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="id" foreignKey="fkey_vl_unit_kind" implied="false" onDeleteCascade="false" schema="tce_vl" table="unit_kind"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="11" name="fk_urn_material" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="id" foreignKey="fkey_vl_urn_material" implied="false" onDeleteCascade="false" schema="tce_vl" table="urn_material"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="12" name="fk_urn_shape" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="id" foreignKey="fkey_vl_urn_shape" implied="false" onDeleteCascade="false" schema="tce_vl" table="urn_shape"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="13" name="fk_contact_person" nullable="true" remarks="" size="2147483647" type="uuid" typeCode="1111">
+            <parent column="id" foreignKey="rel_unit_contact_person" implied="false" onDeleteCascade="false" schema="tce_od" table="contact"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="14" name="remark" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="15" name="disused" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="16" name="disused_date" nullable="true" remarks="" size="13" type="date" typeCode="91"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="17" name="fk_control" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="id" foreignKey="fkey_vl_control_kind" implied="false" onDeleteCascade="false" schema="tce_vl" table="control_kind"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="18" name="the_geom" nullable="true" remarks="" size="2147483647" type="geometry" typeCode="1111"/>
          <primaryKey column="id" sequenceNumberInPK="1"/>
-         <index name="unit_pkey" unique="true">
+         <index name="pkey_tce_od_unit_id" unique="true">
             <column ascending="true" name="id"/>
          </index>
       </table>
-      <table name="vegetation" remarks="" schema="tce_od" type="TABLE">
-         <column autoUpdated="false" defaultValue="uuid_generate_v1()" digits="0" id="0" name="id" nullable="false" remarks="" size="2147483647" type="uuid" typeCode="1111"/>
-         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="fk_vegetation_kind" nullable="true" remarks="" size="10" type="int4" typeCode="4"/>
+      <table name="vegetation" remarks="Dataset of cemetery vegetation / Datensatz der Friedhofsbepflanzungen / Ensemble de données de la végétation du cimetière" schema="tce_od" type="TABLE">
+         <column autoUpdated="false" defaultValue="uuid_generate_v4()" digits="0" id="0" name="id" nullable="false" remarks="" size="2147483647" type="uuid" typeCode="1111"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="fk_kind" nullable="true" remarks="" size="10" type="int4" typeCode="4">
+            <parent column="id" foreignKey="fkey_vl_vegetation_kind" implied="false" onDeleteCascade="false" schema="tce_vl" table="vegetation_kind"/>
+         </column>
          <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="remark" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="the_geom" nullable="true" remarks="" size="2147483647" type="geometry" typeCode="1111"/>
          <primaryKey column="id" sequenceNumberInPK="1"/>
-         <index name="vegetation_pkey" unique="true">
+         <index name="pkey_tce_od_vegetation_id" unique="true">
             <column ascending="true" name="id"/>
          </index>
       </table>

@@ -1,9 +1,10 @@
-vegetation
-unit
-sector
-person
-organisation
-furniture
 file
-deceased
 contract
+deceased
+vegetation
+furniture
+unit
+contact
+sector
+organisation
+cemetery
