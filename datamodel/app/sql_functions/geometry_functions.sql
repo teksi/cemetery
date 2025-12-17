@@ -14,7 +14,7 @@ BEGIN
     -- Check if deceasec has a geometry, otherwise do not update anything
     IF NEW.the_geom IS NULL
         THEN RETURN NEW;
-    ELSE 
+    ELSE
     END IF;
 
     -- Search for a unit polygon that contains the point in NEW.the_geom
