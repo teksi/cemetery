@@ -10,6 +10,13 @@ AS $BODY$
 DECLARE
     v_unit_id tce_od.unit.id%TYPE;
 BEGIN
+
+    -- Check if deceasec has a geometry, otherwise do not update anything
+    IF NEW.the_geom IS NULL
+        THEN RETURN NEW;
+    ELSE 
+    END IF;
+
     -- Search for a unit polygon that contains the point in NEW.the_geom
     -- and assign its id to v_unit_id
     SELECT id INTO v_unit_id
