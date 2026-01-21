@@ -45,8 +45,9 @@ CREATE TABLE IF NOT EXISTS tce_od.unit
 );
 COMMENT ON TABLE tce_od.unit IS 'Dataset of burial units / Datensatz der Grabstellen / Ensemble de données des emplacements de sépulture';
 
-ALTER TABLE tce_od.unit ADD COLUMN ident_short character varying(10);
-ALTER TABLE tce_od.unit ADD COLUMN identifier text;
+CREATE SEQUENCE IF NOT EXISTS tce_od.seq_unit_identifier;
+
+ALTER TABLE tce_od.unit ADD COLUMN identifier text DEFAULT nextval('tce_od.seq_unit_identifier'::regclass) UNIQUE;
 ALTER TABLE tce_od.unit ADD COLUMN excavation_date date;
 ALTER TABLE tce_od.unit ADD COLUMN begin_date date;
 ALTER TABLE tce_od.unit ADD COLUMN end_date date;
