@@ -237,4 +237,4 @@ INSERT INTO tce_vl.country (id, value_en, value_fr, value_de, value_it) VALUES (
 INSERT INTO tce_vl.country (id, value_en, value_fr, value_de, value_it) VALUES (276,'Germany','Allemagne','Deutschland','Germania');
 INSERT INTO tce_vl.country (id, value_en, value_fr, value_de, value_it) VALUES (380,'Italy','Italie','Italien','Italia');
 INSERT INTO tce_vl.country (id, value_en, value_fr, value_de, value_it) VALUES (826,'United Kingdom','Royaume-Uni','Vereinigtes Königreich','Regno Unito');
-INSERT INTO tce_vl.country (id, value_en, value_fr, value_de, value_it) VALUES (999, NULL, NULL, NULL, 'unknown', 'inconnu', 'unbekannt', 'sconosciuto');
+INSERT INTO tce_vl.country (id, value_en, value_fr, value_de, value_it) VALUES (999,'unknown','inconnu','unbekannt','sconosciuto');
