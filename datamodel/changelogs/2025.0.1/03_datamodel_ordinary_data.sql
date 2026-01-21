@@ -19,10 +19,13 @@ ALTER TABLE tce_od.deceased ADD COLUMN city text;
 ALTER TABLE tce_od.deceased ADD COLUMN postal_code character varying(10);
 ALTER TABLE tce_od.deceased ADD COLUMN birth_date date;
 ALTER TABLE tce_od.deceased ADD COLUMN birth_place text;
+ALTER TABLE tce_od.deceased ADD COLUMN fk_birth_country integer;
 ALTER TABLE tce_od.deceased ADD COLUMN death_date date;
 ALTER TABLE tce_od.deceased ADD COLUMN death_place text;
+ALTER TABLE tce_od.deceased ADD COLUMN fk_death_country integer;
 ALTER TABLE tce_od.deceased ADD COLUMN burial_date date;
 ALTER TABLE tce_od.deceased ADD COLUMN burial_place text;
+ALTER TABLE tce_od.deceased ADD COLUMN fk_burial_country integer;
 ALTER TABLE tce_od.deceased ADD COLUMN municipality_disposal_date date;
 ALTER TABLE tce_od.deceased ADD COLUMN municipality_approval boolean;
 ALTER TABLE tce_od.deceased ADD COLUMN incineration_date date;
@@ -167,3 +170,4 @@ COMMENT ON TABLE tce_od.cemetery IS 'Dataset of cemeteries / Datensatz der Fried
 ALTER TABLE tce_od.cemetery ADD COLUMN identifier text;
 ALTER TABLE tce_od.cemetery ADD COLUMN remark text;
 ALTER TABLE tce_od.cemetery ADD COLUMN the_geom geometry(Polygon,{SRID});
+
