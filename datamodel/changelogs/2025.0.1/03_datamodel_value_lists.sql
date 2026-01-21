@@ -86,7 +86,10 @@ INSERT INTO tce_vl.unit_kind (id, value_en, value_fr, value_de, value_it) VALUES
 INSERT INTO tce_vl.unit_kind (id, value_en, value_fr, value_de, value_it) VALUES (2008,'memorial garden','jardin du souvenir','Garten der Erinnerung','giardino della memoria');
 INSERT INTO tce_vl.unit_kind (id, value_en, value_fr, value_de, value_it) VALUES (2009,'concession columbarium','concession columbarium','Koncession Kolumbarium','concessione colombario');
 INSERT INTO tce_vl.unit_kind (id, value_en, value_fr, value_de, value_it) VALUES (2010,'monument only','monument uniquement','nur Monument','solo monumento');
-INSERT INTO tce_vl.unit_kind (id, value_en, value_fr, value_de, value_it) VALUES (2011,'Family grave','tombe familiale','Familiengrab','tomba di famiglia');
+INSERT INTO tce_vl.unit_kind (id, value_en, value_fr, value_de, value_it) VALUES (2011,'family grave','tombe familiale','Familiengrab','tomba di famiglia');
+INSERT INTO tce_vl.unit_kind (id, value_en, value_fr, value_de, value_it) VALUES (2012,'mass grave', 'tombe collective', 'Massengrab', 'tomba collettiva');
+INSERT INTO tce_vl.unit_kind (id, value_en, value_fr, value_de, value_it) VALUES (2013,'memorial', 'mémorial', 'Gedenkstätte', 'memoriale');
+INSERT INTO tce_vl.unit_kind (id, value_en, value_fr, value_de, value_it) VALUES (2014,'communal grave', 'tombe communautaire', 'Gemeinschaftsgrab', 'tomba comunitaria');
 
 /* FOREIGN KEYS */
 ALTER TABLE tce_od.unit ADD CONSTRAINT fkey_vl_unit_kind FOREIGN KEY (fk_kind)
