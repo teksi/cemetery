@@ -33,6 +33,7 @@ ALTER TABLE tce_od.deceased ADD COLUMN exumation_place text;
 ALTER TABLE tce_od.deceased ADD COLUMN remark text;
 ALTER TABLE tce_od.deceased ADD COLUMN child boolean;
 ALTER TABLE tce_od.deceased ADD COLUMN quality double precision;
+ALTER TABLE tce_od.deceased ADD COLUMN depth double precision;
 ALTER TABLE tce_od.deceased ADD COLUMN orientation double precision;
 ALTER TABLE tce_od.deceased ADD COLUMN fk_unit uuid;
 ALTER TABLE tce_od.deceased ADD COLUMN the_geom geometry(Point,{SRID});
