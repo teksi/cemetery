@@ -90,6 +90,30 @@
             <column ascending="true" name="id"/>
          </index>
       </table>
+      <table name="country" remarks="Country value list / Liste des pays" schema="tce_vl" type="TABLE">
+         <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <child column="fk_birth_country" foreignKey="rel_deceased_birth_country" implied="false" onDeleteCascade="false" schema="tce_od" table="deceased"/>
+            <child column="fk_burial_country" foreignKey="rel_deceased_burial_country" implied="false" onDeleteCascade="false" schema="tce_od" table="deceased"/>
+            <child column="fk_death_country" foreignKey="rel_deceased_death_country" implied="false" onDeleteCascade="false" schema="tce_od" table="deceased"/>
+         </column>
+         <column autoUpdated="false" defaultValue="true" digits="0" id="1" name="active" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="short_en" nullable="true" remarks="" size="10" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="short_fr" nullable="true" remarks="" size="10" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="short_de" nullable="true" remarks="" size="10" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="short_it" nullable="true" remarks="" size="10" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="6" name="value_en" nullable="true" remarks="" size="50" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="7" name="value_fr" nullable="true" remarks="" size="50" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="8" name="value_de" nullable="true" remarks="" size="50" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="9" name="value_it" nullable="true" remarks="" size="50" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="10" name="description_en" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="11" name="description_fr" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="12" name="description_de" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="13" name="description_it" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="vl_country_pk" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
       <table name="furniture_kind" remarks="Furniture kind" schema="tce_vl" type="TABLE">
          <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
             <child column="fk_kind" foreignKey="fkey_vl_furniture_kind" implied="false" onDeleteCascade="false" schema="tce_od" table="furniture"/>

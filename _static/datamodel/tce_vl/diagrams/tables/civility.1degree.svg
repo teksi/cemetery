@@ -131,7 +131,7 @@
 <g id="node3" class="node">
 <title>tce_od.deceased</title>
 <g id="a_node3"><a xlink:href="../../../tce_od/tables/deceased.html" xlink:title="tce_od.deceased" target="_top">
-<polygon fill="#ffffff" stroke="transparent" points="295,-256 295,-336 513,-336 513,-256 295,-256"/>
+<polygon fill="#ffffff" stroke="transparent" points="295,-190 295,-336 513,-336 513,-190 295,-190"/>
 <polygon fill="#f5f5f5" stroke="transparent" points="295,-314 295,-336 513,-336 513,-314 295,-314"/>
 <polygon fill="none" stroke="black" points="295,-314 295,-336 513,-336 513,-314 295,-314"/>
 <text text-anchor="start" x="300" y="-323.2" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00">tce_od.deceased</text>
@@ -139,18 +139,27 @@
 <polygon fill="none" stroke="black" points="295,-292 295,-314 513,-314 513,-292 295,-292"/>
 <image xlink:href="../../images/foreignKeys.png" width="11px" height="12px" preserveAspectRatio="xMinYMin meet" x="300" y="-309"/>
 <text text-anchor="start" x="315" y="-300.2" font-family="Helvetica,sans-Serif" font-size="11.00">fk_civility</text>
-<polygon fill="none" stroke="black" points="295,-274 295,-292 513,-292 513,-274 295,-274"/>
-<text text-anchor="start" x="298" y="-280.2" font-family="Helvetica,sans-Serif" font-size="11.00">...</text>
-<polygon fill="#ffffff" stroke="transparent" points="295,-256 295,-274 513,-274 513,-256 295,-256"/>
-<polygon fill="none" stroke="black" points="295,-256 295,-274 513,-274 513,-256 295,-256"/>
-<polygon fill="#ffffff" stroke="transparent" points="296,-257 296,-273 367,-273 367,-257 296,-257"/>
-<text text-anchor="start" x="298" y="-262.2" font-family="Helvetica,sans-Serif" font-size="11.00">&lt; 1</text>
-<polygon fill="#ffffff" stroke="transparent" points="367,-257 367,-273 454,-273 454,-257 367,-257"/>
-<text text-anchor="start" x="392" y="-262.2" font-family="Helvetica,sans-Serif" font-size="11.00">0 rows</text>
-<polygon fill="#ffffff" stroke="transparent" points="454,-257 454,-273 512,-273 512,-257 454,-257"/>
-<text text-anchor="start" x="502" y="-262.2" font-family="Helvetica,sans-Serif" font-size="11.00"> &#160;</text>
-<polygon fill="black" stroke="black" points="367,-257 367,-273 367,-273 367,-257 367,-257"/>
-<polygon fill="black" stroke="black" points="454,-257 454,-273 454,-273 454,-257 454,-257"/>
+<polygon fill="none" stroke="black" points="295,-270 295,-292 513,-292 513,-270 295,-270"/>
+<image xlink:href="../../images/foreignKeys.png" width="11px" height="12px" preserveAspectRatio="xMinYMin meet" x="300" y="-287"/>
+<text text-anchor="start" x="315" y="-278.2" font-family="Helvetica,sans-Serif" font-size="11.00">fk_birth_country</text>
+<polygon fill="none" stroke="black" points="295,-248 295,-270 513,-270 513,-248 295,-248"/>
+<image xlink:href="../../images/foreignKeys.png" width="11px" height="12px" preserveAspectRatio="xMinYMin meet" x="300" y="-265"/>
+<text text-anchor="start" x="315" y="-256.2" font-family="Helvetica,sans-Serif" font-size="11.00">fk_death_country</text>
+<polygon fill="none" stroke="black" points="295,-226 295,-248 513,-248 513,-226 295,-226"/>
+<image xlink:href="../../images/foreignKeys.png" width="11px" height="12px" preserveAspectRatio="xMinYMin meet" x="300" y="-243"/>
+<text text-anchor="start" x="315" y="-234.2" font-family="Helvetica,sans-Serif" font-size="11.00">fk_burial_country</text>
+<polygon fill="none" stroke="black" points="295,-208 295,-226 513,-226 513,-208 295,-208"/>
+<text text-anchor="start" x="298" y="-214.2" font-family="Helvetica,sans-Serif" font-size="11.00">...</text>
+<polygon fill="#ffffff" stroke="transparent" points="295,-190 295,-208 513,-208 513,-190 295,-190"/>
+<polygon fill="none" stroke="black" points="295,-190 295,-208 513,-208 513,-190 295,-190"/>
+<polygon fill="#ffffff" stroke="transparent" points="296,-191 296,-207 367,-207 367,-191 296,-191"/>
+<text text-anchor="start" x="298" y="-196.2" font-family="Helvetica,sans-Serif" font-size="11.00">&lt; 4</text>
+<polygon fill="#ffffff" stroke="transparent" points="367,-191 367,-207 454,-207 454,-191 367,-191"/>
+<text text-anchor="start" x="392" y="-196.2" font-family="Helvetica,sans-Serif" font-size="11.00">0 rows</text>
+<polygon fill="#ffffff" stroke="transparent" points="454,-191 454,-207 512,-207 512,-191 454,-191"/>
+<text text-anchor="start" x="502" y="-196.2" font-family="Helvetica,sans-Serif" font-size="11.00"> &#160;</text>
+<polygon fill="black" stroke="black" points="367,-191 367,-207 367,-207 367,-191 367,-191"/>
+<polygon fill="black" stroke="black" points="454,-191 454,-207 454,-207 454,-191 454,-191"/>
 </a>
 </g>
 </g>
