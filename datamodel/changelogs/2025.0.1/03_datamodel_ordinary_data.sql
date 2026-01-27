@@ -170,4 +170,3 @@ COMMENT ON TABLE tce_od.cemetery IS 'Dataset of cemeteries / Datensatz der Fried
 ALTER TABLE tce_od.cemetery ADD COLUMN identifier text;
 ALTER TABLE tce_od.cemetery ADD COLUMN remark text;
 ALTER TABLE tce_od.cemetery ADD COLUMN the_geom geometry(Polygon,{SRID});
-
