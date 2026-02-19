@@ -86,3 +86,8 @@ REFERENCES tce_od.cemetery (id) MATCH SIMPLE
 ON UPDATE NO ACTION
 ON DELETE NO ACTION
 DEFERRABLE INITIALLY DEFERRED;
+
+-- delete "object" column
+-- TODO: Beforehand it would probably be smart to check if data exists and handle that accordingly
+-- E.g. by resolving the file-connections and using the new ref-attributes
+ALTER TABLE tce_od.file DROP COLUMN "object";
