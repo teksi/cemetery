@@ -4,16 +4,14 @@ RETURNS TEXT
 AS
 $$
 DECLARE
-display_text TEXT DEFAULT '';
-placeholder TEXT := 'TODO';
-identifier TEXT;
-last_name TEXT;
-first_name TEXT;
-remark TEXT;
-death_date TEXT;
+    display_text TEXT DEFAULT '';
+    placeholder TEXT := 'TODO';
+    identifier TEXT;
+    last_name TEXT;
+    first_name TEXT;
+    remark TEXT;
+    death_date TEXT;
 BEGIN
-
-    --SET client_min_messages TO NOTICE;
 
     -- extract row values
     identifier := (new_row ->>'identifier')::text;
