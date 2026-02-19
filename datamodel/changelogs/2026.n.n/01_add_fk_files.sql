@@ -1,0 +1,88 @@
+ALTER TABLE tce_od.file ADD COLUMN cemetery_ref uuid;
+
+ALTER TABLE tce_od.file
+ADD CONSTRAINT file_cemetery_assoc FOREIGN KEY (cemetery_ref)
+REFERENCES tce_od.cemetery (id) MATCH SIMPLE
+ON UPDATE NO ACTION
+ON DELETE NO ACTION
+DEFERRABLE INITIALLY DEFERRED;
+
+
+ALTER TABLE tce_od.file ADD COLUMN contact_ref uuid;
+
+ALTER TABLE tce_od.file
+ADD CONSTRAINT file_contact_assoc FOREIGN KEY (contact_ref)
+REFERENCES tce_od.contact (id) MATCH SIMPLE
+ON UPDATE NO ACTION
+ON DELETE NO ACTION
+DEFERRABLE INITIALLY DEFERRED;
+
+
+ALTER TABLE tce_od.file ADD COLUMN contract_ref uuid;
+
+ALTER TABLE tce_od.file
+ADD CONSTRAINT file_contract_assoc FOREIGN KEY (contract_ref)
+REFERENCES tce_od.contract (id) MATCH SIMPLE
+ON UPDATE NO ACTION
+ON DELETE NO ACTION
+DEFERRABLE INITIALLY DEFERRED;
+
+
+ALTER TABLE tce_od.file ADD COLUMN deceased_ref uuid;
+
+ALTER TABLE tce_od.file
+ADD CONSTRAINT file_deceased_assoc FOREIGN KEY (deceased_ref)
+REFERENCES tce_od.deceased (id) MATCH SIMPLE
+ON UPDATE NO ACTION
+ON DELETE NO ACTION
+DEFERRABLE INITIALLY DEFERRED;
+
+
+ALTER TABLE tce_od.file ADD COLUMN furniture_ref uuid;
+
+ALTER TABLE tce_od.file
+ADD CONSTRAINT file_furniture_assoc FOREIGN KEY (furniture_ref)
+REFERENCES tce_od.furniture (id) MATCH SIMPLE
+ON UPDATE NO ACTION
+ON DELETE NO ACTION
+DEFERRABLE INITIALLY DEFERRED;
+
+
+ALTER TABLE tce_od.file ADD COLUMN organisation_ref uuid;
+
+ALTER TABLE tce_od.file
+ADD CONSTRAINT file_organisation_assoc FOREIGN KEY (organisation_ref)
+REFERENCES tce_od.organisation (id) MATCH SIMPLE
+ON UPDATE NO ACTION
+ON DELETE NO ACTION
+DEFERRABLE INITIALLY DEFERRED;
+
+
+ALTER TABLE tce_od.file ADD COLUMN sector_ref uuid;
+
+ALTER TABLE tce_od.file
+ADD CONSTRAINT file_sector_assoc FOREIGN KEY (sector_ref)
+REFERENCES tce_od.sector (id) MATCH SIMPLE
+ON UPDATE NO ACTION
+ON DELETE NO ACTION
+DEFERRABLE INITIALLY DEFERRED;
+
+
+ALTER TABLE tce_od.file ADD COLUMN unit_ref uuid;
+
+ALTER TABLE tce_od.file
+ADD CONSTRAINT file_unit_assoc FOREIGN KEY (unit_ref)
+REFERENCES tce_od.unit (id) MATCH SIMPLE
+ON UPDATE NO ACTION
+ON DELETE NO ACTION
+DEFERRABLE INITIALLY DEFERRED;
+
+
+ALTER TABLE tce_od.file ADD COLUMN vegetation_ref uuid;
+
+ALTER TABLE tce_od.file
+ADD CONSTRAINT file_vegetation_assoc FOREIGN KEY (vegetation_ref)
+REFERENCES tce_od.cemetery (id) MATCH SIMPLE
+ON UPDATE NO ACTION
+ON DELETE NO ACTION
+DEFERRABLE INITIALLY DEFERRED;
