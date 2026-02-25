@@ -32,6 +32,9 @@ BEGIN
     phone_number := (new_row ->>'phone')::text;
     email := (new_row ->>'email')::text;
 
+    -- Debugging
+    --RAISE NOTICE '%', new_row;
+
     -- combine to form display-text
     IF tablename = 'cemetery' THEN
         display_text := identifier;
@@ -60,11 +63,10 @@ BEGIN
             ' | ',
             last_name,
             COALESCE(' (' || family_name_at_birth || ')'),
-            COALESCE(' "' || nickname || '"'),
             COALESCE(' ' || first_name),
-            COALESCE(' ' || second_first_name)
+            COALESCE(' ' || second_first_name),
+            COALESCE(' "' || nickname || '"')
         );
-        display_text := death_date || ' | ' || last_name || ' ' || first_name;
 
     ELSIF tablename = 'file' THEN
         display_text := identifier;
@@ -86,6 +88,9 @@ BEGIN
 
     ELSE display_text := '?';
     END IF;
+
+    -- Debugging
+    --RAISE NOTICE 'DspTXT: %', display_text;
 
     RETURN display_text;
 
