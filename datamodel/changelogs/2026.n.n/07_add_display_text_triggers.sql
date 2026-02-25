@@ -10,7 +10,7 @@ BEGIN
 END
 $BODY$
   LANGUAGE 'plpgsql' VOLATILE;
-  
+
 
 -- append triggers to all required classes
 DO $$
@@ -34,7 +34,7 @@ DECLARE
 BEGIN
     FOREACH tablename IN ARRAY table_list
     LOOP
-        trigger_name := tablename || '_dp_trigger';        
+        trigger_name := tablename || '_dp_trigger';
 
         EXECUTE format('DROP TRIGGER IF EXISTS %I ON tce_od.%I;', trigger_name, tablename);
 
