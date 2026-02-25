@@ -1,4 +1,4 @@
-ALTER TABLE tce_od.file ADD COLUMN cemetery_ref uuid;
+ALTER TABLE tce_od.file ADD COLUMN IF NOT EXISTS cemetery_ref uuid;
 
 ALTER TABLE tce_od.file
 ADD CONSTRAINT file_cemetery_assoc FOREIGN KEY (cemetery_ref)
@@ -8,7 +8,7 @@ ON DELETE NO ACTION
 DEFERRABLE INITIALLY DEFERRED;
 
 
-ALTER TABLE tce_od.file ADD COLUMN contact_ref uuid;
+ALTER TABLE tce_od.file ADD COLUMN IF NOT EXISTS contact_ref uuid;
 
 ALTER TABLE tce_od.file
 ADD CONSTRAINT file_contact_assoc FOREIGN KEY (contact_ref)
@@ -18,7 +18,7 @@ ON DELETE NO ACTION
 DEFERRABLE INITIALLY DEFERRED;
 
 
-ALTER TABLE tce_od.file ADD COLUMN contract_ref uuid;
+ALTER TABLE tce_od.file ADD COLUMN IF NOT EXISTS contract_ref uuid;
 
 ALTER TABLE tce_od.file
 ADD CONSTRAINT file_contract_assoc FOREIGN KEY (contract_ref)
@@ -28,7 +28,7 @@ ON DELETE NO ACTION
 DEFERRABLE INITIALLY DEFERRED;
 
 
-ALTER TABLE tce_od.file ADD COLUMN deceased_ref uuid;
+ALTER TABLE tce_od.file ADD COLUMN IF NOT EXISTS deceased_ref uuid;
 
 ALTER TABLE tce_od.file
 ADD CONSTRAINT file_deceased_assoc FOREIGN KEY (deceased_ref)
@@ -38,7 +38,7 @@ ON DELETE NO ACTION
 DEFERRABLE INITIALLY DEFERRED;
 
 
-ALTER TABLE tce_od.file ADD COLUMN furniture_ref uuid;
+ALTER TABLE tce_od.file ADD COLUMN IF NOT EXISTS furniture_ref uuid;
 
 ALTER TABLE tce_od.file
 ADD CONSTRAINT file_furniture_assoc FOREIGN KEY (furniture_ref)
@@ -48,7 +48,7 @@ ON DELETE NO ACTION
 DEFERRABLE INITIALLY DEFERRED;
 
 
-ALTER TABLE tce_od.file ADD COLUMN organisation_ref uuid;
+ALTER TABLE tce_od.file ADD COLUMN IF NOT EXISTS organisation_ref uuid;
 
 ALTER TABLE tce_od.file
 ADD CONSTRAINT file_organisation_assoc FOREIGN KEY (organisation_ref)
@@ -58,7 +58,7 @@ ON DELETE NO ACTION
 DEFERRABLE INITIALLY DEFERRED;
 
 
-ALTER TABLE tce_od.file ADD COLUMN sector_ref uuid;
+ALTER TABLE tce_od.file ADD COLUMN IF NOT EXISTS sector_ref uuid;
 
 ALTER TABLE tce_od.file
 ADD CONSTRAINT file_sector_assoc FOREIGN KEY (sector_ref)
@@ -68,7 +68,7 @@ ON DELETE NO ACTION
 DEFERRABLE INITIALLY DEFERRED;
 
 
-ALTER TABLE tce_od.file ADD COLUMN unit_ref uuid;
+ALTER TABLE tce_od.file ADD COLUMN IF NOT EXISTS unit_ref uuid;
 
 ALTER TABLE tce_od.file
 ADD CONSTRAINT file_unit_assoc FOREIGN KEY (unit_ref)
@@ -78,7 +78,7 @@ ON DELETE NO ACTION
 DEFERRABLE INITIALLY DEFERRED;
 
 
-ALTER TABLE tce_od.file ADD COLUMN vegetation_ref uuid;
+ALTER TABLE tce_od.file ADD COLUMN IF NOT EXISTS vegetation_ref uuid;
 
 ALTER TABLE tce_od.file
 ADD CONSTRAINT file_vegetation_assoc FOREIGN KEY (vegetation_ref)

@@ -1,0 +1,10 @@
+ALTER TABLE tce_od.cemetery ADD COLUMN IF NOT EXISTS display_txt TEXT;
+ALTER TABLE tce_od.contact ADD COLUMN IF NOT EXISTS display_txt TEXT;
+ALTER TABLE tce_od.contract ADD COLUMN IF NOT EXISTS display_txt TEXT;
+ALTER TABLE tce_od.deceased ADD COLUMN IF NOT EXISTS display_txt TEXT;
+ALTER TABLE tce_od.file ADD COLUMN IF NOT EXISTS display_txt TEXT;
+ALTER TABLE tce_od.furniture ADD COLUMN IF NOT EXISTS display_txt TEXT;
+ALTER TABLE tce_od.organisation ADD COLUMN IF NOT EXISTS display_txt TEXT;
+ALTER TABLE tce_od.sector ADD COLUMN IF NOT EXISTS display_txt TEXT;
+ALTER TABLE tce_od.unit ADD COLUMN IF NOT EXISTS display_txt TEXT;
+ALTER TABLE tce_od.vegetation ADD COLUMN IF NOT EXISTS display_txt TEXT;
