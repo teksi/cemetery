@@ -1,0 +1,93 @@
+ALTER TABLE tce_od.file ADD COLUMN IF NOT EXISTS cemetery_ref uuid;
+
+ALTER TABLE tce_od.file
+ADD CONSTRAINT file_cemetery_assoc FOREIGN KEY (cemetery_ref)
+REFERENCES tce_od.cemetery (id) MATCH SIMPLE
+ON UPDATE NO ACTION
+ON DELETE NO ACTION
+DEFERRABLE INITIALLY DEFERRED;
+
+
+ALTER TABLE tce_od.file ADD COLUMN IF NOT EXISTS contact_ref uuid;
+
+ALTER TABLE tce_od.file
+ADD CONSTRAINT file_contact_assoc FOREIGN KEY (contact_ref)
+REFERENCES tce_od.contact (id) MATCH SIMPLE
+ON UPDATE NO ACTION
+ON DELETE NO ACTION
+DEFERRABLE INITIALLY DEFERRED;
+
+
+ALTER TABLE tce_od.file ADD COLUMN IF NOT EXISTS contract_ref uuid;
+
+ALTER TABLE tce_od.file
+ADD CONSTRAINT file_contract_assoc FOREIGN KEY (contract_ref)
+REFERENCES tce_od.contract (id) MATCH SIMPLE
+ON UPDATE NO ACTION
+ON DELETE NO ACTION
+DEFERRABLE INITIALLY DEFERRED;
+
+
+ALTER TABLE tce_od.file ADD COLUMN IF NOT EXISTS deceased_ref uuid;
+
+ALTER TABLE tce_od.file
+ADD CONSTRAINT file_deceased_assoc FOREIGN KEY (deceased_ref)
+REFERENCES tce_od.deceased (id) MATCH SIMPLE
+ON UPDATE NO ACTION
+ON DELETE NO ACTION
+DEFERRABLE INITIALLY DEFERRED;
+
+
+ALTER TABLE tce_od.file ADD COLUMN IF NOT EXISTS furniture_ref uuid;
+
+ALTER TABLE tce_od.file
+ADD CONSTRAINT file_furniture_assoc FOREIGN KEY (furniture_ref)
+REFERENCES tce_od.furniture (id) MATCH SIMPLE
+ON UPDATE NO ACTION
+ON DELETE NO ACTION
+DEFERRABLE INITIALLY DEFERRED;
+
+
+ALTER TABLE tce_od.file ADD COLUMN IF NOT EXISTS organisation_ref uuid;
+
+ALTER TABLE tce_od.file
+ADD CONSTRAINT file_organisation_assoc FOREIGN KEY (organisation_ref)
+REFERENCES tce_od.organisation (id) MATCH SIMPLE
+ON UPDATE NO ACTION
+ON DELETE NO ACTION
+DEFERRABLE INITIALLY DEFERRED;
+
+
+ALTER TABLE tce_od.file ADD COLUMN IF NOT EXISTS sector_ref uuid;
+
+ALTER TABLE tce_od.file
+ADD CONSTRAINT file_sector_assoc FOREIGN KEY (sector_ref)
+REFERENCES tce_od.sector (id) MATCH SIMPLE
+ON UPDATE NO ACTION
+ON DELETE NO ACTION
+DEFERRABLE INITIALLY DEFERRED;
+
+
+ALTER TABLE tce_od.file ADD COLUMN IF NOT EXISTS unit_ref uuid;
+
+ALTER TABLE tce_od.file
+ADD CONSTRAINT file_unit_assoc FOREIGN KEY (unit_ref)
+REFERENCES tce_od.unit (id) MATCH SIMPLE
+ON UPDATE NO ACTION
+ON DELETE NO ACTION
+DEFERRABLE INITIALLY DEFERRED;
+
+
+ALTER TABLE tce_od.file ADD COLUMN IF NOT EXISTS vegetation_ref uuid;
+
+ALTER TABLE tce_od.file
+ADD CONSTRAINT file_vegetation_assoc FOREIGN KEY (vegetation_ref)
+REFERENCES tce_od.cemetery (id) MATCH SIMPLE
+ON UPDATE NO ACTION
+ON DELETE NO ACTION
+DEFERRABLE INITIALLY DEFERRED;
+
+-- delete "object" column
+-- TODO: Beforehand it would probably be smart to check if data exists and handle that accordingly
+-- E.g. by resolving the file-connections and using the new ref-attributes
+ALTER TABLE tce_od.file DROP COLUMN "object";
