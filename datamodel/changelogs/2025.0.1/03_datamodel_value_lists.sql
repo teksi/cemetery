@@ -86,7 +86,10 @@ INSERT INTO tce_vl.unit_kind (id, value_en, value_fr, value_de, value_it) VALUES
 INSERT INTO tce_vl.unit_kind (id, value_en, value_fr, value_de, value_it) VALUES (2008,'memorial garden','jardin du souvenir','Garten der Erinnerung','giardino della memoria');
 INSERT INTO tce_vl.unit_kind (id, value_en, value_fr, value_de, value_it) VALUES (2009,'concession columbarium','concession columbarium','Koncession Kolumbarium','concessione colombario');
 INSERT INTO tce_vl.unit_kind (id, value_en, value_fr, value_de, value_it) VALUES (2010,'monument only','monument uniquement','nur Monument','solo monumento');
-INSERT INTO tce_vl.unit_kind (id, value_en, value_fr, value_de, value_it) VALUES (2011,'Family grave','tombe familiale','Familiengrab','tomba di famiglia');
+INSERT INTO tce_vl.unit_kind (id, value_en, value_fr, value_de, value_it) VALUES (2011,'family grave','tombe familiale','Familiengrab','tomba di famiglia');
+INSERT INTO tce_vl.unit_kind (id, value_en, value_fr, value_de, value_it) VALUES (2012,'mass grave', 'tombe collective', 'Massengrab', 'tomba collettiva');
+INSERT INTO tce_vl.unit_kind (id, value_en, value_fr, value_de, value_it) VALUES (2013,'memorial', 'mémorial', 'Gedenkstätte', 'memoriale');
+INSERT INTO tce_vl.unit_kind (id, value_en, value_fr, value_de, value_it) VALUES (2014,'communal grave', 'tombe communautaire', 'Gemeinschaftsgrab', 'tomba comunitaria');
 
 /* FOREIGN KEYS */
 ALTER TABLE tce_od.unit ADD CONSTRAINT fkey_vl_unit_kind FOREIGN KEY (fk_kind)
@@ -219,3 +222,19 @@ ALTER TABLE tce_od.deceased ADD CONSTRAINT fkey_vl_deceased_civility FOREIGN KEY
   REFERENCES tce_vl.civility (id) MATCH SIMPLE;
 ALTER TABLE tce_od.contact ADD CONSTRAINT fkey_vl_contact_civility FOREIGN KEY (fk_civility)
     REFERENCES tce_vl.civility (id) MATCH SIMPLE;
+
+
+------------------------- COUNTRIES ----------------------------
+
+/* CREATE */
+CREATE TABLE IF NOT EXISTS tce_vl.country () INHERITS ( tce_vl.value_list_base );
+ALTER TABLE tce_vl.country ADD CONSTRAINT vl_country_pk PRIMARY KEY (id);
+COMMENT ON TABLE tce_vl.country IS 'Country value list / Liste des pays';
+
+/* VALUES */
+INSERT INTO tce_vl.country (id, value_en, value_fr, value_de, value_it) VALUES (756,'Switzerland','Suisse','Schweiz','Svizzera');
+INSERT INTO tce_vl.country (id, value_en, value_fr, value_de, value_it) VALUES (250,'France','France','Frankreich','Francia');
+INSERT INTO tce_vl.country (id, value_en, value_fr, value_de, value_it) VALUES (276,'Germany','Allemagne','Deutschland','Germania');
+INSERT INTO tce_vl.country (id, value_en, value_fr, value_de, value_it) VALUES (380,'Italy','Italie','Italien','Italia');
+INSERT INTO tce_vl.country (id, value_en, value_fr, value_de, value_it) VALUES (826,'United Kingdom','Royaume-Uni','Vereinigtes Königreich','Regno Unito');
+INSERT INTO tce_vl.country (id, value_en, value_fr, value_de, value_it) VALUES (999,'unknown','inconnu','unbekannt','sconosciuto');

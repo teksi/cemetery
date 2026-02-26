@@ -10,7 +10,31 @@ ALTER TABLE tce_od.deceased
 
 COMMENT ON CONSTRAINT rel_deceased_unit ON tce_od.deceased IS 'Foreign key constraint linking deceased.fk_unit to unit.id, ensuring referential integrity between deceased records and their associated burial units.';
 
- /*
+ALTER TABLE tce_od.deceased
+  ADD CONSTRAINT rel_deceased_death_country FOREIGN KEY (fk_death_country)
+  REFERENCES tce_vl.country (id) MATCH SIMPLE
+  ON UPDATE RESTRICT ON DELETE RESTRICT
+  DEFERRABLE INITIALLY DEFERRED;
+
+COMMENT ON CONSTRAINT rel_deceased_death_country ON tce_od.deceased IS 'Foreign key constraint linking deceased.fk_death_country to country.id, ensuring referential integrity between deceased records and their associated death countries.';
+
+ALTER TABLE tce_od.deceased
+  ADD CONSTRAINT rel_deceased_birth_country FOREIGN KEY (fk_birth_country)
+  REFERENCES tce_vl.country (id) MATCH SIMPLE
+  ON UPDATE RESTRICT ON DELETE RESTRICT
+  DEFERRABLE INITIALLY DEFERRED;
+
+COMMENT ON CONSTRAINT rel_deceased_birth_country ON tce_od.deceased IS 'Foreign key constraint linking deceased.fk_birth_country to country.id, ensuring referential integrity between deceased records and their associated birth countries.';
+
+ALTER TABLE tce_od.deceased
+  ADD CONSTRAINT rel_deceased_burial_country FOREIGN KEY (fk_burial_country)
+  REFERENCES tce_vl.country (id) MATCH SIMPLE
+  ON UPDATE RESTRICT ON DELETE RESTRICT
+  DEFERRABLE INITIALLY DEFERRED;
+
+COMMENT ON CONSTRAINT rel_deceased_burial_country ON tce_od.deceased IS 'Foreign key constraint linking deceased.fk_burial_country to country.id, ensuring referential integrity between deceased records and their associated burial countries.';
+
+/*
 
  What it does: adds a named foreign‑key constraint rel_deceased_unit on the table tce.deceased, enforcing that values in the column fk_unit must match an existing id in tce_od.unit.
 

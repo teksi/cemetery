@@ -19,10 +19,13 @@ ALTER TABLE tce_od.deceased ADD COLUMN city text;
 ALTER TABLE tce_od.deceased ADD COLUMN postal_code character varying(10);
 ALTER TABLE tce_od.deceased ADD COLUMN birth_date date;
 ALTER TABLE tce_od.deceased ADD COLUMN birth_place text;
+ALTER TABLE tce_od.deceased ADD COLUMN fk_birth_country integer;
 ALTER TABLE tce_od.deceased ADD COLUMN death_date date;
 ALTER TABLE tce_od.deceased ADD COLUMN death_place text;
+ALTER TABLE tce_od.deceased ADD COLUMN fk_death_country integer;
 ALTER TABLE tce_od.deceased ADD COLUMN burial_date date;
 ALTER TABLE tce_od.deceased ADD COLUMN burial_place text;
+ALTER TABLE tce_od.deceased ADD COLUMN fk_burial_country integer;
 ALTER TABLE tce_od.deceased ADD COLUMN municipality_disposal_date date;
 ALTER TABLE tce_od.deceased ADD COLUMN municipality_approval boolean;
 ALTER TABLE tce_od.deceased ADD COLUMN incineration_date date;
@@ -33,6 +36,7 @@ ALTER TABLE tce_od.deceased ADD COLUMN exumation_place text;
 ALTER TABLE tce_od.deceased ADD COLUMN remark text;
 ALTER TABLE tce_od.deceased ADD COLUMN child boolean;
 ALTER TABLE tce_od.deceased ADD COLUMN quality double precision;
+ALTER TABLE tce_od.deceased ADD COLUMN depth double precision;
 ALTER TABLE tce_od.deceased ADD COLUMN orientation double precision;
 ALTER TABLE tce_od.deceased ADD COLUMN fk_unit uuid;
 ALTER TABLE tce_od.deceased ADD COLUMN the_geom geometry(Point,{SRID});
@@ -44,8 +48,9 @@ CREATE TABLE IF NOT EXISTS tce_od.unit
 );
 COMMENT ON TABLE tce_od.unit IS 'Dataset of burial units / Datensatz der Grabstellen / Ensemble de données des emplacements de sépulture';
 
-ALTER TABLE tce_od.unit ADD COLUMN ident_short character varying(10);
-ALTER TABLE tce_od.unit ADD COLUMN identifier text;
+CREATE SEQUENCE IF NOT EXISTS tce_od.seq_unit_identifier;
+
+ALTER TABLE tce_od.unit ADD COLUMN identifier text DEFAULT nextval('tce_od.seq_unit_identifier'::regclass) UNIQUE;
 ALTER TABLE tce_od.unit ADD COLUMN excavation_date date;
 ALTER TABLE tce_od.unit ADD COLUMN begin_date date;
 ALTER TABLE tce_od.unit ADD COLUMN end_date date;
