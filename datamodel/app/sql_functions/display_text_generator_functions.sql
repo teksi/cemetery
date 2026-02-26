@@ -143,7 +143,7 @@ BEGIN
               BEFORE INSERT OR UPDATE
               ON tce_od.%I
               FOR EACH ROW
-              EXECUTE PROCEDURE tce_od.generate_display_text();
+              EXECUTE PROCEDURE tce_app.generate_display_text();
         $sql$, trigger_name, tablename);
     END LOOP;
 END $$;
