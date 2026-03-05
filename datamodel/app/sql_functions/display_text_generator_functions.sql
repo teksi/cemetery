@@ -1,3 +1,22 @@
+-- function used to normalize empty strings to null values
+DROP FUNCTION IF EXISTS tce_app.normalize_empty_string(in_string TEXT) CASCADE;
+CREATE FUNCTION tce_app.normalize_empty_string(in_string TEXT)
+RETURNS TEXT
+AS
+$$
+DECLARE
+out_string TEXT DEFAULT NULL::text;
+BEGIN
+    IF in_string IS NULL OR in_string = ''
+        THEN out_string := NULL::text;
+    ELSE out_string := in_string;
+    END IF;
+
+    RETURN out_string;
+END;
+$$ LANGUAGE plpgsql;
+
+-- display text generator
 DROP FUNCTION IF EXISTS tce_app.displaytext_generator(uuid, NAME, JSONB) CASCADE;
 CREATE FUNCTION tce_app.displaytext_generator(obj_id uuid, tablename NAME, new_row JSONB)
 RETURNS TEXT
@@ -18,19 +37,21 @@ DECLARE
     email TEXT;
     contract_kind integer;
     contract_kind_txt TEXT;
+    urn_kind integer;
+    urn_emoji TEXT;
 BEGIN
 
     -- extract row values
-    identifier := (new_row ->>'identifier')::text;
-    first_name := (new_row ->>'first_name')::text;
-    second_first_name := (new_row ->>'second_first_name')::text;
-    last_name := (new_row ->>'last_name')::text;
-    family_name_at_birth := (new_row ->>'family_name_at_birth')::text;
-    nickname := (new_row ->>'nickname')::text;
-    remark := (new_row ->>'remark')::text;
+    identifier := tce_app.normalize_empty_string((new_row ->>'identifier')::text);
+    first_name := tce_app.normalize_empty_string((new_row ->>'first_name')::text);
+    second_first_name := tce_app.normalize_empty_string((new_row ->>'second_first_name')::text);
+    last_name := tce_app.normalize_empty_string((new_row ->>'last_name')::text);
+    family_name_at_birth := tce_app.normalize_empty_string((new_row ->>'family_name_at_birth')::text);
+    nickname := tce_app.normalize_empty_string((new_row ->>'nickname')::text);
+    remark := tce_app.normalize_empty_string((new_row ->>'remark')::text);
     death_date := to_char((new_row ->>'death_date')::timestamp, 'DD.MM.YYYY');
-    phone_number := (new_row ->>'phone')::text;
-    email := (new_row ->>'email')::text;
+    phone_number := tce_app.normalize_empty_string((new_row ->>'phone')::text);
+    email := tce_app.normalize_empty_string((new_row ->>'email')::text);
 
     -- Debugging
     --RAISE NOTICE '%', new_row;
@@ -42,30 +63,37 @@ BEGIN
     ELSIF tablename = 'contact' THEN
         display_text := CONCAT(
             COALESCE(last_name, ''),
-            COALESCE(' ' || first_name),
-            COALESCE(' ' || second_first_name),
-            COALESCE(' | ' || email),
-            COALESCE(' | ' || phone_number)
+            COALESCE(' ' || first_name, ''),
+            COALESCE(' ' || second_first_name, ''),
+            COALESCE(' | ' || email, ''),
+            COALESCE(' | ' || phone_number, '')
         );
 
     ELSIF tablename = 'contract' THEN
         contract_kind := (new_row ->>'fk_kind')::text;
         contract_kind_txt := (SELECT ck.value_de FROM tce_vl.contract_kind ck WHERE ck.id = contract_kind);
         display_text := CONCAT(
-            COALESCE('Vertrag: ' || contract_kind_txt),
+            COALESCE(contract_kind_txt, ''),
             COALESCE(' | ' || identifier, ''),
             COALESCE(' | ' || remark, '')
         );
 
     ELSIF tablename = 'deceased' THEN
+        urn_kind := (new_row ->>'fk_urn_kind')::text;
+        IF urn_kind IS NOT NULL
+            THEN urn_emoji := ' ⚱️';
+        ELSE urn_emoji := '';
+        END IF;
+
         display_text := CONCAT(
             death_date,
+            COALESCE(urn_emoji, ''),
             ' | ',
             last_name,
-            COALESCE(' (' || family_name_at_birth || ')'),
-            COALESCE(' ' || first_name),
-            COALESCE(' ' || second_first_name),
-            COALESCE(' "' || nickname || '"')
+            COALESCE(' (' || family_name_at_birth || ')', ''),
+            COALESCE(' ' || first_name, ''),
+            COALESCE(' ' || second_first_name, ''),
+            COALESCE(' "' || nickname || '"', '')
         );
 
     ELSIF tablename = 'file' THEN
