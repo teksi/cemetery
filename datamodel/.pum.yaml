@@ -67,6 +67,7 @@ uninstall:
   - code: DROP SCHEMA IF EXISTS tce_vl CASCADE;
   - code: DROP SCHEMA IF EXISTS tce_sys CASCADE;
   - code: DROP SCHEMA IF EXISTS tce_app CASCADE;
+  - code: DROP SCHEMA IF EXISTS tce_cfg CASCADE;
 
 # demo_data:
 #  - name: Aletsch
