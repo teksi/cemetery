@@ -140,6 +140,11 @@
                                                 <td class="constraint detail">rel_deceased_unit</td>
                                                 <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
                                             </tr>
+                                            <tr>
+                                                <td title="file.unit_ref references unit.id via file_unit_assoc"><a href='file.html'>file</a><span class='relatedKey'>.unit_ref</span></td>
+                                                <td class="constraint detail">file_unit_assoc</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
                                         </table>
                                     </td>
                                     <td>
@@ -468,6 +473,23 @@
                                 <tr>
                                     <td><span id="the_geom">the_geom</span></td>
                                     <td>geometry</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="display_txt">display_txt</span></td>
+                                    <td>text</td>
                                     <td>2147483647</td>
                                     <td title='nullable'>√</td>
                                     <td title=''></td>

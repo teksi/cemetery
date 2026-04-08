@@ -131,6 +131,11 @@
                                     <td>
                                         <table border='0' cellspacing='0' cellpadding='0'>
                                             <tr>
+                                                <td title="file.organisation_ref references organisation.id via file_organisation_assoc"><a href='file.html'>file</a><span class='relatedKey'>.organisation_ref</span></td>
+                                                <td class="constraint detail">file_organisation_assoc</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
+                                            <tr>
                                                 <td title="unit.fk_company references organisation.id via rel_unit_company"><a href='unit.html'>unit</a><span class='relatedKey'>.fk_company</span></td>
                                                 <td class="constraint detail">rel_unit_company</td>
                                                 <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
@@ -162,6 +167,23 @@
                                 </tr>
                                 <tr>
                                     <td><span id="remark">remark</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="display_txt">display_txt</span></td>
                                     <td>text</td>
                                     <td>2147483647</td>
                                     <td title='nullable'>√</td>

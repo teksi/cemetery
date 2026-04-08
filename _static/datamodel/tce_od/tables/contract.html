@@ -130,6 +130,11 @@
                                     <td>uuid_generate_v4()</td>
                                     <td>
                                         <table border='0' cellspacing='0' cellpadding='0'>
+                                            <tr>
+                                                <td title="file.contract_ref references contract.id via file_contract_assoc"><a href='file.html'>file</a><span class='relatedKey'>.contract_ref</span></td>
+                                                <td class="constraint detail">file_contract_assoc</td>
+                                                <td class="constraint detail"><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span></td>
+                                            </tr>
                                         </table>
                                     </td>
                                     <td>
@@ -308,6 +313,23 @@
                                 </tr>
                                 <tr>
                                     <td><span id="remark">remark</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="display_txt">display_txt</span></td>
                                     <td>text</td>
                                     <td>2147483647</td>
                                     <td title='nullable'>√</td>
