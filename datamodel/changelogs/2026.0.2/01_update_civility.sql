@@ -1,6 +1,6 @@
 -- 1. Sauvegarder les valeurs actuelles (courtes)
 UPDATE tce_vl.civility
-SET 
+SET
     short_fr = value_fr,
     short_en = CASE
         WHEN id = 6101 THEN 'Mr'
@@ -18,7 +18,7 @@ WHERE id IN (6101, 6102);
 
 -- 2. Remplacer par les valeurs longues
 UPDATE tce_vl.civility
-SET 
+SET
     value_fr = CASE
         WHEN id = 6101 THEN 'Monsieur'
         WHEN id = 6102 THEN 'Madame'
