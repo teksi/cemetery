@@ -458,91 +458,10 @@
 <polygon fill="black" stroke="black" points="492.53,-295.25 500.16,-299.58 496.52,-295.63 500.5,-296 500.5,-296 500.5,-296 496.52,-295.63 500.84,-292.42 492.53,-295.25 492.53,-295.25"/>
 <ellipse fill="none" stroke="black" cx="489.35" cy="-294.95" rx="3.2" ry="3.2"/>
 </g>
-<!-- contract -->
-<g id="node5" class="node">
-<title>contract</title>
-<g id="a_node5"><a xlink:href="../../tables/contract.html" xlink:title="contract" target="_top">
-<polygon fill="#ffffff" stroke="transparent" points="754.5,-955 754.5,-1101 913.5,-1101 913.5,-955 754.5,-955"/>
-<polygon fill="#f5f5f5" stroke="transparent" points="755,-1079 755,-1101 914,-1101 914,-1079 755,-1079"/>
-<polygon fill="none" stroke="black" points="755,-1079 755,-1101 914,-1101 914,-1079 755,-1079"/>
-<text text-anchor="start" x="760" y="-1088.2" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00">contract</text>
-<text text-anchor="start" x="872" y="-1087.2" font-family="Helvetica,sans-Serif" font-size="11.00">[table]</text>
-<polygon fill="none" stroke="black" points="755,-1057 755,-1079 914,-1079 914,-1057 755,-1057"/>
-<image xlink:href="../../images/primaryKeys.png" width="11px" height="12px" preserveAspectRatio="xMinYMin meet" x="760" y="-1074"/>
-<text text-anchor="start" x="775" y="-1065.2" font-family="Helvetica,sans-Serif" font-size="11.00">id</text>
-<polygon fill="none" stroke="black" points="755,-1035 755,-1057 914,-1057 914,-1035 755,-1035"/>
-<image xlink:href="../../images/foreignKeys.png" width="11px" height="12px" preserveAspectRatio="xMinYMin meet" x="760" y="-1052"/>
-<text text-anchor="start" x="775" y="-1043.2" font-family="Helvetica,sans-Serif" font-size="11.00">fk_kind</text>
-<polygon fill="none" stroke="black" points="755,-1013 755,-1035 914,-1035 914,-1013 755,-1013"/>
-<image xlink:href="../../images/foreignKeys.png" width="11px" height="12px" preserveAspectRatio="xMinYMin meet" x="760" y="-1030"/>
-<text text-anchor="start" x="775" y="-1021.2" font-family="Helvetica,sans-Serif" font-size="11.00">fk_contract_person</text>
-<polygon fill="none" stroke="black" points="755,-991 755,-1013 914,-1013 914,-991 755,-991"/>
-<image xlink:href="../../images/foreignKeys.png" width="11px" height="12px" preserveAspectRatio="xMinYMin meet" x="760" y="-1008"/>
-<text text-anchor="start" x="775" y="-999.2" font-family="Helvetica,sans-Serif" font-size="11.00">fk_unit</text>
-<polygon fill="none" stroke="black" points="755,-973 755,-991 914,-991 914,-973 755,-973"/>
-<text text-anchor="start" x="758" y="-979.2" font-family="Helvetica,sans-Serif" font-size="11.00">...</text>
-<polygon fill="#ffffff" stroke="transparent" points="755,-955 755,-973 914,-973 914,-955 755,-955"/>
-<polygon fill="none" stroke="black" points="755,-955 755,-973 914,-973 914,-955 755,-955"/>
-<polygon fill="#ffffff" stroke="transparent" points="756,-956 756,-972 813,-972 813,-956 756,-956"/>
-<text text-anchor="start" x="758" y="-961.2" font-family="Helvetica,sans-Serif" font-size="11.00">&lt; 3</text>
-<polygon fill="#ffffff" stroke="transparent" points="813,-956 813,-972 857,-972 857,-956 813,-956"/>
-<text text-anchor="start" x="831" y="-961.2" font-family="Helvetica,sans-Serif" font-size="11.00"> &#160;</text>
-<polygon fill="#ffffff" stroke="transparent" points="857,-956 857,-972 913,-972 913,-956 857,-956"/>
-<text text-anchor="start" x="891" y="-961.2" font-family="Helvetica,sans-Serif" font-size="11.00">1 &gt;</text>
-<polygon fill="black" stroke="black" points="813,-956 813,-972 813,-972 813,-956 813,-956"/>
-<polygon fill="black" stroke="black" points="857,-956 857,-972 857,-972 857,-956 857,-956"/>
-</a>
-</g>
-</g>
-<!-- contract&#45;&gt;contact -->
-<g id="edge3" class="edge">
-<title>contract:w&#45;&gt;contact:e</title>
-<path fill="none" stroke="black" d="M739.56,-1023.69C623.57,-1018.79 566.23,-957.49 471,-1032 409.6,-1080.04 501.96,-1201 424,-1201"/>
-<polygon fill="black" stroke="black" points="746,-1023.83 753.92,-1027.6 750,-1023.92 754,-1024 754,-1024 754,-1024 750,-1023.92 754.08,-1020.4 746,-1023.83 746,-1023.83"/>
-<ellipse fill="none" stroke="black" cx="742.8" cy="-1023.76" rx="3.2" ry="3.2"/>
-</g>
-<!-- contract&#45;&gt;unit -->
-<g id="edge5" class="edge">
-<title>contract:w&#45;&gt;unit:e</title>
-<path fill="none" stroke="black" d="M739.72,-998.77C654.94,-956.6 760.42,-516 655.5,-516"/>
-<polygon fill="black" stroke="black" points="746.2,-1000.23 753.21,-1005.51 750.1,-1001.12 754,-1002 754,-1002 754,-1002 750.1,-1001.12 754.79,-998.49 746.2,-1000.23 746.2,-1000.23"/>
-<ellipse fill="none" stroke="black" cx="743.08" cy="-999.53" rx="3.2" ry="3.2"/>
-</g>
-<!-- tce_vl.contract_kind -->
-<g id="node19" class="node">
-<title>tce_vl.contract_kind</title>
-<g id="a_node19"><a xlink:href="../../../tce_vl/tables/contract_kind.html" xlink:title="tce_vl.contract_kind" target="_top">
-<polygon fill="#ffffff" stroke="transparent" points="481,-1043 481,-1101 674,-1101 674,-1043 481,-1043"/>
-<polygon fill="#f5f5f5" stroke="transparent" points="481.5,-1079 481.5,-1101 674.5,-1101 674.5,-1079 481.5,-1079"/>
-<polygon fill="none" stroke="black" points="481.5,-1079 481.5,-1101 674.5,-1101 674.5,-1079 481.5,-1079"/>
-<text text-anchor="start" x="486.5" y="-1088.2" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00">tce_vl.contract_kind</text>
-<text text-anchor="start" x="632.5" y="-1087.2" font-family="Helvetica,sans-Serif" font-size="11.00">[table]</text>
-<polygon fill="none" stroke="black" points="481.5,-1061 481.5,-1079 674.5,-1079 674.5,-1061 481.5,-1061"/>
-<text text-anchor="start" x="484.5" y="-1067.2" font-family="Helvetica,sans-Serif" font-size="11.00">...</text>
-<polygon fill="#ffffff" stroke="transparent" points="481.5,-1043 481.5,-1061 674.5,-1061 674.5,-1043 481.5,-1043"/>
-<polygon fill="none" stroke="black" points="481.5,-1043 481.5,-1061 674.5,-1061 674.5,-1043 481.5,-1043"/>
-<polygon fill="#ffffff" stroke="transparent" points="482.5,-1044 482.5,-1060 532.5,-1060 532.5,-1044 482.5,-1044"/>
-<text text-anchor="start" x="484.5" y="-1049.2" font-family="Helvetica,sans-Serif" font-size="11.00"> &#160;</text>
-<polygon fill="#ffffff" stroke="transparent" points="532.5,-1044 532.5,-1060 611.5,-1060 611.5,-1044 532.5,-1044"/>
-<text text-anchor="start" x="553.5" y="-1049.2" font-family="Helvetica,sans-Serif" font-size="11.00">0 rows</text>
-<polygon fill="#ffffff" stroke="transparent" points="611.5,-1044 611.5,-1060 673.5,-1060 673.5,-1044 611.5,-1044"/>
-<text text-anchor="start" x="651.5" y="-1049.2" font-family="Helvetica,sans-Serif" font-size="11.00">1 &gt;</text>
-<polygon fill="black" stroke="black" points="532.5,-1044 532.5,-1060 532.5,-1060 532.5,-1044 532.5,-1044"/>
-<polygon fill="black" stroke="black" points="611.5,-1044 611.5,-1060 611.5,-1060 611.5,-1044 611.5,-1044"/>
-</a>
-</g>
-</g>
-<!-- contract&#45;&gt;tce_vl.contract_kind -->
-<g id="edge4" class="edge">
-<title>contract:w&#45;&gt;tce_vl.contract_kind:e</title>
-<path fill="none" stroke="black" d="M739.57,-1046.27C720.5,-1046.97 700.83,-1048.95 682.06,-1051.51"/>
-<polygon fill="black" stroke="black" points="746,-1046.15 754.07,-1049.6 750,-1046.08 754,-1046 754,-1046 754,-1046 750,-1046.08 753.93,-1042.4 746,-1046.15 746,-1046.15"/>
-<ellipse fill="none" stroke="black" cx="742.8" cy="-1046.21" rx="3.2" ry="3.2"/>
-</g>
 <!-- deceased -->
-<g id="node6" class="node">
+<g id="node5" class="node">
 <title>deceased</title>
-<g id="a_node6"><a xlink:href="../../tables/deceased.html" xlink:title="deceased" target="_top">
+<g id="a_node5"><a xlink:href="../../tables/deceased.html" xlink:title="deceased" target="_top">
 <polygon fill="#ffffff" stroke="transparent" points="725,-744 725,-934 943,-934 943,-744 725,-744"/>
 <polygon fill="#f5f5f5" stroke="transparent" points="725,-912 725,-934 943,-934 943,-912 725,-912"/>
 <polygon fill="none" stroke="black" points="725,-912 725,-934 943,-934 943,-912 725,-912"/>
@@ -640,6 +559,87 @@
 <polygon fill="black" stroke="black" points="716,-878.94 723.97,-882.6 720,-878.97 724,-879 724,-879 724,-879 720,-878.97 724.03,-875.4 716,-878.94 716,-878.94"/>
 <ellipse fill="none" stroke="black" cx="712.8" cy="-878.92" rx="3.2" ry="3.2"/>
 </g>
+<!-- contract -->
+<g id="node6" class="node">
+<title>contract</title>
+<g id="a_node6"><a xlink:href="../../tables/contract.html" xlink:title="contract" target="_top">
+<polygon fill="#ffffff" stroke="transparent" points="754.5,-955 754.5,-1101 913.5,-1101 913.5,-955 754.5,-955"/>
+<polygon fill="#f5f5f5" stroke="transparent" points="755,-1079 755,-1101 914,-1101 914,-1079 755,-1079"/>
+<polygon fill="none" stroke="black" points="755,-1079 755,-1101 914,-1101 914,-1079 755,-1079"/>
+<text text-anchor="start" x="760" y="-1088.2" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00">contract</text>
+<text text-anchor="start" x="872" y="-1087.2" font-family="Helvetica,sans-Serif" font-size="11.00">[table]</text>
+<polygon fill="none" stroke="black" points="755,-1057 755,-1079 914,-1079 914,-1057 755,-1057"/>
+<image xlink:href="../../images/primaryKeys.png" width="11px" height="12px" preserveAspectRatio="xMinYMin meet" x="760" y="-1074"/>
+<text text-anchor="start" x="775" y="-1065.2" font-family="Helvetica,sans-Serif" font-size="11.00">id</text>
+<polygon fill="none" stroke="black" points="755,-1035 755,-1057 914,-1057 914,-1035 755,-1035"/>
+<image xlink:href="../../images/foreignKeys.png" width="11px" height="12px" preserveAspectRatio="xMinYMin meet" x="760" y="-1052"/>
+<text text-anchor="start" x="775" y="-1043.2" font-family="Helvetica,sans-Serif" font-size="11.00">fk_kind</text>
+<polygon fill="none" stroke="black" points="755,-1013 755,-1035 914,-1035 914,-1013 755,-1013"/>
+<image xlink:href="../../images/foreignKeys.png" width="11px" height="12px" preserveAspectRatio="xMinYMin meet" x="760" y="-1030"/>
+<text text-anchor="start" x="775" y="-1021.2" font-family="Helvetica,sans-Serif" font-size="11.00">fk_contract_person</text>
+<polygon fill="none" stroke="black" points="755,-991 755,-1013 914,-1013 914,-991 755,-991"/>
+<image xlink:href="../../images/foreignKeys.png" width="11px" height="12px" preserveAspectRatio="xMinYMin meet" x="760" y="-1008"/>
+<text text-anchor="start" x="775" y="-999.2" font-family="Helvetica,sans-Serif" font-size="11.00">fk_unit</text>
+<polygon fill="none" stroke="black" points="755,-973 755,-991 914,-991 914,-973 755,-973"/>
+<text text-anchor="start" x="758" y="-979.2" font-family="Helvetica,sans-Serif" font-size="11.00">...</text>
+<polygon fill="#ffffff" stroke="transparent" points="755,-955 755,-973 914,-973 914,-955 755,-955"/>
+<polygon fill="none" stroke="black" points="755,-955 755,-973 914,-973 914,-955 755,-955"/>
+<polygon fill="#ffffff" stroke="transparent" points="756,-956 756,-972 813,-972 813,-956 756,-956"/>
+<text text-anchor="start" x="758" y="-961.2" font-family="Helvetica,sans-Serif" font-size="11.00">&lt; 3</text>
+<polygon fill="#ffffff" stroke="transparent" points="813,-956 813,-972 857,-972 857,-956 813,-956"/>
+<text text-anchor="start" x="831" y="-961.2" font-family="Helvetica,sans-Serif" font-size="11.00"> &#160;</text>
+<polygon fill="#ffffff" stroke="transparent" points="857,-956 857,-972 913,-972 913,-956 857,-956"/>
+<text text-anchor="start" x="891" y="-961.2" font-family="Helvetica,sans-Serif" font-size="11.00">1 &gt;</text>
+<polygon fill="black" stroke="black" points="813,-956 813,-972 813,-972 813,-956 813,-956"/>
+<polygon fill="black" stroke="black" points="857,-956 857,-972 857,-972 857,-956 857,-956"/>
+</a>
+</g>
+</g>
+<!-- contract&#45;&gt;contact -->
+<g id="edge3" class="edge">
+<title>contract:w&#45;&gt;contact:e</title>
+<path fill="none" stroke="black" d="M739.56,-1023.69C623.57,-1018.79 566.23,-957.49 471,-1032 409.6,-1080.04 501.96,-1201 424,-1201"/>
+<polygon fill="black" stroke="black" points="746,-1023.83 753.92,-1027.6 750,-1023.92 754,-1024 754,-1024 754,-1024 750,-1023.92 754.08,-1020.4 746,-1023.83 746,-1023.83"/>
+<ellipse fill="none" stroke="black" cx="742.8" cy="-1023.76" rx="3.2" ry="3.2"/>
+</g>
+<!-- contract&#45;&gt;unit -->
+<g id="edge5" class="edge">
+<title>contract:w&#45;&gt;unit:e</title>
+<path fill="none" stroke="black" d="M739.72,-998.77C654.94,-956.6 760.42,-516 655.5,-516"/>
+<polygon fill="black" stroke="black" points="746.2,-1000.23 753.21,-1005.51 750.1,-1001.12 754,-1002 754,-1002 754,-1002 750.1,-1001.12 754.79,-998.49 746.2,-1000.23 746.2,-1000.23"/>
+<ellipse fill="none" stroke="black" cx="743.08" cy="-999.53" rx="3.2" ry="3.2"/>
+</g>
+<!-- tce_vl.contract_kind -->
+<g id="node19" class="node">
+<title>tce_vl.contract_kind</title>
+<g id="a_node19"><a xlink:href="../../../tce_vl/tables/contract_kind.html" xlink:title="tce_vl.contract_kind" target="_top">
+<polygon fill="#ffffff" stroke="transparent" points="481,-1043 481,-1101 674,-1101 674,-1043 481,-1043"/>
+<polygon fill="#f5f5f5" stroke="transparent" points="481.5,-1079 481.5,-1101 674.5,-1101 674.5,-1079 481.5,-1079"/>
+<polygon fill="none" stroke="black" points="481.5,-1079 481.5,-1101 674.5,-1101 674.5,-1079 481.5,-1079"/>
+<text text-anchor="start" x="486.5" y="-1088.2" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="11.00">tce_vl.contract_kind</text>
+<text text-anchor="start" x="632.5" y="-1087.2" font-family="Helvetica,sans-Serif" font-size="11.00">[table]</text>
+<polygon fill="none" stroke="black" points="481.5,-1061 481.5,-1079 674.5,-1079 674.5,-1061 481.5,-1061"/>
+<text text-anchor="start" x="484.5" y="-1067.2" font-family="Helvetica,sans-Serif" font-size="11.00">...</text>
+<polygon fill="#ffffff" stroke="transparent" points="481.5,-1043 481.5,-1061 674.5,-1061 674.5,-1043 481.5,-1043"/>
+<polygon fill="none" stroke="black" points="481.5,-1043 481.5,-1061 674.5,-1061 674.5,-1043 481.5,-1043"/>
+<polygon fill="#ffffff" stroke="transparent" points="482.5,-1044 482.5,-1060 532.5,-1060 532.5,-1044 482.5,-1044"/>
+<text text-anchor="start" x="484.5" y="-1049.2" font-family="Helvetica,sans-Serif" font-size="11.00"> &#160;</text>
+<polygon fill="#ffffff" stroke="transparent" points="532.5,-1044 532.5,-1060 611.5,-1060 611.5,-1044 532.5,-1044"/>
+<text text-anchor="start" x="553.5" y="-1049.2" font-family="Helvetica,sans-Serif" font-size="11.00">0 rows</text>
+<polygon fill="#ffffff" stroke="transparent" points="611.5,-1044 611.5,-1060 673.5,-1060 673.5,-1044 611.5,-1044"/>
+<text text-anchor="start" x="651.5" y="-1049.2" font-family="Helvetica,sans-Serif" font-size="11.00">1 &gt;</text>
+<polygon fill="black" stroke="black" points="532.5,-1044 532.5,-1060 532.5,-1060 532.5,-1044 532.5,-1044"/>
+<polygon fill="black" stroke="black" points="611.5,-1044 611.5,-1060 611.5,-1060 611.5,-1044 611.5,-1044"/>
+</a>
+</g>
+</g>
+<!-- contract&#45;&gt;tce_vl.contract_kind -->
+<g id="edge4" class="edge">
+<title>contract:w&#45;&gt;tce_vl.contract_kind:e</title>
+<path fill="none" stroke="black" d="M739.57,-1046.27C720.5,-1046.97 700.83,-1048.95 682.06,-1051.51"/>
+<polygon fill="black" stroke="black" points="746,-1046.15 754.07,-1049.6 750,-1046.08 754,-1046 754,-1046 754,-1046 750,-1046.08 753.93,-1042.4 746,-1046.15 746,-1046.15"/>
+<ellipse fill="none" stroke="black" cx="742.8" cy="-1046.21" rx="3.2" ry="3.2"/>
+</g>
 <!-- file -->
 <g id="node8" class="node">
 <title>file</title>
@@ -729,19 +729,19 @@
 <polygon fill="black" stroke="black" points="983.23,-644.11 990.15,-649.5 987.11,-645.06 991,-646 991,-646 991,-646 987.11,-645.06 991.85,-642.5 983.23,-644.11 983.23,-644.11"/>
 <ellipse fill="none" stroke="black" cx="980.12" cy="-643.36" rx="3.2" ry="3.2"/>
 </g>
-<!-- file&#45;&gt;contract -->
-<g id="edge13" class="edge">
-<title>file:w&#45;&gt;contract:e</title>
-<path fill="none" stroke="black" d="M977.1,-738.72C924.85,-779.32 985.77,-1068 915,-1068"/>
-<polygon fill="black" stroke="black" points="983.42,-736.57 992.16,-737.41 987.21,-735.29 991,-734 991,-734 991,-734 987.21,-735.29 989.84,-730.59 983.42,-736.57 983.42,-736.57"/>
-<ellipse fill="none" stroke="black" cx="980.39" cy="-737.6" rx="3.2" ry="3.2"/>
-</g>
 <!-- file&#45;&gt;deceased -->
 <g id="edge14" class="edge">
 <title>file:w&#45;&gt;deceased:e</title>
 <path fill="none" stroke="black" d="M976.44,-714.39C920.25,-736.27 1024.81,-901 944,-901"/>
 <polygon fill="black" stroke="black" points="983.11,-713.3 991.58,-715.55 987.05,-712.65 991,-712 991,-712 991,-712 987.05,-712.65 990.42,-708.45 983.11,-713.3 983.11,-713.3"/>
 <ellipse fill="none" stroke="black" cx="979.95" cy="-713.81" rx="3.2" ry="3.2"/>
+</g>
+<!-- file&#45;&gt;contract -->
+<g id="edge13" class="edge">
+<title>file:w&#45;&gt;contract:e</title>
+<path fill="none" stroke="black" d="M977.1,-738.72C924.85,-779.32 985.77,-1068 915,-1068"/>
+<polygon fill="black" stroke="black" points="983.42,-736.57 992.16,-737.41 987.21,-735.29 991,-734 991,-734 991,-734 987.21,-735.29 989.84,-730.59 983.42,-736.57 983.42,-736.57"/>
+<ellipse fill="none" stroke="black" cx="980.39" cy="-737.6" rx="3.2" ry="3.2"/>
 </g>
 <!-- file&#45;&gt;organisation -->
 <g id="edge16" class="edge">
