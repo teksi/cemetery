@@ -22,6 +22,7 @@
       <table name="contact" remarks="Dataset of contacts / Datensatz der Kontakte / Ensemble de données des contacts" schema="tce_od" type="TABLE">
          <column autoUpdated="false" defaultValue="uuid_generate_v4()" digits="0" id="0" name="id" nullable="false" remarks="" size="2147483647" type="uuid" typeCode="1111">
             <child column="fk_contract_person" foreignKey="rel_contract_contact" implied="false" onDeleteCascade="false" schema="tce_od" table="contract"/>
+            <child column="fk_contact_person" foreignKey="rel_deceased_contact_person" implied="false" onDeleteCascade="false" schema="tce_od" table="deceased"/>
             <child column="contact_ref" foreignKey="file_contact_assoc" implied="false" onDeleteCascade="false" schema="tce_od" table="file"/>
             <child column="fk_contact_person" foreignKey="rel_unit_contact_person" implied="false" onDeleteCascade="false" schema="tce_od" table="unit"/>
          </column>
@@ -139,6 +140,12 @@
          <column autoUpdated="false" defaultValue="null" digits="0" id="34" name="nickname" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="35" name="family_name_at_birth" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
          <column autoUpdated="false" defaultValue="null" digits="0" id="36" name="display_txt" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="37" name="ceremony_place" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="38" name="ceremony_date" nullable="true" remarks="" size="13" type="date" typeCode="91"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="39" name="fk_contact_person" nullable="true" remarks="" size="2147483647" type="uuid" typeCode="1111">
+            <parent column="id" foreignKey="rel_deceased_contact_person" implied="false" onDeleteCascade="false" schema="tce_od" table="contact"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="40" name="contact_person_link" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
          <primaryKey column="id" sequenceNumberInPK="1"/>
          <index name="pkey_tce_od_deceased_id" unique="true">
             <column ascending="true" name="id"/>
